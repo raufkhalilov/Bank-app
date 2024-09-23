@@ -1,0 +1,13 @@
+D:\VisualStudio\Bank\Bank\Bank\bin\Debug\Bank.exe.config
+D:\VisualStudio\Bank\Bank\Bank\bin\Debug\Bank.exe
+D:\VisualStudio\Bank\Bank\Bank\bin\Debug\Bank.pdb
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.csproj.AssemblyReference.cache
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.Properties.Resources.resources
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.csproj.GenerateResource.cache
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.exe
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.pdb
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.Clients.resources
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.Products.resources
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.MainForm.resources
+D:\VisualStudio\Bank\Bank\Bank\obj\Debug\Bank.ClientInfo.resources
