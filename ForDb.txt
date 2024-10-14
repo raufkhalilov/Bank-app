@@ -1,0 +1,28 @@
+-- Table: public.clients
+
+-- DROP TABLE IF EXISTS public.clients;
+
+CREATE TABLE IF NOT EXISTS public.clients
+(
+    id integer NOT NULL DEFAULT nextval('clients_id_seq'::regclass),
+    full_name character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    registration_address text COLLATE pg_catalog."default" NOT NULL,
+    birth_date date NOT NULL,
+    residential_address text COLLATE pg_catalog."default" NOT NULL,
+    passport_details text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT clients_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.clients
+    OWNER to postgres;
+	
+-- Вставка тестовых данных в таблицу clients
+INSERT INTO public.clients (full_name, registration_address, birth_date, residential_address, passport_details)
+VALUES
+    ('Иванов Иван Иванович', 'г. Москва, ул. Ленина, д. 1', '1985-06-15', 'г. Москва, ул. Пушкина, д. 2', '1234 567890'),
+    ('Петров Петр Петрович', 'г. Санкт-Петербург, ул. Невский, д. 3', '1990-12-22', 'г. Санкт-Петербург, ул. Маяковского, д. 4', '2345 678901'),
+    ('Сидорова Мария Сергеевна', 'г. Екатеринбург, ул. Толстого, д. 5', '1988-04-10', 'г. Екатеринбург, ул. Чехова, д. 6', '3456 789012'),
+    ('Алексеев Алексей Викторович', 'г. Казань, ул. Кулибина, д. 7', '1992-08-30', 'г. Казань, ул. Гоголя, д. 8', '4567 890123'),
+    ('Федорова Екатерина Александровна', 'г. Новосибирск, ул. Кирова, д. 9', '1983-11-05', 'г. Новосибирск, ул. Свердлова, д. 10', '5678 901234');
