@@ -8,7 +8,7 @@ using json = nlohmann::json;
 json get_data(pqxx::connection& C) {
     try {
         pqxx::work W(C);
-        pqxx::result R = W.exec("SELECT * FROM products");
+        pqxx::result R = W.exec("SELECT * FROM contracts");
 
         json j;
 
@@ -43,17 +43,17 @@ crow::response handle_get_data(pqxx::connection& C) {
 
 int main() {
     crow::SimpleApp app;  // Создаем экземпляр приложения
-    pqxx::connection C("host=192.168.80.1 port=5432 dbname=CFTBANK user=postgres password=1");
-
+    pqxx::connection C("host=192.168.80.1 port=5432 dbname=arhiv user=postgres password=1");
+    
     // Route для корневого URL
     CROW_ROUTE(app, "/")([](){
         return "Hello, World!";
     });
 
-    // Route для получения всех данных
-    CROW_ROUTE(app, "/data")([&C]() {
+    // Route для получения всех данных таблицы contracts
+    CROW_ROUTE(app, "/DataContracts")([&C]() {
         return handle_get_data(C);
     });
-    
-    app.port(8080).multithreaded().run();
+
+    app.port(8080).multithreaded().run();    
 }
