@@ -58,7 +58,7 @@ json get_dataContracts(pqxx::connection& C) {
 // Обработчик для маршрута получения данных
 crow::response handle_get_data(pqxx::connection& C, int k) {
     if(k==1)
-        return crow::response(get_dataContracts(C).dump());  // Возвращаем JSON-строку в качестве ответа
+        return crow::response(get_dataContracts(C).dump());
     if(k==2)
         return crow::response(get_dataClients(C).dump());
 }
@@ -84,29 +84,25 @@ crow::response add_client(pqxx::connection& C, const json& client_data) {
 }
 
 int main() {
-    crow::SimpleApp app;  // Создаем экземпляр приложения
+    crow::SimpleApp app;
     pqxx::connection C("host=192.168.80.1 port=5432 dbname=arhiv user=postgres password=1");
 
-    // Подготовим запрос для вставки данных
+    // запрос для вставки данных
     C.prepare("insert_clients", "INSERT INTO clients (client_name, phone_number) VALUES ($1, $2)"); // Исправлено на full_name
 
-    // Route для корневого URL
     CROW_ROUTE(app, "/")([](){
         return "Hello, World!";
     });
 
-    // Route для получения всех данных таблицы contracts
-    CROW_ROUTE(app, "/DataContracts")([&C]() {
+    CROW_ROUTE(app, "/get/Contracts")([&C]() {
         return handle_get_data(C, 1);
     });
 
-    // Route для получения всех данных таблицы clients
-    CROW_ROUTE(app, "/DataClients")([&C]() {
+    CROW_ROUTE(app, "/get/Clients")([&C]() {
         return handle_get_data(C, 2);
     });
 
-    // Route для добавления клиента
-    CROW_ROUTE(app, "/addClient").methods(crow::HTTPMethod::POST)([&C](const crow::request& req) {
+    CROW_ROUTE(app, "/post/Client").methods(crow::HTTPMethod::POST)([&C](const crow::request& req) {
         auto client_data = json::parse(req.body);  // Парсится тело запроса
         return add_client(C, client_data);         // Добавление в бд
     });
