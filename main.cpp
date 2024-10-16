@@ -1,18 +1,57 @@
 #include "crow.h"
 #include <pqxx/pqxx>
 #include <nlohmann/json.hpp>  
-
+#include <iostream>
 using json = nlohmann::json;
+// json get_dataClients(pqxx::connection& C) {
+//     try{
+//         pqxx::work W(C);
+//         pqxx::result R = W.exec("SELECT * FROM clients");
+//         json j;
+//         for (const auto &row : R) {
+//             j.push_back({
+//                 {"client_id", row["client_id"].is_null() ? nullptr : json(row["client_id"].as<int>())},
+//                 {"client_name", row["client_name"].is_null() ? nullptr : json(row["client_name"].as<std::string>())},
+//                 {"client_name", row["client_name"].is_null() ? nullptr : json(row["client_name"].as<std::string>())},
+//             }); 
+//         }
+//         W.commit();
+//         return j;
+//     } 
+//     catch (const std::exception &e) {
+//         std::cerr << "Error: " << e.what() << std::endl;
+//         return json{};
+//     }
+// }
+json get_dataClients(pqxx::connection& C) {
+    try {
+        pqxx::work W(C);
+        pqxx::result R = W.exec("SELECT * FROM clients");
+        json j;
+
+        for (const auto &row : R) {
+            j.push_back(json{
+                {"client_id", row["client_id"].is_null() ? nullptr : json(row["client_id"].as<int>())},
+                {"client_name", row["client_name"].is_null() ? nullptr : json(row["client_name"].as<std::string>())},
+                {"phone_number", row["phone_number"].is_null() ? nullptr : json(row["phone_number"].as<std::string>())},
+            });
+        }
+        W.commit();
+        return j;
+    } 
+    catch (const std::exception &e) {
+        std::cerr << "Ошибка: " << e.what() << std::endl;
+        return json{};
+    }
+}
 
 //Функция для получения данных из базы данных
-json get_data(pqxx::connection& C) {
+json get_dataContracts(pqxx::connection& C) {
     try {
         pqxx::work W(C);
         pqxx::result R = W.exec("SELECT * FROM contracts");
 
         json j;
-
-        std::cout << R.size() << " rows fetched.\n";
 
         for (const auto &row : R) {
             j.push_back({
@@ -36,8 +75,11 @@ json get_data(pqxx::connection& C) {
 
 
 // Обработчик для маршрута получения данных
-crow::response handle_get_data(pqxx::connection& C) {
-    return crow::response(get_data(C).dump());  // Возвращаем JSON-строку в качестве ответа
+crow::response handle_get_data(pqxx::connection& C, int k) {
+    if(k==1)
+        return crow::response(get_dataContracts(C).dump());  // Возвращаем JSON-строку в качестве ответа
+    if(k==2)
+        return crow::response(get_dataClients(C).dump());
 }
 
 
@@ -52,7 +94,11 @@ int main() {
 
     // Route для получения всех данных таблицы contracts
     CROW_ROUTE(app, "/DataContracts")([&C]() {
-        return handle_get_data(C);
+        return handle_get_data(C, 1);
+    });
+
+    CROW_ROUTE(app, "/DataClients")([&C]() {
+        return handle_get_data(C, 2);
     });
 
     app.port(8080).multithreaded().run();    

@@ -1,0 +1,36 @@
+CREATE TABLE clients (
+    client_id INT PRIMARY KEY,
+    client_name VARCHAR(255),
+    phone_number VARCHAR(20)
+);
+
+INSERT INTO clients (client_id, client_name, phone_number) VALUES
+(1, 'Sidorov I.P.', '123-456-7890'),
+(2, 'Ivanov P.S.', '234-567-8901'),
+(3, 'Petrov S.I.', '345-678-9012'),
+(4, 'Vasiliev S.A.', '456-789-0123'),
+(5, 'Kozlov A.P.', '567-890-1234'),
+(6, 'Mironov A.P.', '678-901-2345'),
+(7, 'Kuznetsova M.V.', '789-012-3456');
+
+CREATE TABLE contracts (
+    id INT,
+    client_id INT,
+    description VARCHAR(255),
+    product_type_id INT,
+    start_date DATE,
+    end_date DATE,
+    contract_amount DECIMAL(10, 2)
+);
+
+INSERT INTO contracts (id, client_id, description, product_type_id, start_date, end_date, contract_amount) VALUES
+(1, 1, 'Credit Agreement with Sidorov I.P.', 1, '2015-06-01', NULL, 5000.00),
+(4, 4, 'Credit Agreement with Vasiliev S.A.', 1, '2016-06-15', NULL, 10000.00),
+(2, 2, 'Deposit Agreement with Ivanov P.S.', 2, '2017-08-01', NULL, 10000.00),
+(3, 3, 'Card Agreement with Petrov S.I.', 3, '2017-08-01', NULL, 120000.00),
+(5, 4, 'Deposit Agreement with Vasiliev S.A.', 2, '2017-07-01', NULL, 5000.00),
+(6, 5, 'Card Agreement with Kozlov A.P.', 3, '2018-02-20', NULL, NULL),
+(7, 6, 'Credit Agreement with Mironov A.P.', 1, '2018-05-01', NULL, NULL),
+(8, 7, 'Credit Agreement with Kuznetsova M.V.', 1, '2017-09-01', '2020-01-01', NULL),
+(9, 6, 'Deposit Agreement with Mironov A.P.', 2, '2019-01-10', NULL, NULL),
+(10, 7, 'Deposit Agreement with Kuznetsova M.V.', 2, '2019-02-15', NULL, NULL);
