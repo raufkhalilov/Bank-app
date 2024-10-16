@@ -1,17 +1,21 @@
 CREATE TABLE clients (
-    client_id INT PRIMARY KEY,
-    client_name VARCHAR(255),
-    phone_number VARCHAR(20)
+    client_id SERIAL PRIMARY KEY,      
+    client_name VARCHAR(255) NOT NULL, 
+    phone_number VARCHAR(20) NOT NULL   
 );
 
-INSERT INTO clients (client_id, client_name, phone_number) VALUES
-(1, 'Sidorov I.P.', '123-456-7890'),
-(2, 'Ivanov P.S.', '234-567-8901'),
-(3, 'Petrov S.I.', '345-678-9012'),
-(4, 'Vasiliev S.A.', '456-789-0123'),
-(5, 'Kozlov A.P.', '567-890-1234'),
-(6, 'Mironov A.P.', '678-901-2345'),
-(7, 'Kuznetsova M.V.', '789-012-3456');
+INSERT INTO clients (client_name, phone_number) VALUES
+('John Doe', '123-456-7890'),
+('Jane Smith', '234-567-8901'),
+('Alice Johnson', '345-678-9012'),
+('Bob Brown', '456-789-0123'),
+('Charlie Davis', '567-890-1234'),
+('Diana Evans', '678-901-2345'),
+('Ethan Harris', '789-012-3456'),
+('Fiona Miller', '890-123-4567'),
+('George Wilson', '901-234-5678'),
+('Hannah Lee', '012-345-6789');
+
 
 CREATE TABLE contracts (
     id INT,
