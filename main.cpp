@@ -9,13 +9,16 @@ using json = nlohmann::json;
 json get_dataClients(pqxx::connection& C) {
     try {
         pqxx::work W(C);
+        //pqxx::result R = W.exec("SELECT * FROM clients");
         pqxx::result R = W.exec("SELECT * FROM clients");
-        json j;
+        std::cerr << "Получено " << R.size() << " клиентов." << std::endl;
 
+        json j;
         for (const auto &row : R) {
+
             j.push_back(json{
-                {"client_id", row["id"].is_null() ? nullptr : json(row["id"].as<int>())}, // Изменение здесь
-                {"client_name", row["full_name"].is_null() ? nullptr : json(row["full_name"].as<std::string>())}, // Изменение здесь
+                {"client_id", row["client_id"].is_null() ? nullptr : json(row["client_id"].as<int>())}, // Изменение здесь
+                {"client_name", row["client_name"].is_null() ? nullptr : json(row["client_name"].as<std::string>())}, // Изменение здесь
                 {"phone_number", row["phone_number"].is_null() ? nullptr : json(row["phone_number"].as<std::string>())},
             });
         }
