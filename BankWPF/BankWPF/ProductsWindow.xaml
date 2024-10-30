@@ -1,0 +1,33 @@
+﻿<Window x:Class="BankWPF.ProductsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankWPF"
+        mc:Ignorable="d"
+        Title="Products" Height="450" Width="800" Loaded="products_window_loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="269*"/>
+            <RowDefinition Height="103*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,0">
+            
+            <DataGrid x:Name="ProductsGrid" AutoGenerateColumns="False" Background="White" Margin="0,0,0,-34">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="25" />
+                    <DataGridTextColumn Header="ClientID" Binding="{Binding client_id}" Width="55" />
+                    <DataGridTextColumn Header="Description" Binding="{Binding description}" Width="*" />
+                    <DataGridTextColumn Header="ProductTypeID" Binding="{Binding product_type_id}" Width="90" />
+                    <DataGridTextColumn Header="Amount" Binding="{Binding contract_amount}" Width="55" />
+                    <DataGridTextColumn Header="StartDate" Binding="{Binding start_date}" Width="70" />
+                    <DataGridTextColumn Header="EndDate" Binding="{Binding end_date}" Width="70" />
+                </DataGrid.Columns>
+            </DataGrid>
+            
+        </Grid>
+        <Grid Background="#FF63B8F7" Grid.Row="1"/>
+
+    </Grid>
+</Window>
