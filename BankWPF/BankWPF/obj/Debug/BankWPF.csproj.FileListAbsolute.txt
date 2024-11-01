@@ -14,9 +14,9 @@ C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\BankWPF.pdb
 C:\Users\georg\source\repos\BankWPF\BankWPF\bin\Debug\Newtonsoft.Json.dll
 C:\Users\georg\source\repos\BankWPF\BankWPF\bin\Debug\Newtonsoft.Json.xml
 C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\BankWPF.csproj.Up2Date
-C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\ClientsWindow.g.cs
-C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\ProductsWindow.g.cs
-C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\MainWindow.g.cs
-C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\ClientsWindow.baml
-C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\ProductsWindow.baml
-C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\MainWindow.baml
+C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ClientsWindow.g.cs
+C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ProductsWindow.g.cs
+C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\MainWindow.g.cs
+C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ClientsWindow.baml
+C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ProductsWindow.baml
+C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\MainWindow.baml
