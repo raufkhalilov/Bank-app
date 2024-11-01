@@ -6,3 +6,7 @@
 
 Доступные post-запросы:
 ```curl -X POST http://localhost:8080/post/Client -H "Content-Type: application/json" -d '{"client_name": "<...>", "phone_number":"<...>"}'```
+
+# Пользовательский интерфейс:
+1) Работает вывод таблиц клиентов и продуктов(контрактов?)
+2) Реализован метод для записи в БД (Helper.PostData). К событию пока не привязан.
