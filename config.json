@@ -1,0 +1,9 @@
+{
+    "db": {
+        "host": "<your_host>",
+        "port": 5432,
+        "dbname": "arhiv",
+        "user": "postgres",
+        "password": "<your_password>"
+    }
+}
