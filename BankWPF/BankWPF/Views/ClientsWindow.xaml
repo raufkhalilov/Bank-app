@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BankWPF"
+        xmlns:local="clr-namespace:BankWPF" 
+        xmlns:viewmodels="clr-namespace:BankWPF.ViewModels" 
         mc:Ignorable="d"
-        Title="Clients" Height="450" Width="800" Loaded="clients_window_loaded">
+        Title="Clients" Height="450" Width="800">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="103*"/>
             <ColumnDefinition Width="697*"/>
@@ -18,18 +20,18 @@
 
         <Grid Grid.Row="0" Margin="0,0,0,120" Grid.ColumnSpan="2" Grid.RowSpan="2">
 
-            <DataGrid x:Name="ClientsGrid" AutoGenerateColumns="False" Background="White" Margin="0,0,0,-34">
+            <DataGrid x:Name="ClientsGrid" ItemsSource="{Binding Clients}" AutoGenerateColumns="False" Background="White" Margin="20,10,20,-10">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding client_id}" Width="25" />
-                    <DataGridTextColumn Header="ClientID" Binding="{Binding client_name}" Width="*" />
-                    <DataGridTextColumn Header="Description" Binding="{Binding phone_number}" Width="*" />
-                    
+                    <DataGridTextColumn Header="ID" Binding="{Binding ClientId}" Width="25" />
+                    <DataGridTextColumn Header="ClientID" Binding="{Binding ClientName}" Width="*" />
+                    <DataGridTextColumn Header="Description" Binding="{Binding PhoneNumber}" Width="*" />
+
                 </DataGrid.Columns>
             </DataGrid>
 
         </Grid>
-        <Grid Background="#FF63B8F7" Grid.Row="1" Grid.ColumnSpan="2">
-            <Button Content="Button" HorizontalAlignment="Left" Margin="159,47,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Grid Background="#FF63B8F7" Grid.ColumnSpan="2" Margin="0,312,0,0" Grid.RowSpan="2">
+            <Button Content="Новый клиент" HorizontalAlignment="Left" Margin="23,18,0,0" VerticalAlignment="Top" Command="{Binding AddCommand}" Width="131" Height="26" Background="#FFFFC800"/>
         </Grid>
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
 ﻿using BankWPF.Classes;
+using BankWPF.Views;
+using BankWPF.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -25,18 +27,22 @@ namespace BankWPF
     /// </summary>
     public partial class ClientsWindow : Window
     {
+
+
         public ClientsWindow()
         {
             InitializeComponent();
+
+            DataContext = new ClientsViewModel();
         }
 
-        private async void clients_window_loaded(object sender, RoutedEventArgs e)
+        public async void clients_window_loaded(object sender, RoutedEventArgs e)
         {
 
             //Btn_click_del btn_Click_Del = clients_window_loaded;
 
             //асинхронное получение данных от сервера
-            var jsonData = await Helper.GetData("http://localhost:8080/get/Clients"/*, this, btn_Click_Del, sender, e*/);
+            /*var jsonData = await Helper.GetData("http://localhost:8080/get/Clients"*//*, this, btn_Click_Del, sender, e*//*);
 
             if (jsonData != null)
             {
@@ -52,28 +58,16 @@ namespace BankWPF
                 }
                 else
                     Close();
-            }
+            }*/
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            if (MessageBox.Show("Вы действительно хотите добавить нового клиента?", "Добавление клиента", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
-                return;
+            //ClientWindow clientWindow = new ClientWindow(this);
+            //clientWindow.Show();
 
-            string url = "http://localhost:8080/post/Client";
-
-            Client client1 = new Client()
-            {
-                client_name = "Test3",
-                phone_number = "Test",
-            };
-
-            string request = await Helper.PostData(url, client1);
-
-            if (request != null)
-                this.clients_window_loaded(sender,e);
-               
+            //this.clients_window_loaded(sender,e);
         }
     }
 }

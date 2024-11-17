@@ -13,5 +13,6 @@ namespace BankWPF
     /// </summary>
     public partial class App : Application
     {
+        //Data
     }
 }

@@ -20,3 +20,5 @@ C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\MainWindow.g.cs
 C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ClientsWindow.baml
 C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ProductsWindow.baml
 C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\MainWindow.baml
+C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ClientWindow.g.cs
+C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ClientWindow.baml

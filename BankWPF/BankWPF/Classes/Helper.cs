@@ -27,61 +27,41 @@ namespace BankWPF.Classes
 
                 return res;
             }
-            catch (Exception ex)
+            catch (Exception /*ex*/)
             {
-              
+
 
                 return null;
             }
             //return res;
         }
 
-        public static async Task<string> PostData<T>(string url, T dataForPost)
+        public static async Task<string> PostData<T>(string requestUrl, T dataForPost)
         {
 
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(dataForPost);
 
-            // Создаем HttpClient
-            using (var client = new HttpClient())
+
+            string res = null;
+            // Создаем содержимое запроса
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
             {
-                // Устанавливаем заголовки, если это необходимо
-                //client.DefaultRequestHeaders.Add("Accept", "application/json");
-                //client.DefaultRequestHeaders.Add("Authorization", "Bearer your_token_here");
-
-                // Создаем содержимое запроса
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                try
+                //
+                using (var client = new HttpClient())
                 {
-                    // Отправляем POST-запрос
-                    HttpResponseMessage response = await client.PostAsync(url, content);
-
-                    // Проверяем успешность запроса
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Читаем ответ
-                        string responseBody = await response.Content.ReadAsStringAsync();
-                        //Console.WriteLine("Response received: " + responseBody);
-                    }
-                    else
-                    {
-                        //Console.WriteLine($"Error: {response.StatusCode}");
-                    }
-
-
-                    return await response.Content.ReadAsStringAsync();
-                }
-                catch (Exception ex)
-                {
-                    //Console.WriteLine($"Exception caught: {ex.Message}");
-
-                    return null;
+                    var response = await client.PostAsync(requestUrl, content);
+                    response.EnsureSuccessStatusCode(); // Проверяет, был ли ответ успешным
+                    res = await response.Content.ReadAsStringAsync();
                 }
 
-
+                return res;
             }
-
-
+            catch (Exception /*ex*/)
+            {
+                return null;
+            }
         }
 
     }
