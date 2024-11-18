@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\
+D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\
 BankWPF
 none
 false
 DEBUG;TRACE
-C:\Users\georg\source\repos\BankWPF\BankWPF\App.xaml
-4-713750864
+D:\app_for_admins-main\BankWPF\BankWPF\App.xaml
+4593952319
 
-15-516306478
-18269314109
-Views\ClientsWindow.xaml;Views\ClientWindow.xaml;Views\ProductsWindow.xaml;Views\MainWindow.xaml;
+211020204432
+19-1759660820
+Views\AddClientWindow.xaml;Views\ClientsWindow.xaml;Views\ProductsWindow.xaml;Views\MainWindow.xaml;
 
-False
+True
 

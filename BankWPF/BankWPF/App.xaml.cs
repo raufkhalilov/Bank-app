@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BankWPF.Services;
+using BankWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,6 +15,14 @@ namespace BankWPF
     /// </summary>
     public partial class App : Application
     {
-        //Data
+       protected override void OnStartup(StartupEventArgs e)
+       {
+            base.OnStartup(e);
+
+            var dialogService = new DialogService();
+            var mainViewModel = new ApplicationViewModel(dialogService);
+            var mainWindow = new MainWindow { DataContext = mainViewModel };
+            mainWindow.Show();
+       }
     }
 }

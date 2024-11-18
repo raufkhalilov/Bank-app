@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.135\lib\net462\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -62,11 +65,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\ClientsWindow.xaml">
+    <Page Include="Views\AddClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ClientWindow.xaml">
+    <Page Include="Views\ClientsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,18 +85,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\Commands\RelayCommand.cs" />
+    <Compile Include="Classes\RelayCommand.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Services\RequestsToApiService.cs" />
+    <Compile Include="Services\WindowService.cs" />
+    <Compile Include="ViewModels\ApplicationViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ClientAddingViewModel.cs" />
     <Compile Include="ViewModels\ClientsViewModel.cs" />
-    <Compile Include="ViewModels\ClientViewModel.cs" />
+    <Compile Include="ViewModels\ContractsViewModel.cs" />
+    <Compile Include="Views\AddClientWindow.xaml.cs">
+      <DependentUpon>AddClientWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ClientsWindow.xaml.cs">
       <DependentUpon>ClientsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Contract.cs" />
-    <Compile Include="Views\ClientWindow.xaml.cs">
-      <DependentUpon>ClientWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ProductsWindow.xaml.cs">
       <DependentUpon>ProductsWindow.xaml</DependentUpon>
     </Compile>

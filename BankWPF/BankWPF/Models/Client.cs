@@ -3,20 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BankWPF.Models
 {
-    public class Client : INotifyPropertyChanged
+    internal class Client : BaseModel
     {
         [JsonProperty("client_id")]
-        private int client_id;
+        private int client_id { get; set; }
         [JsonProperty("client_name")]
-        private string client_name;
+        private string client_name { get; set; }
         [JsonProperty("phone_number")]
-        private string phone_number;
+        private string phone_number { get; set; }
+
 
         public int ClientId
         {
@@ -27,32 +27,23 @@ namespace BankWPF.Models
                 OnPropertyChanged("ClientId");
             }
         }
-
         public string ClientName
         {
             get { return client_name; }
             set
             {
                 client_name = value;
-                OnPropertyChanged("ClientId");
+                OnPropertyChanged("ClientName");
             }
         }
-
         public string PhoneNumber
         {
             get { return phone_number; }
             set
             {
                 phone_number = value;
-                OnPropertyChanged("ClientId");
+                OnPropertyChanged("PhoneNumber");
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
 }

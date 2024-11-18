@@ -3,35 +3,73 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BankWPF" 
-        xmlns:viewmodels="clr-namespace:BankWPF.ViewModels" 
+        xmlns:local="clr-namespace:BankWPF" xmlns:viewmodels="clr-namespace:BankWPF.ViewModels" 
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        d:DataContext="{d:DesignInstance Type=viewmodels:ClientsViewModel}"
         mc:Ignorable="d"
-        Title="Clients" Height="450" Width="800">
+        Title="Clients" Height="450" Width="800" Loaded="clients_window_loaded"
+    >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction
+                Command="{Binding GetDataCommand}"/>
+                <!--
+                CommandParameter="{Binding SelectedPhone}" />
+                -->
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="103*"/>
-            <ColumnDefinition Width="697*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="173*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="269*"/>
-            <RowDefinition Height="103*"/>
+            
+            
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Margin="0,0,0,120" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <Grid Grid.Column="0" Background="#FFE1FCFC">
+            
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <DataGrid x:Name="ClientsGrid" ItemsSource="{Binding Clients}" AutoGenerateColumns="False" Background="White" Margin="20,10,20,-10">
+            <TextBlock Grid.Row="0" Text="Клиенты нашего банка" FontSize="20" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            
+            <DataGrid Grid.Row="1" 
+                      x:Name="ClientsGrid" 
+                      AutoGenerateColumns="False" 
+                      Background="White" 
+                      Margin="10,0,10,0" 
+                      BorderThickness="0" 
+                      BorderBrush="Aqua" 
+                      ItemsSource="{Binding Clients}">
+                
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ClientId}" Width="25" />
                     <DataGridTextColumn Header="ClientID" Binding="{Binding ClientName}" Width="*" />
                     <DataGridTextColumn Header="Description" Binding="{Binding PhoneNumber}" Width="*" />
-
                 </DataGrid.Columns>
+                
             </DataGrid>
 
+            <Button Grid.Row="2" 
+                    BorderThickness="0" 
+                    Content="Новый клиент" 
+                    HorizontalAlignment="Left" 
+                    Margin="10,0,0,0" 
+                    VerticalAlignment="Center" 
+                    Width="93" Height="29" 
+                    Command="{Binding OpenAddClientDialogCommand}"/>
+
         </Grid>
-        <Grid Background="#FF63B8F7" Grid.ColumnSpan="2" Margin="0,312,0,0" Grid.RowSpan="2">
-            <Button Content="Новый клиент" HorizontalAlignment="Left" Margin="23,18,0,0" VerticalAlignment="Top" Command="{Binding AddCommand}" Width="131" Height="26" Background="#FFFFC800"/>
-        </Grid>
+        
     </Grid>
 </Window>

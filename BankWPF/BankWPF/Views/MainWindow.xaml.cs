@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
+using BankWPF.ViewModels;
 
 namespace BankWPF
 {
@@ -25,6 +26,7 @@ namespace BankWPF
         public MainWindow()
         {
             InitializeComponent();
+            //DataContext = new ApplicationViewModel();
         }
 
        
@@ -59,14 +61,14 @@ namespace BankWPF
 
         private void btn_clients_window(object sender, RoutedEventArgs e)
         {
-            ClientsWindow clientsWindow = new ClientsWindow();
-            clientsWindow.Show();
+            //ClientsWindow clientsWindow = new ClientsWindow();
+            //clientsWindow.Show();
         }
 
         private void btn_products_window(object sender, RoutedEventArgs e)
         {
-            ProductsWindow productsWin = new ProductsWindow();
-            productsWin.Show();
+            //ProductsWindow productsWin = new ProductsWindow();
+            //productsWin.Show();
         }
 
         private void btn_exit(object sender, RoutedEventArgs e)

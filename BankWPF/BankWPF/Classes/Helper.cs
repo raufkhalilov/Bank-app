@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace BankWPF.Classes
 {
     internal class Helper
     {
         //ф-ия принимет строку-URLссылу, указатель на окно из которого произошел вызов, указатель на 
-        public static async Task<string> GetData(string requestUrl /*Window window, Btn_click_del btn_Click_Del, object sender, RoutedEventArgs e*/)
+        public static async Task<string> GetData(string requestUrl)
         {
             string res = string.Empty;
 
@@ -27,41 +23,55 @@ namespace BankWPF.Classes
 
                 return res;
             }
-            catch (Exception /*ex*/)
+            catch (Exception ex)
             {
-
-
                 return null;
             }
             //return res;
         }
 
-        public static async Task<string> PostData<T>(string requestUrl, T dataForPost)
+        public static async Task<string> PostData<T>(string url, T dataForPost)
         {
 
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(dataForPost);
 
+            // Создаем HttpClient
+            using (var client = new HttpClient())
+            { 
+                // Создаем содержимое запроса
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            string res = null;
-            // Создаем содержимое запроса
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            try
-            {
-                //
-                using (var client = new HttpClient())
+                try
                 {
-                    var response = await client.PostAsync(requestUrl, content);
-                    response.EnsureSuccessStatusCode(); // Проверяет, был ли ответ успешным
-                    res = await response.Content.ReadAsStringAsync();
+                    // Отправляем POST-запрос
+                    HttpResponseMessage response = await client.PostAsync(url, content);
+
+                    // Проверяем успешность запроса
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Читаем ответ
+                        string responseBody = await response.Content.ReadAsStringAsync();
+                        //Console.WriteLine("Response received: " + responseBody);
+                    }
+                    else
+                    {
+                        //Console.WriteLine($"Error: {response.StatusCode}");
+                    }
+
+
+                    return await response.Content.ReadAsStringAsync();
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine($"Exception caught: {ex.Message}");
+
+                    return null;
                 }
 
-                return res;
+
             }
-            catch (Exception /*ex*/)
-            {
-                return null;
-            }
+
+
         }
 
     }
