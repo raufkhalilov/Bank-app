@@ -71,7 +71,7 @@
                     VerticalAlignment="Center"
                     FontSize="18"
                     Text="Phone number :" />
-
+                <!--
                 <TextBox
                     Grid.Row="0"
                     Grid.Column="1"
@@ -82,7 +82,7 @@
                     IsReadOnly="False"
                     Text="{Binding ClientID, UpdateSourceTrigger=PropertyChanged}"
                     TextWrapping="Wrap" />
-
+                -->
                 <TextBox
                     Grid.Row="1"
                     Grid.Column="1"
@@ -125,6 +125,7 @@
                     Grid.Column="1"
                     Margin="15,10,15,10"
                     Command="{Binding PostDataCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     Content="Add"
                     FontSize="14" />
 

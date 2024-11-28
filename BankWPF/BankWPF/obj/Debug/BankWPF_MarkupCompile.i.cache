@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\app_for_admins-main\BankWPF\BankWPF\App.xaml
-4593952319
+61022178228
 
-211020204432
+351154974674
 19-1759660820
-Views\AddClientWindow.xaml;Views\ClientsWindow.xaml;Views\ProductsWindow.xaml;Views\MainWindow.xaml;
+Components\NavigationBar.xaml;Views\AddClientWindow.xaml;Views\ClientsView.xaml;Views\ContractsView.xaml;Views\MainWindow.xaml;Views\StartPage.xaml;
 
-True
+False
 

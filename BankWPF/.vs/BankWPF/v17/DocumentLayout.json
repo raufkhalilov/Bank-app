@@ -3,96 +3,184 @@
   "WorkspaceRootPath": "D:\\app_for_admins-main\\BankWPF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\classes\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\classes\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\contractsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\contractsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\services\\windowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\services\\windowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|d:\\app_for_admins-main\\bankwpf\\bankwpf\\commands\\loadcontractscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\commands\\loadcontractscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\clientswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\clientswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|d:\\app_for_admins-main\\bankwpf\\bankwpf\\commands\\loadclientscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\commands\\loadclientscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|d:\\app_for_admins-main\\bankwpf\\bankwpf\\views\\addclientwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\addclientwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\clientaddingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\clientaddingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\commands\\loaddatacommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\commands\\loaddatacommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\clientsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\clientsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\services\\requeststoapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\services\\requeststoapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|d:\\app_for_admins-main\\bankwpf\\bankwpf\\views\\contractsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\contractsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\classes\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\classes\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|d:\\app_for_admins-main\\bankwpf\\bankwpf\\views\\clientsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\clientsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\addclientwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\addclientwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\contractsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\contractsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|d:\\app_for_admins-main\\bankwpf\\bankwpf\\views\\clientsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\clientsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\clientswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\clientswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\applicationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\applicationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\startviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\startviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\clientaddingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\clientaddingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\productswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\productswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\navigationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\navigationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\contractsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\contractsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\commands\\baseasynccommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\commands\\baseasynccommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\startpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\startpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\services\\windowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\services\\windowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\components\\navigationbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\components\\navigationbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|d:\\app_for_admins-main\\bankwpf\\bankwpf\\commands\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\commands\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\services\\requeststoapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\services\\requeststoapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\commands\\navigationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\commands\\navigationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\services\\navigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\services\\navigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\services\\responsevalidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\services\\responsevalidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\addclientwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\addclientwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\commands\\basecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\commands\\basecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\stores\\navigationstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\stores\\navigationstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\addclientwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\addclientwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ProductsWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankWPF\\Views\\ProductsWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\productswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\productswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\app_for_admins-main\\BankWPF\\BankWPF\\obj\\Debug\\Views\\ProductsWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankWPF\\obj\\Debug\\Views\\ProductsWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\components\\navigationbar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\components\\navigationbar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\views\\startpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\views\\startpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\properties\\settings.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\properties\\settings.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\models\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\models\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\models\\tarifs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\models\\tarifs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|D:\\app_for_admins-main\\BankWPF\\bankwpf\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC90B54-69EA-4EC3-BBB0-C349443F726E}|BankWPF\\BankWPF.csproj|solutionrelative:bankwpf\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\RelayCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankWPF\\Classes\\RelayCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\Helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankWPF\\Classes\\Helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -102,62 +190,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WindowService.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\WindowService.cs",
-              "RelativeDocumentMoniker": "BankWPF\\Services\\WindowService.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\WindowService.cs",
-              "RelativeToolTip": "BankWPF\\Services\\WindowService.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAIAwwEcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T06:14:49.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ClientAddingViewModel.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ClientAddingViewModel.cs",
-              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\ClientAddingViewModel.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ClientAddingViewModel.cs",
-              "RelativeToolTip": "BankWPF\\ViewModels\\ClientAddingViewModel.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAAAEEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T12:55:23.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddClientWindow.xaml",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\AddClientWindow.xaml",
-              "RelativeDocumentMoniker": "BankWPF\\Views\\AddClientWindow.xaml",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\AddClientWindow.xaml",
-              "RelativeToolTip": "BankWPF\\Views\\AddClientWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-17T11:29:45.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RelayCommand.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\RelayCommand.cs",
-              "RelativeDocumentMoniker": "BankWPF\\Classes\\RelayCommand.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\RelayCommand.cs",
-              "RelativeToolTip": "BankWPF\\Classes\\RelayCommand.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAIAwwDwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T06:06:25.768Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -165,71 +202,352 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClientsWindow.xaml.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ClientsWindow.xaml.cs",
-              "RelativeDocumentMoniker": "BankWPF\\Views\\ClientsWindow.xaml.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ClientsWindow.xaml.cs",
-              "RelativeToolTip": "BankWPF\\Views\\ClientsWindow.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAwwE4AAAA3AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ContractsViewModel.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ContractsViewModel.cs",
+              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\ContractsViewModel.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ContractsViewModel.cs",
+              "RelativeToolTip": "BankWPF\\ViewModels\\ContractsViewModel.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAowCoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T07:39:15.508Z",
+              "WhenOpened": "2024-11-14T21:39:57.355Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "BankWPF\\Views\\MainWindow.xaml",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\MainWindow.xaml",
-              "RelativeToolTip": "BankWPF\\Views\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-11T06:22:46.844Z",
+              "DocumentIndex": 3,
+              "Title": "LoadDataCommand.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\LoadDataCommand.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Commands\\LoadDataCommand.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\LoadDataCommand.cs",
+              "RelativeToolTip": "BankWPF\\Commands\\LoadDataCommand.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAmwEIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T18:02:23.065Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "LoadContractsCommand.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\LoadContractsCommand.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Commands\\LoadContractsCommand.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\LoadContractsCommand.cs",
+              "RelativeToolTip": "BankWPF\\Commands\\LoadContractsCommand.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowBwAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T09:41:54.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoadClientsCommand.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\LoadClientsCommand.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Commands\\LoadClientsCommand.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\LoadClientsCommand.cs",
+              "RelativeToolTip": "BankWPF\\Commands\\LoadClientsCommand.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAWwBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T09:22:30.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ClientsViewModel.cs",
               "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ClientsViewModel.cs",
               "RelativeDocumentMoniker": "BankWPF\\ViewModels\\ClientsViewModel.cs",
               "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ClientsViewModel.cs",
               "RelativeToolTip": "BankWPF\\ViewModels\\ClientsViewModel.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAkwEAAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T06:04:06.903Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClientsView.xaml",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ClientsView.xaml",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\ClientsView.xaml",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ClientsView.xaml",
+              "RelativeToolTip": "BankWPF\\Views\\ClientsView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-20T17:31:57.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClientsView.xaml.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ClientsView.xaml.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\ClientsView.xaml.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ClientsView.xaml.cs",
+              "RelativeToolTip": "BankWPF\\Views\\ClientsView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T09:58:07.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ContractsView.xaml.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ContractsView.xaml.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\ContractsView.xaml.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ContractsView.xaml.cs",
+              "RelativeToolTip": "BankWPF\\Views\\ContractsView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T09:58:11.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "ContractsView.xaml",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ContractsView.xaml",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\ContractsView.xaml",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ContractsView.xaml",
+              "RelativeToolTip": "BankWPF\\Views\\ContractsView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-20T17:50:53.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StartViewModel.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\StartViewModel.cs",
+              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\StartViewModel.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\StartViewModel.cs",
+              "RelativeToolTip": "BankWPF\\ViewModels\\StartViewModel.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAswCAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T06:03:37.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\App.xaml.cs",
+              "RelativeDocumentMoniker": "BankWPF\\App.xaml.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\App.xaml.cs",
+              "RelativeToolTip": "BankWPF\\App.xaml.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAswEoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T07:07:13.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NavigationViewModel.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\NavigationViewModel.cs",
+              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\NavigationViewModel.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\NavigationViewModel.cs",
+              "RelativeToolTip": "BankWPF\\ViewModels\\NavigationViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T05:33:53.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ClientAddingViewModel.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ClientAddingViewModel.cs",
+              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\ClientAddingViewModel.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ClientAddingViewModel.cs",
+              "RelativeToolTip": "BankWPF\\ViewModels\\ClientAddingViewModel.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAABoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T12:55:23.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BaseAsyncCommand.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\BaseAsyncCommand.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Commands\\BaseAsyncCommand.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\BaseAsyncCommand.cs",
+              "RelativeToolTip": "BankWPF\\Commands\\BaseAsyncCommand.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwCEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T15:56:23.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "packages.config",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\packages.config",
+              "RelativeDocumentMoniker": "BankWPF\\packages.config",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\packages.config",
+              "RelativeToolTip": "BankWPF\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-18T08:16:59.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\App.config",
+              "RelativeDocumentMoniker": "BankWPF\\App.config",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\App.config",
+              "RelativeToolTip": "BankWPF\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-18T08:16:53.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StartPage.xaml",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\StartPage.xaml",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\StartPage.xaml",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\StartPage.xaml",
+              "RelativeToolTip": "BankWPF\\Views\\StartPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-19T15:24:28.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "WindowService.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\WindowService.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Services\\WindowService.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\WindowService.cs",
+              "RelativeToolTip": "BankWPF\\Services\\WindowService.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAACcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T06:14:49.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "NavigationBar.xaml",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Components\\NavigationBar.xaml",
+              "RelativeDocumentMoniker": "BankWPF\\Components\\NavigationBar.xaml",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Components\\NavigationBar.xaml",
+              "RelativeToolTip": "BankWPF\\Components\\NavigationBar.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-25T06:53:00.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "BankWPF\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T15:48:23.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AddClientWindow.xaml.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\AddClientWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\AddClientWindow.xaml.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\AddClientWindow.xaml.cs",
+              "RelativeToolTip": "BankWPF\\Views\\AddClientWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:04:07.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Properties\\Resources.Designer.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "BankWPF\\Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T08:10:49.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\Helper.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Commands\\Helper.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\Helper.cs",
+              "RelativeToolTip": "BankWPF\\Commands\\Helper.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswBkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T09:05:31.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "NavigationCommand.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\NavigationCommand.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Commands\\NavigationCommand.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\NavigationCommand.cs",
+              "RelativeToolTip": "BankWPF\\Commands\\NavigationCommand.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwCsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T09:05:17.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "NavigationService.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\NavigationService.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Services\\NavigationService.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\NavigationService.cs",
+              "RelativeToolTip": "BankWPF\\Services\\NavigationService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAASwBkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T19:13:54.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ResponseValidateService.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\ResponseValidateService.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Services\\ResponseValidateService.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\ResponseValidateService.cs",
+              "RelativeToolTip": "BankWPF\\Services\\ResponseValidateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T08:58:34.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "RequestsToApiService.cs",
               "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\RequestsToApiService.cs",
               "RelativeDocumentMoniker": "BankWPF\\Services\\RequestsToApiService.cs",
               "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Services\\RequestsToApiService.cs",
               "RelativeToolTip": "BankWPF\\Services\\RequestsToApiService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAA0AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAswEQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T09:56:51.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Helper.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\Helper.cs",
-              "RelativeDocumentMoniker": "BankWPF\\Classes\\Helper.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\Helper.cs",
-              "RelativeToolTip": "BankWPF\\Classes\\Helper.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAUwBkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T05:56:07.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 35,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\App.xaml",
               "RelativeDocumentMoniker": "BankWPF\\App.xaml",
@@ -241,90 +559,102 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ProductsWindow.g.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\obj\\Debug\\Views\\ProductsWindow.g.cs",
-              "RelativeDocumentMoniker": "BankWPF\\obj\\Debug\\Views\\ProductsWindow.g.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\obj\\Debug\\Views\\ProductsWindow.g.cs",
-              "RelativeToolTip": "BankWPF\\obj\\Debug\\Views\\ProductsWindow.g.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAUwDkAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 26,
+              "Title": "BaseCommand.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\BaseCommand.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Commands\\BaseCommand.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\BaseCommand.cs",
+              "RelativeToolTip": "BankWPF\\Commands\\BaseCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T21:33:23.79Z"
+              "WhenOpened": "2024-11-26T09:43:00.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AddClientWindow.xaml.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\AddClientWindow.xaml.cs",
-              "RelativeDocumentMoniker": "BankWPF\\Views\\AddClientWindow.xaml.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\AddClientWindow.xaml.cs",
-              "RelativeToolTip": "BankWPF\\Views\\AddClientWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 44,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\Helper.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Classes\\Helper.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\Helper.cs",
+              "RelativeToolTip": "BankWPF\\Classes\\Helper.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwBkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:04:07.615Z"
+              "WhenOpened": "2024-11-11T05:56:07.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ClientsWindow.xaml",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ClientsWindow.xaml",
-              "RelativeDocumentMoniker": "BankWPF\\Views\\ClientsWindow.xaml",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ClientsWindow.xaml",
-              "RelativeToolTip": "BankWPF\\Views\\ClientsWindow.xaml",
+              "DocumentIndex": 43,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Classes\\RelayCommand.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Classes\\RelayCommand.cs",
+              "RelativeToolTip": "BankWPF\\Classes\\RelayCommand.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAIAwwDwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T06:06:25.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ProductsWindow.xaml.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ProductsWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\ProductsWindow.xaml.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ProductsWindow.xaml.cs",
+              "RelativeToolTip": "BankWPF\\Views\\ProductsWindow.xaml.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T20:29:56.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Commands\\RelayCommand.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Commands\\RelayCommand.cs",
+              "RelativeToolTip": "BankWPF\\Commands\\RelayCommand.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAASwDoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T15:26:29.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "NavigationStore.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Stores\\NavigationStore.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Stores\\NavigationStore.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Stores\\NavigationStore.cs",
+              "RelativeToolTip": "BankWPF\\Stores\\NavigationStore.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T20:17:04.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AddClientWindow.xaml",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\AddClientWindow.xaml",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\AddClientWindow.xaml",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\AddClientWindow.xaml",
+              "RelativeToolTip": "BankWPF\\Views\\AddClientWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-12T08:46:59.767Z",
+              "WhenOpened": "2024-11-17T11:29:45.296Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ApplicationViewModel.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ApplicationViewModel.cs",
-              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\ApplicationViewModel.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ApplicationViewModel.cs",
-              "RelativeToolTip": "BankWPF\\ViewModels\\ApplicationViewModel.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 33,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "BankWPF\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T06:03:37.087Z"
+              "WhenOpened": "2024-11-11T05:59:45.696Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Client.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\Client.cs",
-              "RelativeDocumentMoniker": "BankWPF\\Models\\Client.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\Client.cs",
-              "RelativeToolTip": "BankWPF\\Models\\Client.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T07:49:34.627Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProductsWindow.xaml",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ProductsWindow.xaml",
-              "RelativeDocumentMoniker": "BankWPF\\Views\\ProductsWindow.xaml",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ProductsWindow.xaml",
-              "RelativeToolTip": "BankWPF\\Views\\ProductsWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-14T21:20:26.611Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\App.xaml.cs",
-              "RelativeDocumentMoniker": "BankWPF\\App.xaml.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\App.xaml.cs",
-              "RelativeToolTip": "BankWPF\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T07:07:13.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 30,
               "Title": "Contract.cs",
               "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\Contract.cs",
               "RelativeDocumentMoniker": "BankWPF\\Models\\Contract.cs",
@@ -336,63 +666,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ContractsViewModel.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ContractsViewModel.cs",
-              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\ContractsViewModel.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\ContractsViewModel.cs",
-              "RelativeToolTip": "BankWPF\\ViewModels\\ContractsViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
+              "DocumentIndex": 34,
+              "Title": "StartPage.xaml.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\StartPage.xaml.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Views\\StartPage.xaml.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\StartPage.xaml.cs",
+              "RelativeToolTip": "BankWPF\\Views\\StartPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T21:39:57.355Z"
+              "WhenOpened": "2024-11-19T15:28:29.489Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "BankWPF\\Views\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\MainWindow.xaml.cs",
-              "RelativeToolTip": "BankWPF\\Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAwwEYAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 39,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "BankWPF\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T06:22:50.786Z"
+              "WhenOpened": "2024-11-19T08:10:39.371Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ProductsWindow.xaml.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ProductsWindow.xaml.cs",
-              "RelativeDocumentMoniker": "BankWPF\\Views\\ProductsWindow.xaml.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Views\\ProductsWindow.xaml.cs",
-              "RelativeToolTip": "BankWPF\\Views\\ProductsWindow.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAUwC4AAAAQAAAAAAAAAA==",
+              "DocumentIndex": 32,
+              "Title": "NavigationBar.xaml.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Components\\NavigationBar.xaml.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Components\\NavigationBar.xaml.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Components\\NavigationBar.xaml.cs",
+              "RelativeToolTip": "BankWPF\\Components\\NavigationBar.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T20:29:56.062Z"
+              "WhenOpened": "2024-11-25T07:04:06.277Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BaseViewModel.cs",
-              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\BaseViewModel.cs",
-              "RelativeDocumentMoniker": "BankWPF\\ViewModels\\BaseViewModel.cs",
-              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\ViewModels\\BaseViewModel.cs",
-              "RelativeToolTip": "BankWPF\\ViewModels\\BaseViewModel.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T05:59:45.696Z"
+              "DocumentIndex": 37,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "BankWPF\\Properties\\Settings.settings",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Properties\\Settings.settings",
+              "RelativeToolTip": "BankWPF\\Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2024-11-19T08:11:07.039Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 36,
+              "Title": "Settings.Designer.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Properties\\Settings.Designer.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Properties\\Settings.Designer.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Properties\\Settings.Designer.cs",
+              "RelativeToolTip": "BankWPF\\Properties\\Settings.Designer.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T08:11:05.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
               "Title": "BaseModel.cs",
               "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\BaseModel.cs",
               "RelativeDocumentMoniker": "BankWPF\\Models\\BaseModel.cs",
               "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\BaseModel.cs",
               "RelativeToolTip": "BankWPF\\Models\\BaseModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T13:27:28.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Tarifs.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\Tarifs.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Models\\Tarifs.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\Tarifs.cs",
+              "RelativeToolTip": "BankWPF\\Models\\Tarifs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T07:08:07.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Client.cs",
+              "DocumentMoniker": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "BankWPF\\Models\\Client.cs",
+              "ToolTip": "D:\\app_for_admins-main\\BankWPF\\BankWPF\\Models\\Client.cs",
+              "RelativeToolTip": "BankWPF\\Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T07:49:34.627Z"
             }
           ]
         }

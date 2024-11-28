@@ -1,75 +1,117 @@
-﻿<Window x:Class="BankWPF.ClientsWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BankWPF" xmlns:viewmodels="clr-namespace:BankWPF.ViewModels" 
-        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-        d:DataContext="{d:DesignInstance Type=viewmodels:ClientsViewModel}"
-        mc:Ignorable="d"
-        Title="Clients" Height="450" Width="800" Loaded="clients_window_loaded"
-    >
+﻿<Window
+    x:Class="BankWPF.Views.ClientsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:BankWPF"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:BankWPF.ViewModels"
+    Title="Clients"
+    Width="800"
+    Height="450"
+    d:DataContext="{d:DesignInstance Type=viewmodels:ClientsViewModel}"
+    mc:Ignorable="d">
+    
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction
-                Command="{Binding GetDataCommand}"/>
-                <!--
+            <i:InvokeCommandAction Command="{Binding GetDataCommand}" />
+            <!--
                 CommandParameter="{Binding SelectedPhone}" />
-                -->
+            -->
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="173*"/>
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="173*" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            
-            
-        </Grid.RowDefinitions>
+        <Grid.RowDefinitions />
 
         <Grid Grid.Column="0" Background="#FFE1FCFC">
-            
-        </Grid>
-        
-        <Grid Grid.Column="1">
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.8*"/>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="4.5*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Клиенты нашего банка" FontSize="20" Margin="10,0,0,0" VerticalAlignment="Center"/>
-            
-            <DataGrid Grid.Row="1" 
-                      x:Name="ClientsGrid" 
-                      AutoGenerateColumns="False" 
-                      Background="White" 
-                      Margin="10,0,10,0" 
-                      BorderThickness="0" 
-                      BorderBrush="Aqua" 
-                      ItemsSource="{Binding Clients}">
-                
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding ClientId}" Width="25" />
-                    <DataGridTextColumn Header="ClientID" Binding="{Binding ClientName}" Width="*" />
-                    <DataGridTextColumn Header="Description" Binding="{Binding PhoneNumber}" Width="*" />
-                </DataGrid.Columns>
-                
-            </DataGrid>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-            <Button Grid.Row="2" 
-                    BorderThickness="0" 
-                    Content="Новый клиент" 
-                    HorizontalAlignment="Left" 
-                    Margin="10,0,0,0" 
-                    VerticalAlignment="Center" 
-                    Width="93" Height="29" 
-                    Command="{Binding OpenAddClientDialogCommand}"/>
+                <Button
+                    Grid.Row="0"
+                    Content="Статистика"
+                    />
+
+                <Button
+                    Grid.Row="1"
+                    VerticalAlignment="Stretch"
+                    Background="#FFFF7979"
+                    BorderThickness="0"
+                    Content="Назад" />
+
+            </Grid>
 
         </Grid>
-        
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="0"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Text="Клиенты нашего банка" />
+
+            <DataGrid
+                x:Name="ClientsGrid"
+                Grid.Row="1"
+                Margin="10,0,10,0"
+                AutoGenerateColumns="False"
+                Background="White"
+                BorderBrush="Aqua"
+                BorderThickness="0"
+                ItemsSource="{Binding Clients}">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Width="25"
+                        Binding="{Binding ClientId}"
+                        Header="ID" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding ClientName}"
+                        Header="ClientID" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding PhoneNumber}"
+                        Header="Description" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+            <Button
+                Grid.Row="2"
+                Width="93"
+                Height="29"
+                Margin="10,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                BorderThickness="0"
+                Command="{Binding OpenAddClientDialogCommand}"
+                Content="Новый клиент" />
+
+        </Grid>
+
     </Grid>
 </Window>

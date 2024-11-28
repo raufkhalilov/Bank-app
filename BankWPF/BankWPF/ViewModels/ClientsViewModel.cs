@@ -1,6 +1,8 @@
 ﻿using BankWPF.Classes;
+using BankWPF.Commands;
 using BankWPF.Models;
 using BankWPF.Services;
+using BankWPF.Stores;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -36,24 +38,47 @@ namespace BankWPF.ViewModels
 
         public ICommand OpenAddClientDialogCommand { get; }
 
-
+        public NavigationViewModel NavigationViewModel { get; }
 
         private readonly IRequestsToApiService _requestsToApiService;
 
-        public ICommand GetDataCommand { get; }
+        //public ICommand GetDataCommand { get; }
 
-        public ICommand PostDataCommand { get; }
-
-        public ClientsViewModel(IRequestsToApiService requestService, IDialogService dialogService)
-        {
-            Clients = new ObservableCollection<Client>();
     
-            _requestsToApiService = requestService;
-            GetDataCommand = new RelayCommand(LoadData);
-            PostDataCommand = new RelayCommand(PostData);
+        public ICommand LoadDataCommand { get; }
 
-            _dialogService = dialogService;
+
+        //public ICommand OpenContractsViewCommand { get; }
+
+        public bool dataChangedFlag = true;
+
+        public ClientsViewModel(IRequestsToApiService requestService, NavigationViewModel navigationViewModel/*,, IDialogService dialogServiceNavigationStore navigationStore*/)
+        {
+
+
+            NavigationViewModel = navigationViewModel;
+
+            Clients = new ObservableCollection<Client>();
+            
+            
+            _requestsToApiService = requestService;
+           
+           
+
+
+            _dialogService = new DialogService();
             OpenAddClientDialogCommand = new RelayCommand(OpenDialog);
+
+            LoadDataCommand = new LoadClientsCommand(this, _requestsToApiService);
+        }
+
+        public static ClientsViewModel LoadViewModel(IRequestsToApiService requestService, NavigationViewModel navigationViewModel/*, IDialogService dialogServiceNavigationStore navigationStore*/)
+        {
+            ClientsViewModel viewModel = new ClientsViewModel(requestService, navigationViewModel/*, navigationStore*/);
+
+            viewModel.LoadDataCommand.Execute(viewModel);
+
+            return viewModel;
         }
 
 
@@ -62,59 +87,7 @@ namespace BankWPF.ViewModels
         private void OpenDialog(object parameter)
         {
             _dialogService.ShowAddClientDialog();
-            this.LoadData(parameter);
-        }
-
-        private async void PostData(object parameter)
-        {
-            //if (MessageBox.Show("Вы действительно хотите добавить нового клиента?", "Добавление клиента", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
-            //    return;
-
-            string url = "http://localhost:8080/post/Client";
-
-            Client client1 = new Client()
-            {
-                //client_name = "Test3",
-                //phone_number = "Test",
-                ClientId = 1,
-                ClientName = "Test1711",
-                PhoneNumber = "1234567890"
-            };
-
-            string request = await _requestsToApiService.PostDataToApi(url, client1);
-
-            if (request != null)
-            {
-                this.LoadData(parameter);
-            }
-                //this.clients_window_loaded(sender, e); */
-        }
-
-        private async void LoadData(object parameter)
-        {
-            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients"/*, this, btn_Click_Del, sender, e*/);
-
-            if (jsonData != null)
-            {
-                ObservableCollection<Client> parsedData = JsonConvert.DeserializeObject<ObservableCollection<Client>>(jsonData);
-                Clients = parsedData;
-            }
-            else
-            {
-                if (MessageBox.Show("Ошибка подключения к серверу " + ".\nПопробовать попробовать подключиться снова? ", 
-                    "Ошибка", 
-                    MessageBoxButton.OKCancel, 
-                    MessageBoxImage.Exclamation) == MessageBoxResult.OK)
-                {
-                    //btn_Click_Del(sender, e);
-                    this.LoadData(parameter);
-                }
-                else
-                {
-                    //this.Close();
-                }
-
-            }
+            //this.LoadData(parameter);
         }
 
         #endregion
