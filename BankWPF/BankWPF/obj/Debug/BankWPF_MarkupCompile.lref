@@ -1,7 +1,12 @@
 ﻿
 
-FD:\app_for_admins-main\BankWPF\BankWPF\Views\ClientsWindow.xaml;;
-FD:\app_for_admins-main\BankWPF\BankWPF\Views\ProductsWindow.xaml;;
-FD:\app_for_admins-main\BankWPF\BankWPF\Views\MainWindow.xaml;;
+FD:\app_for_admins-main\BankWPF\BankWPF\Components\NavigationBar.xaml;;
 FD:\app_for_admins-main\BankWPF\BankWPF\Views\AddClientWindow.xaml;;
+FD:\app_for_admins-main\BankWPF\BankWPF\Views\ClientBlank.xaml;;
+FD:\app_for_admins-main\BankWPF\BankWPF\Views\ClientsView.xaml;;
+FD:\app_for_admins-main\BankWPF\BankWPF\Views\ContractBlank.xaml;;
+FD:\app_for_admins-main\BankWPF\BankWPF\Views\ContractsView.xaml;;
+FD:\app_for_admins-main\BankWPF\BankWPF\Views\LoginView.xaml;;
+FD:\app_for_admins-main\BankWPF\BankWPF\Views\MainWindow.xaml;;
+FD:\app_for_admins-main\BankWPF\BankWPF\Views\StartPage.xaml;;
 

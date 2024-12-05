@@ -25,11 +25,11 @@ namespace BankWPF.Services
         {
             var dialogService = new DialogService();
             var requestToApiServise = new RequestsToApiService();
-            var clientsViewModel = new ClientsViewModel(requestToApiServise, dialogService);
+            //var clientsViewModel = new ClientsViewModel(requestToApiServise, dialogService);
 
 
-            var window = new ClientsWindow() {DataContext = clientsViewModel }; // Замените на ваше окно
-            window.Show();
+            //var window = new ClientsWindow() {DataContext = clientsViewModel }; // Замените на ваше окно
+            //window.Show();
         }
 
         public void ShowContractsDialog() {
@@ -37,23 +37,23 @@ namespace BankWPF.Services
 
             //logic...
 
-            var requestToApiServise = new RequestsToApiService();
-            var clientsViewModel = new ContractsViewModel(requestToApiServise);
+            //var requestToApiServise = new RequestsToApiService();
+            //var clientsViewModel = new ContractsViewModel(requestToApiServise);
 
-            var window = new ProductsWindow();
-            window.Show();
+            //var window = new ProductsWindow();
+            //window.Show();
         }
 
         public void ShowAddClientDialog()
         {
             /*Client client = new Client();*/
 
-            var requestToApiServise = new RequestsToApiService();
-            var clientAddingViewModel = new ClientAddingViewModel(/*client,*/ requestToApiServise);
+            //var requestToApiServise = new RequestsToApiService();
+            //var clientAddingViewModel = new ClientAddingViewModel(/*client,*/ requestToApiServise);
 
 
-            var window = new AddClientWindow() { DataContext = clientAddingViewModel }; // Замените на ваше окно
-            window.ShowDialog();
+            //var window = new AddClientWindow() { DataContext = clientAddingViewModel }; // Замените на ваше окно
+            //window.ShowDialog();
             /*window.Close();*/
         }
 

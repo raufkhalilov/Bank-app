@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace BankWPF.Services
 {
-    interface IRequestsToApiService
-    {
-        Task<string> GetDataFromApi(string url);
-
-        Task<string> PostDataToApi<T>(string url, T dataForPost);
-    }
+   
 
     internal class RequestsToApiService : IRequestsToApiService
     {
+
+
         public async Task<string> GetDataFromApi(string requestUrl)
         {
             string res = string.Empty;
@@ -37,7 +34,7 @@ namespace BankWPF.Services
             }
         }
 
-        public async Task<string> PostDataToApi<T>(string url, T dataForPost)
+        public async Task<string> PostDataToApi/*<T>*/(string url, object dataForPost)
         {
 
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(dataForPost);

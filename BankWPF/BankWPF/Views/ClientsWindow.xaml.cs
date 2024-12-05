@@ -18,7 +18,7 @@ using System.Net.Http;
 using System.Net;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace BankWPF
+namespace BankWPF.Views
 {
     /// <summary>
     /// Логика взаимодействия для Clients.xaml
@@ -30,14 +30,14 @@ namespace BankWPF
             InitializeComponent();
             //DataContext = new ClientsVeiwModel();
         }
-
+/*
         private async void clients_window_loaded(object sender, RoutedEventArgs e)
         {
 
             //Btn_click_del btn_Click_Del = clients_window_loaded;
 
             //асинхронное получение данных от сервера
-           /* var jsonData = await Helper.GetData("http://localhost:8080/get/Clients"*//*, this, btn_Click_Del, sender, e*//*);
+           *//* var jsonData = await Helper.GetData("http://localhost:8080/get/Clients"*//*, this, btn_Click_Del, sender, e*//*);
 
             if (jsonData != null)
             {
@@ -54,11 +54,11 @@ namespace BankWPF
                 else
                     Close();
             }
-*/
+*//*
 
 
         }
-
+*/
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
 /*

@@ -65,51 +65,113 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\BaseAsyncCommand.cs" />
+    <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\LoadContractsCommand.cs" />
+    <Compile Include="Commands\LoadClientsCommand.cs" />
+    <Compile Include="Commands\LoadUserContractsCommand.cs" />
+    <Compile Include="Commands\NavigationCommand.cs" />
+    <Compile Include="Commands\PostClientCommand.cs" />
+    <Compile Include="Commands\PostContractCommand.cs" />
+    <Compile Include="Commands\PostDataCommand.cs" />
+    <Compile Include="Components\NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bank.cs" />
+    <Compile Include="Models\ClientsBook.cs" />
+    <Compile Include="Models\ContractsBook.cs" />
+    <Compile Include="Services\ApiServices\ApiClientCreator.cs" />
+    <Compile Include="Services\ApiServices\ApiClientsProvider.cs" />
+    <Compile Include="Services\ApiServices\ApiContractCreator.cs" />
+    <Compile Include="Services\ApiServices\ApiContractsProvider.cs" />
+    <Compile Include="Services\ApiServices\IClientCreator.cs" />
+    <Compile Include="Services\ApiServices\IClientsProvider.cs" />
+    <Compile Include="Services\ApiServices\IContractCreator.cs" />
+    <Compile Include="Services\ApiServices\IContractsProvider.cs" />
+    <Compile Include="Services\ApiServices\IDataListProvider.cs" />
+    <Compile Include="Services\IRequestsToApiService.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\ResponseValidateService.cs" />
+    <Compile Include="Stores\BankStore.cs" />
+    <Compile Include="ViewModels\ClientBlankViewModel.cs" />
+    <Compile Include="ViewModels\ContractBlankViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\NavigationViewModel.cs" />
+    <Compile Include="Views\ClientBlank.xaml.cs">
+      <DependentUpon>ClientBlank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClientsView.xaml.cs">
+      <DependentUpon>ClientsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContractBlank.xaml.cs">
+      <DependentUpon>ContractBlank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContractsView.xaml.cs">
+      <DependentUpon>ContractsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Components\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ClientsWindow.xaml">
+    <Page Include="Views\ClientBlank.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProductsWindow.xaml">
+    <Page Include="Views\ClientsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\ContractBlank.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContractsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\RelayCommand.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Client.cs" />
-    <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Models\Tarifs.cs" />
     <Compile Include="Services\RequestsToApiService.cs" />
     <Compile Include="Services\WindowService.cs" />
-    <Compile Include="ViewModels\ApplicationViewModel.cs" />
+    <Compile Include="Stores\NavigationStore.cs" />
+    <Compile Include="ViewModels\StartViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\ClientAddingViewModel.cs" />
-    <Compile Include="ViewModels\ClientsViewModel.cs" />
-    <Compile Include="ViewModels\ContractsViewModel.cs" />
+    <Compile Include="ViewModels\ClientsListingViewModel.cs" />
+    <Compile Include="ViewModels\ContractsListingViewModel.cs" />
     <Compile Include="Views\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ClientsWindow.xaml.cs">
-      <DependentUpon>ClientsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\Contract.cs" />
-    <Compile Include="Views\ProductsWindow.xaml.cs">
-      <DependentUpon>ProductsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Views\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

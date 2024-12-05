@@ -1,5 +1,9 @@
-﻿using BankWPF.Services;
+﻿using BankWPF.Models;
+using BankWPF.Services;
+using BankWPF.Services.ApiServices;
+using BankWPF.Stores;
 using BankWPF.ViewModels;
+using BankWPF.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,14 +19,84 @@ namespace BankWPF
     /// </summary>
     public partial class App : Application
     {
-       protected override void OnStartup(StartupEventArgs e)
-       {
-            base.OnStartup(e);
+        private readonly Bank _bank;
+        private readonly BankStore _bankStore;
+        private readonly ClientsBook _clientsBook;
+        private readonly ContractsBook _contractsBook;
 
-            var dialogService = new DialogService();
-            var mainViewModel = new ApplicationViewModel(dialogService);
-            var mainWindow = new MainWindow { DataContext = mainViewModel };
-            mainWindow.Show();
-       }
+        private readonly IClientCreator _clientCreator;
+        private readonly IContractCreator _contractCreator;
+        private readonly IClientsProvider _clientsProvider;
+        private readonly IContractsProvider _contractsProvider;
+
+        private readonly IRequestsToApiService _requestsToApiService;
+
+        private readonly NavigationStore _navigationStore;
+        private readonly NavigationViewModel _navigationViewModel;
+
+
+        public App()
+        {
+            _requestsToApiService = new RequestsToApiService();
+
+            _clientsProvider = new ApiClientsProvider(_requestsToApiService);
+            _clientCreator = new ApiClientCreator(_requestsToApiService);
+            _contractCreator = new ApiContractCreator(_requestsToApiService);
+            _contractsProvider = new ApiContractsProvider(_requestsToApiService);
+
+            _clientsBook = new ClientsBook(_clientsProvider, _clientCreator);
+            _contractsBook = new ContractsBook(_contractCreator, _contractsProvider);
+            _bank = new Bank("BGRT", _clientsBook, _contractsBook);
+            _bankStore = new BankStore(_bank);
+
+            _navigationStore = new NavigationStore(); //!
+            _navigationViewModel = new NavigationViewModel(
+                CreateStartNavigationService(),
+                CreateClientsNavigationService(),
+                CreateContractsNavigationService());
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+    
+            NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
+            startNavigationService.Navigate();
+
+            var startWindow = new MainWindow
+            {
+                DataContext = new MainViewModel(_navigationStore) //!
+            };
+
+            startWindow.Show();
+
+            base.OnStartup(e);
+        }
+
+        private NavigationService<StartViewModel> CreateStartNavigationService()
+        {
+            return new NavigationService<StartViewModel>(_navigationStore, 
+                ()=>new StartViewModel(_navigationViewModel));
+        }
+
+        private NavigationService<ClientsListingViewModel> CreateClientsNavigationService()
+        {
+            return new NavigationService<ClientsListingViewModel>(_navigationStore, 
+                () => ClientsListingViewModel.LoadViewModel(_bankStore,_requestsToApiService, _navigationViewModel, _navigationStore));
+        }
+
+        private NavigationService<ContractsListingViewModel> CreateContractsNavigationService()
+        {
+            return new NavigationService<ContractsListingViewModel>(_navigationStore, 
+                () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore, _requestsToApiService));
+        }
+/*
+        private NavigationService<ClientBlankViewModel> CreateClientCardNavigationService()
+        {
+            return new NavigationService<ClientBlankViewModel>(_navigationStore, 
+                () => new ClientBlankViewModel(_bank,_navigationViewModel, _navigationStore));
+                
+        }*/
+       
     }
 }
+
