@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows;
 using System.Diagnostics.Contracts;
 using Contract = BankWPF.Models.Contract;
+using BankWPF.Commands;
 
 namespace BankWPF.ViewModels
 {
@@ -35,43 +36,39 @@ namespace BankWPF.ViewModels
         }
         #endregion
 
-        private readonly IRequestsToApiService _requestsToApiService;
+        public NavigationViewModel NavigationViewModel { get; }
 
-        public ICommand GetDataCommand { get; }
+        //private readonly IRequestsToApiService _requestsToApiService;
 
-        public ContractsViewModel(IRequestsToApiService dialogService)
+        //public ICommand GetDataCommand { get; }
+        public ICommand LoadContractsCommand { get; }
+
+        public ContractsViewModel(NavigationViewModel navigationViewModel, IRequestsToApiService requestsToApiService)
         {
+
+            NavigationViewModel = navigationViewModel;
+
             Contracts = new ObservableCollection<Contract>();
 
-            _requestsToApiService = dialogService;
-            GetDataCommand = new RelayCommand(LoadData);
+            //_requestsToApiService = requestsToApiService;
+            //GetDataCommand = new RelayCommand(LoadData);
+
+            LoadContractsCommand = new LoadContractsCommand(this, requestsToApiService);
         }
 
-        private async void LoadData(object parameter)
+        //=============================================
+
+
+        public static ContractsViewModel LoadViewModel(NavigationViewModel navigationViewModel, IRequestsToApiService requestsToApiService)
         {
-            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients"/*, this, btn_Click_Del, sender, e*/);
+            ContractsViewModel viewModel = new ContractsViewModel(navigationViewModel, requestsToApiService/*, navigationStore*/);
 
-            if (jsonData != null)
-            {
-                ObservableCollection<Contract> parsedData = JsonConvert.DeserializeObject<ObservableCollection<Contract>>(jsonData);
-                Contracts = parsedData;
-            }
-            else
-            {
-                if (MessageBox.Show("Ошибка подключения к серверу " + ".\nПопробовать попробовать подключиться снова? ",
-                    "Ошибка",
-                    MessageBoxButton.OKCancel,
-                    MessageBoxImage.Exclamation) == MessageBoxResult.OK)
-                {
-                    //btn_Click_Del(sender, e);
-                    this.LoadData(parameter);
-                }
-                else
-                {
-                    //this.Close();
-                }
+            viewModel.LoadContractsCommand.Execute(viewModel);
 
-            }
+            return viewModel;
         }
+
+        //=============================================
+
     }
 }
