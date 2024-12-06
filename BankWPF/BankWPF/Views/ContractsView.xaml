@@ -3,16 +3,20 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:components="clr-namespace:BankWPF.Components"
+    xmlns:custom="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinner"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:BankWPF.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewmodels="clr-namespace:BankWPF.ViewModels"
+    xmlns:viewmodels="clr-namespace:BankWPF.ViewModels" xmlns:convertors="clr-namespace:BankWPF.Convertors"
     d:DataContext="{d:DesignInstance Type=viewmodels:ContractsListingViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
 
+    <UserControl.Resources>
+        <convertors:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
+    </UserControl.Resources>
 
     <Grid Background="White">
 
@@ -32,15 +36,21 @@
 
 
             <Grid Grid.Row="0" Background="#FF99FFDD">
-                <TextBlock Text="BGRT" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" FontFamily="OCR A Extended" FontWeight="Bold"/>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="OCR A Extended"
+                    FontSize="36"
+                    FontWeight="Bold"
+                    Text="BGRT" />
             </Grid>
 
             <components:NavigationBar Grid.Row="1" DataContext="{Binding NavigationViewModel}" />
 
         </Grid>
 
-        
-        
+
+
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.8*" />
@@ -55,48 +65,54 @@
                 FontSize="20"
                 Text="Активные договоры" />
 
-            <DataGrid
-                x:Name="ProductsGrid"
-                Grid.Row="1"
-                Margin="10,0,10,0"
-                AutoGenerateColumns="False"
-                Background="White"
-                BorderThickness="0"
-                
-                ItemsSource="{Binding Contracts}">
+            <Grid Grid.Row="1" Margin="10,0,10,0">
 
-                <DataGrid.Columns>
-                    <DataGridTextColumn
-                        Width="25"
-                        Binding="{Binding ContractID}"
-                        Header="ID" />
-                    <DataGridTextColumn
-                        Width="55"
-                        Binding="{Binding ClientID}"
-                        Header="ClientID" />
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Description}"
-                        Header="Description" />
-                    <DataGridTextColumn
-                        Width="90"
-                        Binding="{Binding ProductTypeID}"
-                        Header="ProductTypeID" />
-                    <DataGridTextColumn
-                        Width="55"
-                        Binding="{Binding ContractAmount}"
-                        Header="Amount" />
-                    <DataGridTextColumn
-                        Width="70"
-                        Binding="{Binding StartDate}"
-                        Header="StartDate" />
-                    <DataGridTextColumn
-                        Width="70"
-                        Binding="{Binding EndDate}"
-                        Header="EndDate" />
-                </DataGrid.Columns>
-            </DataGrid>
+                <custom:LoadingSpinner
+                    Diameter="100"
+                    IsLoading="{Binding IsLoading}"
+                    Thickness="5"
+                    Color="Aquamarine" />
 
+                <DataGrid
+                    x:Name="ProductsGrid"
+                    AutoGenerateColumns="False"
+                    Background="White"
+                    BorderThickness="0"
+                    ItemsSource="{Binding Contracts}"
+                    Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Width="25"
+                            Binding="{Binding ContractID}"
+                            Header="ID" />
+                        <DataGridTextColumn
+                            Width="55"
+                            Binding="{Binding ClientID}"
+                            Header="ClientID" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Description}"
+                            Header="Description" />
+                        <DataGridTextColumn
+                            Width="90"
+                            Binding="{Binding ProductTypeID}"
+                            Header="ProductTypeID" />
+                        <DataGridTextColumn
+                            Width="55"
+                            Binding="{Binding ContractAmount}"
+                            Header="Amount" />
+                        <DataGridTextColumn
+                            Width="70"
+                            Binding="{Binding StartDate}"
+                            Header="StartDate" />
+                        <DataGridTextColumn
+                            Width="70"
+                            Binding="{Binding EndDate}"
+                            Header="EndDate" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
 
             <Button
                 Grid.Row="2"

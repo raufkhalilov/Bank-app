@@ -16,7 +16,7 @@ using System.Windows.Input;
 
 namespace BankWPF.ViewModels
 {
-    internal class ClientsListingViewModel : /*ListingDataViewModel<Client>*/BaseViewModel 
+    internal class ClientsListingViewModel : /*ListingDataViewModel<Client>*/BaseViewModel
     {
 
         Bank _bank;
@@ -33,31 +33,46 @@ namespace BankWPF.ViewModels
             }
         }
 
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get
+            {
+                return _isLoading;
+            }
+            set
+            {
+                _isLoading = value;
+                OnPropertyChanged(nameof(IsLoading));
+            }
+        }
 
         
-                private ObservableCollection<Client> _clients; 
 
-                #region Поля модели представления
-                public ObservableCollection<Client> Clients
-                {
-                    get
-                    {
-                        return _clients;
-                    }
-                    set
-                    {
-                        _clients = value;
-                        OnPropertyChanged("Clients");//
-                    }
-                }
-                #endregion
-        
+        private ObservableCollection<Client> _clients;
+
+        #region Поля модели представления
+        public ObservableCollection<Client> Clients
+        {
+            get
+            {
+                return _clients;
+            }
+            set
+            {
+                _clients = value;
+                OnPropertyChanged("Clients");//
+            }
+        }
+        #endregion
+
 
 
         //Список клиентов теперь хранится в _data родительского класса ListingDataViewModel<TModel>
         //Это сделано для возможности использования одной команды
         //загрузки для всех моделей, всесто нескольких под разные типы
-        
+
 
         public NavigationViewModel NavigationViewModel { get; }
 
@@ -94,7 +109,7 @@ namespace BankWPF.ViewModels
 
             Clients = new ObservableCollection<Client>(); //v1
 
-             //Data  =  new ObservableCollection<Client>();
+            //Data  =  new ObservableCollection<Client>();
 
             _requestsToApiService = requestService;
 
@@ -132,7 +147,7 @@ namespace BankWPF.ViewModels
             base.Dispose();
         }
 
-        public static ClientsListingViewModel LoadViewModel(BankStore bankStore, IRequestsToApiService requestService, 
+        public static ClientsListingViewModel LoadViewModel(BankStore bankStore, IRequestsToApiService requestService,
             NavigationViewModel navigationViewModel, NavigationStore navigationStore)
         {
             ClientsListingViewModel viewModel = new ClientsListingViewModel(bankStore, requestService, navigationViewModel, navigationStore);

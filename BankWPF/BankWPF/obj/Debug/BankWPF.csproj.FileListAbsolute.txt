@@ -22,7 +22,6 @@ C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\ProductsWindow.baml
 C:\Users\georg\source\repos\BankWPF\BankWPF\obj\Debug\Views\MainWindow.baml
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\BankWPF.csproj.AssemblyReference.cache
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Components\NavigationBar.g.cs
-D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\AddClientWindow.g.cs
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\ClientsView.g.cs
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\ContractsView.g.cs
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\MainWindow.g.cs
@@ -58,3 +57,4 @@ D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\ClientBlank.baml
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\LoginView.baml
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\ContractBlank.g.cs
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\ContractBlank.baml
+D:\app_for_admins-main\BankWPF\BankWPF\bin\Debug\LoadingSpinner.dll

@@ -103,6 +103,5 @@ namespace BankWPF.Stores
         {
             ContractAdded?.Invoke(newContract);
         }
-
     }
 }

@@ -37,6 +37,21 @@ namespace BankWPF.ViewModels
         }
         #endregion
 
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get
+            {
+                return _isLoading;
+            }
+            set
+            {
+                _isLoading = value;
+                OnPropertyChanged(nameof(IsLoading));
+            }
+        }
+
         public NavigationViewModel NavigationViewModel { get; }
 
         //private readonly IRequestsToApiService _requestsToApiService;

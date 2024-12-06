@@ -22,6 +22,7 @@ namespace BankWPF.Views
         public MainWindow()
         {
             InitializeComponent();
+            //DataContext = new LoginView();
         }
     }
 }

@@ -31,21 +31,24 @@ namespace BankWPF.Commands
 
             var jsonData = true;//await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients");
 
-            if (jsonData != null)
-            {
+            //if (jsonData != null)
+            //{
 
+            _clientViewModel.IsLoading = true;
 
                 await _bankStore.LoadClients();
                 _clientViewModel.UpdateClientsList(_bankStore.Clients);
+
+            _clientViewModel.IsLoading = false;
 
                 //IEnumerable<Client> clients = await _bank.GetAllClients();//JsonConvert.DeserializeObject<ObservableCollection<Client>>(jsonData);
                 //_clientViewModel.UpdateClientsList(clients);
 
                 //ObservableCollection<Client> parsedData = JsonConvert.DeserializeObject<ObservableCollection<Client>>(jsonData);
                 //_clientViewModel.Clients = parsedData;
-            }
-            else
-            {
+           // }
+            //else
+          /*  {
 
                 if (MessageBox.Show("Ошибка подключения к серверу " + ".\nПопробовать попробовать подключиться снова? ",
                     "Ошибка",
@@ -60,7 +63,7 @@ namespace BankWPF.Commands
                     //this.Close();
                 }
 
-            }
+            }*/
 
 
         }

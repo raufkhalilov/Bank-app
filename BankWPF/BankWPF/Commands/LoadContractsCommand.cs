@@ -36,9 +36,10 @@ namespace BankWPF.Commands
             if (jsonData != null)
             {
 
-
+                _contractsViewModel.IsLoading = true;
                 await _bankStore.LoadContracts();
                 _contractsViewModel.UpdateContractsList(_bankStore.Contracts);
+                _contractsViewModel.IsLoading = false;
 
                 //IEnumerable<Client> clients = await _bank.GetAllClients();//JsonConvert.DeserializeObject<ObservableCollection<Client>>(jsonData);
                 //_clientViewModel.UpdateClientsList(clients);
