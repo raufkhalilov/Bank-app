@@ -92,8 +92,8 @@ namespace BankWPF.ViewModels
             //OpenContractBlankCommand = new NavigationCommand<ContractBlankViewModel>(new NavigationService<ContractBlankViewModel>(navigationStore,
             //    () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore)));
 
-            OpenContractBlankCommand = new NavigationCommand<LoginViewModel>(new NavigationService<LoginViewModel>(navigationStore,
-                () => new LoginViewModel()));
+            //OpenContractBlankCommand = new NavigationCommand<LoginViewModel>(new NavigationService<LoginViewModel>(navigationStore,
+            //   () => new LoginViewModel()));
 
         }
 

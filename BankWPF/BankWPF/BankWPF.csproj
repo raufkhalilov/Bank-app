@@ -74,6 +74,7 @@
     <Compile Include="Commands\LoadContractsCommand.cs" />
     <Compile Include="Commands\LoadClientsCommand.cs" />
     <Compile Include="Commands\LoadUserContractsCommand.cs" />
+    <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\NavigationCommand.cs" />
     <Compile Include="Commands\PostClientCommand.cs" />
     <Compile Include="Commands\PostContractCommand.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Models\Bank.cs" />
     <Compile Include="Models\ClientsBook.cs" />
     <Compile Include="Models\ContractsBook.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Services\ApiServices\ApiClientCreator.cs" />
     <Compile Include="Services\ApiServices\ApiClientsProvider.cs" />
     <Compile Include="Services\ApiServices\ApiContractCreator.cs" />
@@ -94,9 +96,10 @@
     <Compile Include="Services\ApiServices\IContractCreator.cs" />
     <Compile Include="Services\ApiServices\IContractsProvider.cs" />
     <Compile Include="Services\ApiServices\IDataListProvider.cs" />
+    <Compile Include="Services\AuthenicationService.cs" />
+    <Compile Include="Services\IAuthService.cs" />
     <Compile Include="Services\IRequestsToApiService.cs" />
     <Compile Include="Services\NavigationService.cs" />
-    <Compile Include="Services\ResponseValidateService.cs" />
     <Compile Include="Stores\BankStore.cs" />
     <Compile Include="ViewModels\ClientBlankViewModel.cs" />
     <Compile Include="ViewModels\ContractBlankViewModel.cs" />
@@ -152,7 +155,6 @@
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Tarifs.cs" />
     <Compile Include="Services\RequestsToApiService.cs" />
-    <Compile Include="Services\WindowService.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="ViewModels\StartViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />

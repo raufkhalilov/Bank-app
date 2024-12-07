@@ -30,6 +30,7 @@ namespace BankWPF
         private readonly IContractsProvider _contractsProvider;
 
         private readonly IRequestsToApiService _requestsToApiService;
+        private readonly IAuthService _authService;
 
         private readonly NavigationStore _navigationStore;
         private readonly NavigationViewModel _navigationViewModel;
@@ -37,7 +38,10 @@ namespace BankWPF
 
         public App()
         {
+           
             _requestsToApiService = new RequestsToApiService();
+
+            _authService = new AuthenicationService(/*_requestsToApiService*/); // soon
 
             _clientsProvider = new ApiClientsProvider(_requestsToApiService);
             _clientCreator = new ApiClientCreator(_requestsToApiService);
@@ -59,8 +63,11 @@ namespace BankWPF
         protected override void OnStartup(StartupEventArgs e)
         {
     
-            NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
-            startNavigationService.Navigate();
+            //NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
+            //startNavigationService.Navigate();
+
+            NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
+            loginNavigationService.Navigate();
 
             var startWindow = new MainWindow
             {
@@ -70,6 +77,12 @@ namespace BankWPF
             startWindow.Show();
 
             base.OnStartup(e);
+        }
+
+        private NavigationService<LoginViewModel> CreateLoginViewModel()
+        {
+            return new NavigationService<LoginViewModel>(_navigationStore, 
+                () => new LoginViewModel(_navigationStore, _navigationViewModel, _authService));
         }
 
         private NavigationService<StartViewModel> CreateStartNavigationService()

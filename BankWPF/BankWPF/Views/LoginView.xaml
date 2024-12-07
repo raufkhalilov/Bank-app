@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:BankWPF.Views"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodels="clr-namespace:BankWPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:LoginViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     Background="Azure"
@@ -66,29 +66,31 @@
                 Grid.Row="0"
                 Margin="3,3,6,3"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                FontSize="20"
+                VerticalAlignment="Bottom"
+                FontSize="18"
                 Text="Логин:" />
 
             <TextBox
                 Grid.Row="1"
                 Margin="3,3,6,3"
                 HorizontalAlignment="Stretch"
-                FontSize="20" />
+                FontSize="18" 
+                Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock
                 Grid.Row="2"
                 Margin="3,3,6,3"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                FontSize="20"
+                VerticalAlignment="Bottom"
+                FontSize="18"
                 Text="Пароль:" />
 
             <TextBox
                 Grid.Row="3"
                 Margin="3,3,6,3"
                 HorizontalAlignment="Stretch"
-                FontSize="20" />
+                FontSize="18" 
+                Text="{Binding Password,UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
@@ -103,11 +105,12 @@
 
             <Button
                 Grid.Row="1"
-                Margin="25,0,30,0"
+                Margin="60,0"
                 Background="#FFADFFE3"
                 BorderThickness="0"
                 Content="Вход"
-                FontSize="20" />
+                Command="{Binding LoginCommand}"
+                FontSize="16" />
 
         </Grid>
 

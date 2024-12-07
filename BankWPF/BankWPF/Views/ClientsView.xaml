@@ -98,9 +98,6 @@
                             MouseAction="LeftDoubleClick" />
                     </DataGrid.InputBindings>
 
-
-
-
                     <DataGrid.Columns>
                         <DataGridTextColumn
                             Width="25"
@@ -109,11 +106,11 @@
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding ClientName}"
-                            Header="ClientID" />
+                            Header="Name" />
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding PhoneNumber}"
-                            Header="Description" />
+                            Header="Phone number" />
                     </DataGrid.Columns>
 
                 </DataGrid>

@@ -90,7 +90,7 @@ namespace BankWPF.ViewModels
 
         private readonly IRequestsToApiService _requestsToApiService;
 
-        private readonly IDialogService _dialogService;
+        //private readonly IDialogService _dialogService;
 
         //public ICommand GetDataCommand { get; }
 
@@ -116,7 +116,7 @@ namespace BankWPF.ViewModels
 
 
 
-            _dialogService = new DialogService();
+            //_dialogService = new DialogService();
             //OpenAddClientDialogCommand = new RelayCommand(OpenDialog);
 
             OpenClientCardCommand = new NavigationCommand<ClientBlankViewModel>(new NavigationService<ClientBlankViewModel>(navigationStore,
@@ -170,13 +170,13 @@ namespace BankWPF.ViewModels
 
 
         #region Методы класса
-
+/*
         private void OpenDialog(object parameter)
         {
-            _dialogService.ShowAddClientDialog();
+            //_dialogService.ShowAddClientDialog();
             //this.LoadData(parameter);
         }
-
+*/
         #endregion
 
     }
