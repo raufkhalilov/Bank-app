@@ -23,15 +23,15 @@ namespace BankWPF.Stores
         public List<Contract> Contracts => _contracts;
 
 
-        private readonly Lazy<Task> _initLazyClients;
-        private readonly Lazy<Task> _initLazyContracts;
+        private /*readonly*/ Lazy<Task> _initLazyClients;
+        private /*readonly*/ Lazy<Task> _initLazyContracts;
 
         public Action<Client> ClientAdded;
         public Action<Contract> ContractAdded;
 
 
-        public BankStore(Bank bank) 
-        { 
+        public BankStore(Bank bank)
+        {
             _bank = bank;
 
             _initLazyClients = new Lazy<Task>(InitializeClients);
@@ -55,8 +55,38 @@ namespace BankWPF.Stores
             //IEnumerable<Contract> contracts = await _bank.GetAllContracts();
 
             _clients.Clear();
-            _clients.AddRange(clients);
+
+            if (clients != null)
+            {
+                _clients.AddRange(clients);
+            }
+
         }
+
+        //helper//
+
+        /*
+        public async Task Helper(Client newClient)
+        {
+            await _bank.AddNewClient(newClient);
+
+            _clients.Add(newClient);
+
+            _clients.Remove(newClient);
+
+            OnClientAdded(newClient);
+        }
+        */
+
+
+        public void ReLoadBank() //
+        {
+            
+            _initLazyClients = new Lazy<Task>(InitializeClients);
+            _initLazyContracts = new Lazy<Task>(InitializeContracts);
+
+        } 
+        //helper//
 
         public async Task AddNewClient(Client newClient)
         {
@@ -86,12 +116,14 @@ namespace BankWPF.Stores
             //IEnumerable<Contract> contracts = await _bank.GetAllContracts();
 
             _contracts.Clear();
-            _contracts.AddRange(contracts);
+
+            if (contracts != null)
+                _contracts.AddRange(contracts);
         }
 
         public async Task AddNewContract(Contract newContract)
         {
-         
+
             await _bank.AddNewContract(newContract);
 
             _contracts.Add(newContract);

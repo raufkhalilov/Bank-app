@@ -39,7 +39,6 @@ D:\app_for_admins-main\BankWPF\BankWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 D:\app_for_admins-main\BankWPF\BankWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
 D:\app_for_admins-main\BankWPF\BankWPF\bin\Debug\Newtonsoft.Json.xml
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Components\NavigationBar.baml
-D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\AddClientWindow.baml
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\ClientsView.baml
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\ContractsView.baml
 D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\Views\MainWindow.baml

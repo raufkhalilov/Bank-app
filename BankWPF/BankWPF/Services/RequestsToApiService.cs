@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BankWPF.Services
 {
@@ -30,6 +31,8 @@ namespace BankWPF.Services
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Произошла ошибка подключения к серверу!\n"+ex.Message,"Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
                 return null;
             }
         }

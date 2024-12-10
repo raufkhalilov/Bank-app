@@ -48,8 +48,6 @@ namespace BankWPF.Commands
                     MessageBox.Show("При добавлении клиента произошла ошибка!", "Добавление клиента", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                
-
                 //request = await _requestsToApiService.PostDataToApi(url, _dataForPost);/*TModel*/
                 //_bank.((Contract)_dataForPost);
             }

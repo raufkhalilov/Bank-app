@@ -71,6 +71,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\BaseAsyncCommand.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\HelperPostDataCommand.cs" />
     <Compile Include="Commands\LoadContractsCommand.cs" />
     <Compile Include="Commands\LoadClientsCommand.cs" />
     <Compile Include="Commands\LoadUserContractsCommand.cs" />
@@ -203,6 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourses\icons\icons8-гроссбух-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

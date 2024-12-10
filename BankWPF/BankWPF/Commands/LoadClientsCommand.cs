@@ -29,8 +29,7 @@ namespace BankWPF.Commands
         public override async Task ExecuteAsync()
         {
 
-            var jsonData = true;//await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients");
-
+            //var jsonData = true;//await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients");
             //if (jsonData != null)
             //{
 
@@ -40,7 +39,7 @@ namespace BankWPF.Commands
                 _clientViewModel.UpdateClientsList(_bankStore.Clients);
 
             _clientViewModel.IsLoading = false;
-
+            /*
                 //IEnumerable<Client> clients = await _bank.GetAllClients();//JsonConvert.DeserializeObject<ObservableCollection<Client>>(jsonData);
                 //_clientViewModel.UpdateClientsList(clients);
 
@@ -48,7 +47,7 @@ namespace BankWPF.Commands
                 //_clientViewModel.Clients = parsedData;
            // }
             //else
-          /*  {
+            {
 
                 if (MessageBox.Show("Ошибка подключения к серверу " + ".\nПопробовать попробовать подключиться снова? ",
                     "Ошибка",

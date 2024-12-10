@@ -24,7 +24,7 @@ namespace BankWPF.Services
         {
 
 
-            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients"/*, this, btn_Click_Del, sender, e*/);
+            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients");
 
             if (jsonData != null)
             {

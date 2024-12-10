@@ -31,10 +31,10 @@ namespace BankWPF.Commands
 
 
 
-            var jsonData = true;//await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients");
+            //var jsonData = true;//await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients");
 
-            if (jsonData != null)
-            {
+            //if (jsonData != null)
+            //{
 
                 _contractsViewModel.IsLoading = true;
                 await _bankStore.LoadContracts();
@@ -46,11 +46,11 @@ namespace BankWPF.Commands
 
                 //ObservableCollection<Client> parsedData = JsonConvert.DeserializeObject<ObservableCollection<Client>>(jsonData);
                 //_clientViewModel.Clients = parsedData;
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                if (MessageBox.Show("Ошибка подключения к серверу " + ".\nПопробовать попробовать подключиться снова? ",
+              /*  if (MessageBox.Show("Ошибка подключения к серверу " + ".\nПопробовать попробовать подключиться снова? ",
                     "Ошибка",
                     MessageBoxButton.OKCancel,
                     MessageBoxImage.Exclamation) == MessageBoxResult.OK)
@@ -63,7 +63,7 @@ namespace BankWPF.Commands
                     //this.Close();
                 }
 
-            }
+            }*/
 
 
             /*

@@ -92,7 +92,7 @@ namespace BankWPF.ViewModels
 
         //private readonly IDialogService _dialogService;
 
-        //public ICommand GetDataCommand { get; }
+        public ICommand HelperCommand { get; }
 
 
 
@@ -127,6 +127,8 @@ namespace BankWPF.ViewModels
 
 
             LoadDataCommand = new LoadClientsCommand(this, bankStore, _requestsToApiService);
+
+            HelperCommand = new HelperPostDataCommand(bankStore, navigationViewModel);
 
             bankStore.ClientAdded += OnClientMode;
 

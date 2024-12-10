@@ -50,8 +50,8 @@
         </Grid.ColumnDefinitions>
 
         <ContentControl Grid.ColumnSpan="2" Content="{Binding CurrentViewModel}" />
-        
-            <!--
+
+        <!--
         <local:StartPage DataContext="{Binding CurrentViewModel}"/>
         -->
     </Grid>

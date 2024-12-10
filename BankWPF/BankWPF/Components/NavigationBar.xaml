@@ -48,10 +48,12 @@
                 Content="Договоры"
                 Style="{StaticResource MyButtonStyle}" />
 
-            <Button
-                Grid.Row="2"
-                Content="Тарифы"
-                Style="{StaticResource MyButtonStyle}" />
+            <Button Grid.Row="2" Style="{StaticResource MyButtonStyle}"
+                    Command="{Binding ConnectToApiCommand}">
+
+                <TextBlock Text="Обновить" />
+
+            </Button>
 
             <Button
                 Grid.Row="3"

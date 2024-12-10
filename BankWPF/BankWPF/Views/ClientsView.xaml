@@ -75,8 +75,8 @@
 
                 <custom:LoadingSpinner
                     Diameter="100"
-                    Thickness="5"
                     IsLoading="{Binding IsLoading}"
+                    Thickness="5"
                     Color="Aquamarine" />
 
                 <DataGrid
@@ -127,6 +127,14 @@
                 BorderThickness="0"
                 Command="{Binding OpenClientCardCommand}"
                 Content="Новый клиент" />
+
+            <Button
+                Grid.Row="2"
+                Margin="137,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Command="{Binding HelperCommand}"
+                Content="Button" />
 
         </Grid>
 

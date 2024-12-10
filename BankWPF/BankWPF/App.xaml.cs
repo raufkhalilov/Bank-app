@@ -57,7 +57,8 @@ namespace BankWPF
             _navigationViewModel = new NavigationViewModel(
                 CreateStartNavigationService(),
                 CreateClientsNavigationService(),
-                CreateContractsNavigationService());
+                CreateContractsNavigationService(),
+                _bankStore);
         }
 
         protected override void OnStartup(StartupEventArgs e)

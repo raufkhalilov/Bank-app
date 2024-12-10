@@ -235,17 +235,18 @@
                     FontSize="20"
                     Text="Активные услуги:" />
 
-                <ListView Grid.Row="1" 
-                          Margin="20,0,20,20"
-                          ItemsSource="{Binding ClientsActiveContracts}">
+                <ListView
+                    Grid.Row="1"
+                    Margin="20,0,20,20"
+                    ItemsSource="{Binding ClientsActiveContracts}">
 
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ContractID}" />
-                            <GridViewColumn Header="ContractAmount" DisplayMemberBinding="{Binding ContractAmount}" />
-                            <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" />
+                            <GridViewColumn DisplayMemberBinding="{Binding ContractID}" Header="ID" />
+                            <GridViewColumn DisplayMemberBinding="{Binding ContractAmount}" Header="ContractAmount" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" />
                         </GridView>
-                        
+
                     </ListView.View>
                 </ListView>
 
@@ -270,9 +271,9 @@
                     Margin="10,0,20,10"
                     Background="Beige"
                     BorderThickness="0"
+                    Command="{Binding OpenContractBlankCommand}"
                     Content="Новая услуга"
-                    FontSize="14"
-                    Command="{Binding OpenContractBlankCommand}"/>
+                    FontSize="14" />
 
             </Grid>
 
