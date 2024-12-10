@@ -15,19 +15,30 @@ namespace BankWPF.Commands
 
         private BankStore _bankStore;
         private NavigationViewModel _navigationViewModel;
+        private NavigationStore _navigationStore;
        
 
-        public HelperPostDataCommand(BankStore bankStore, NavigationViewModel navigationViewModel)
+        public HelperPostDataCommand(BankStore bankStore, NavigationViewModel navigationViewModel, NavigationStore navigationStore)
         {
             _bankStore = bankStore;
            _navigationViewModel = navigationViewModel;
+            _navigationStore = navigationStore;
         }
 
         public override async Task ExecuteAsync()
         {
            
             _bankStore.ReLoadBank();
-            _navigationViewModel.NavigateClientsViewCommand.Execute(_bankStore);
+
+
+            if (_navigationStore.CurrentViewModel.GetType() == typeof(ClientsListingViewModel))
+            {
+                _navigationViewModel.NavigateClientsViewCommand.Execute(_bankStore);
+            }
+            else if (_navigationStore.CurrentViewModel.GetType() == typeof(ContractsListingViewModel))
+            {
+                _navigationViewModel.NavigateContractsViewCommand.Execute(_bankStore);
+            }
         }
     }
 }

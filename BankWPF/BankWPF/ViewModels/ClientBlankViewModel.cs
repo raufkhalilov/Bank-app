@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using BankWPF.Commands;
 using System.Windows.Input;
 using BankWPF.Stores;
 
@@ -65,7 +64,7 @@ namespace BankWPF.ViewModels
             set
             {
                 _clientsActiveContracts = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(ClientsActiveContracts));
             }
         }
 

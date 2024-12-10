@@ -13,7 +13,7 @@
     Icon="/Resourses/icons/icons8-гроссбух-48.png"
     ResizeMode="NoResize"
     mc:Ignorable="d">
-    <!--  resize mode should be deleted!  -->
+    <!--  resize mode should be deleted! ResizeMode="NoResize" -->
 
     <Grid>
 

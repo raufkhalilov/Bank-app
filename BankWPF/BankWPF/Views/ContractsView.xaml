@@ -79,8 +79,18 @@
                     AutoGenerateColumns="False"
                     Background="White"
                     BorderThickness="0"
-                    ItemsSource="{Binding Contracts}"
+                    IsReadOnly="True"
+                    IsSynchronizedWithCurrentItem="True"
+                    ItemsSource="{Binding Contracts, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding SelectedContract}"
                     Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+                    <DataGrid.InputBindings>
+                        <MouseBinding
+                            Command="{Binding DblOpenContractCardCommand}"
+                            CommandParameter="{Binding Contracts/}"
+                            MouseAction="LeftDoubleClick" />
+                    </DataGrid.InputBindings>
 
                     <DataGrid.Columns>
                         <DataGridTextColumn

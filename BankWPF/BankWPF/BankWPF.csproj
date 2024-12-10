@@ -74,6 +74,7 @@
     <Compile Include="Commands\HelperPostDataCommand.cs" />
     <Compile Include="Commands\LoadContractsCommand.cs" />
     <Compile Include="Commands\LoadClientsCommand.cs" />
+    <Compile Include="Commands\LoadSelectedContractCommand.cs" />
     <Compile Include="Commands\LoadUserContractsCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\NavigationCommand.cs" />

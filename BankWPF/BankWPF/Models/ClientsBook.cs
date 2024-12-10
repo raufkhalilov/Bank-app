@@ -14,7 +14,7 @@ namespace BankWPF.Models
         IClientsProvider _clientsProvider;
         IClientCreator _clientCreator;
 
-        private readonly List<Client> _clients;
+        //private readonly List<Client> _clients;
 
         public ClientsBook(IClientsProvider clientsProvider, IClientCreator clientCreator)
         {

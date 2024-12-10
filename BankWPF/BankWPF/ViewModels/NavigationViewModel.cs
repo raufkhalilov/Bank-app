@@ -25,7 +25,8 @@ namespace BankWPF.ViewModels
         public NavigationViewModel(NavigationService<StartViewModel> startNavigationService,
             NavigationService<ClientsListingViewModel> clientsNavigationService,
             NavigationService<ContractsListingViewModel> contractNavigateService,
-            BankStore bankStore)
+            BankStore bankStore,
+            NavigationStore navigationStore)
         {
             NavigateStartViewCommand = new NavigationCommand<StartViewModel>(startNavigationService);
             NavigateClientsViewCommand = new NavigationCommand<ClientsListingViewModel>(clientsNavigationService);
@@ -33,7 +34,7 @@ namespace BankWPF.ViewModels
 
             //====
 
-            ConnectToApiCommand = new HelperPostDataCommand(bankStore, this);
+            ConnectToApiCommand = new HelperPostDataCommand(bankStore, this, navigationStore);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace BankWPF.ViewModels
     internal class ClientsListingViewModel : /*ListingDataViewModel<Client>*/BaseViewModel
     {
 
-        Bank _bank;
+        //Bank _bank;
 
         private Client _selectedClient;
 
@@ -109,15 +109,8 @@ namespace BankWPF.ViewModels
 
             Clients = new ObservableCollection<Client>(); //v1
 
-            //Data  =  new ObservableCollection<Client>();
-
             _requestsToApiService = requestService;
 
-
-
-
-            //_dialogService = new DialogService();
-            //OpenAddClientDialogCommand = new RelayCommand(OpenDialog);
 
             OpenClientCardCommand = new NavigationCommand<ClientBlankViewModel>(new NavigationService<ClientBlankViewModel>(navigationStore,
                 () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore)));
@@ -128,13 +121,10 @@ namespace BankWPF.ViewModels
 
             LoadDataCommand = new LoadClientsCommand(this, bankStore, _requestsToApiService);
 
-            HelperCommand = new HelperPostDataCommand(bankStore, navigationViewModel);
+            HelperCommand = new HelperPostDataCommand(bankStore, navigationViewModel, navigationStore);
 
             bankStore.ClientAdded += OnClientMode;
 
-            //LoadDataCommand = new LoadDataCommand<Client>(this, _requestsToApiService);
-
-            //LoadDataCommand = new LoadDataCommand_v2<Client>(Data, _requestsToApiService);
         }
 
         private void OnClientMode(Client client)

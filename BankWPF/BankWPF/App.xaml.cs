@@ -58,7 +58,7 @@ namespace BankWPF
                 CreateStartNavigationService(),
                 CreateClientsNavigationService(),
                 CreateContractsNavigationService(),
-                _bankStore);
+                _bankStore, _navigationStore);
         }
 
         protected override void OnStartup(StartupEventArgs e)
@@ -101,7 +101,7 @@ namespace BankWPF
         private NavigationService<ContractsListingViewModel> CreateContractsNavigationService()
         {
             return new NavigationService<ContractsListingViewModel>(_navigationStore, 
-                () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore, _requestsToApiService));
+                () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore,_navigationStore, _requestsToApiService));
         }
 /*
         private NavigationService<ClientBlankViewModel> CreateClientCardNavigationService()

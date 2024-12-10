@@ -20,8 +20,48 @@ namespace BankWPF.ViewModels
 
         private readonly Contract _contract;
 
+        private string _clientName;
 
         public NavigationViewModel NavigationViewModel { get; }
+
+        public int ClientID
+        {
+            get
+            {
+                return _contract.ClientID;
+            }
+            set
+            {
+                _contract.ClientID = value;
+                OnPropertyChanged(nameof(ClientID));
+            }
+        }
+
+        public string ClientName
+        {
+            get
+            {
+                return _clientName;
+            }
+            set
+            {
+                _clientName = value;
+                OnPropertyChanged(nameof(ClientName));
+            }
+        }
+
+        public int ContractID
+        {
+            get
+            {
+                return _contract.ContractID;
+            }
+            set
+            {
+                _contract.ContractID = value;
+                OnPropertyChanged(nameof(ContractID));
+            }
+        }
 
         public string Description
         {
@@ -66,7 +106,7 @@ namespace BankWPF.ViewModels
 
         public ICommand PostDataCommand { get; }
 
-        public ICommand GetUserContracts { get; }
+        public ICommand GetUserData { get; }
 
         public ICommand OpenContractBlankCommand { get; }
 
@@ -87,7 +127,7 @@ namespace BankWPF.ViewModels
 
             PostDataCommand = new PostDataCommand<Contract>(bankStore, _requestsToApiService, _contract);
 
-            //GetUserContracts = new LoadUserContractsCommand(this, _requestsToApiService);
+            GetUserData = new LoadSelectedContractCommand(this, _requestsToApiService);
 
             //OpenContractBlankCommand = new NavigationCommand<ContractBlankViewModel>(new NavigationService<ContractBlankViewModel>(navigationStore,
             //    () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore)));
@@ -101,8 +141,7 @@ namespace BankWPF.ViewModels
         {
             ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank, navigationViewModel, navigationStore, contract);
 
-            //clientCardViewModel.GetUserContracts.Execute(clientCardViewModel);
-
+            clientCardViewModel.GetUserData.Execute(clientCardViewModel);
 
             return clientCardViewModel;
         }

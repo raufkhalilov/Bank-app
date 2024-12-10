@@ -29,7 +29,7 @@ namespace BankWPF.Commands
 
         public override async Task ExecuteAsync()
         {
-            string url = "http://localhost:8080/post/Client";
+            //string url = "http://localhost:8080/post/Client";
 
             //string request = null;
 
@@ -45,7 +45,7 @@ namespace BankWPF.Commands
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("При добавлении клиента произошла ошибка!", "Добавление клиента", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("При добавлении клиента произошла ошибка!\n"+ex, "Добавление клиента", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
                 //request = await _requestsToApiService.PostDataToApi(url, _dataForPost);/*TModel*/
