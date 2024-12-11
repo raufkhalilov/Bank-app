@@ -21,7 +21,7 @@ namespace BankWPF.Services.ApiServices
 
         public async Task<IEnumerable<Contract>> GetAllContracts()
         {
-            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Contracts");
+            var jsonData = await _requestsToApiService.GetDataFromApi("http://109.206.241.154:8080/get/Contracts");
 
             if (jsonData != null)
             {

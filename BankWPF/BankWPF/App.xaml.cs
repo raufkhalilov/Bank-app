@@ -95,13 +95,13 @@ namespace BankWPF
         private NavigationService<ClientsListingViewModel> CreateClientsNavigationService()
         {
             return new NavigationService<ClientsListingViewModel>(_navigationStore, 
-                () => ClientsListingViewModel.LoadViewModel(_bankStore,_requestsToApiService, _navigationViewModel, _navigationStore));
+                () => ClientsListingViewModel.LoadViewModel(_bankStore,/*_requestsToApiService,*/_clientsProvider,_contractsProvider, _navigationViewModel, _navigationStore));
         }
 
         private NavigationService<ContractsListingViewModel> CreateContractsNavigationService()
         {
             return new NavigationService<ContractsListingViewModel>(_navigationStore, 
-                () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore,_navigationStore, _requestsToApiService));
+                () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore,_navigationStore, /*_requestsToApiService,*/ _clientsProvider));
         }
 /*
         private NavigationService<ClientBlankViewModel> CreateClientCardNavigationService()

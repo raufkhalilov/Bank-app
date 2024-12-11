@@ -128,14 +128,6 @@
                 Command="{Binding OpenClientCardCommand}"
                 Content="Новый клиент" />
 
-            <Button
-                Grid.Row="2"
-                Margin="137,0,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Command="{Binding HelperCommand}"
-                Content="Button" />
-
         </Grid>
 
     </Grid>

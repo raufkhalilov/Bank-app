@@ -1,5 +1,6 @@
 ﻿using BankWPF.Models;
 using BankWPF.Services;
+using BankWPF.Services.ApiServices;
 using BankWPF.ViewModels;
 using Newtonsoft.Json;
 using System;
@@ -15,39 +16,34 @@ namespace BankWPF.Commands
     internal class LoadUserContractsCommand : BaseAsyncCommand
     {
         private readonly ClientBlankViewModel _clientCardViewModel;
-        private readonly IRequestsToApiService _requestsToApiService;
+        private readonly IContractsProvider _contractsProvider;
 
-        public LoadUserContractsCommand(ClientBlankViewModel clientsViewModel, IRequestsToApiService requestsToApiService)
+        public LoadUserContractsCommand(ClientBlankViewModel clientsViewModel, IContractsProvider contractsProvider)
         {
             _clientCardViewModel = clientsViewModel;
-            _requestsToApiService = requestsToApiService;
+            _contractsProvider = contractsProvider;
         }
 
         public override async Task ExecuteAsync()
         {
 
-            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Contracts"/*, this, btn_Click_Del, sender, e*/);
 
-            if (jsonData != null)
+
+            ObservableCollection<Contract> contracts = new ObservableCollection<Contract>(await _contractsProvider.GetAllContracts());
+
+            if (contracts != null)
             {
-                ObservableCollection<Contract> parsedData = JsonConvert.DeserializeObject<ObservableCollection<Contract>>(jsonData);
-                _clientCardViewModel.ClientsActiveContracts = parsedData;
-
-                //_clientCardViewModel.ClientsActiveContracts = _clientCardViewModel.ClientsActiveContracts.Where(c => c.ClientID == _clientCardViewModel.ClientID);
-
-                _clientCardViewModel.ClientsActiveContracts = new ObservableCollection<Contract>(
-                    _clientCardViewModel.ClientsActiveContracts.Where(c => c.ClientID == _clientCardViewModel.ClientID));
+                _clientCardViewModel.ClientsActiveContracts = new ObservableCollection<Contract>(contracts.Where(c => c.ClientID == _clientCardViewModel.ClientID));
             }
             else
             {
 
-                if (MessageBox.Show("Ошибка подключения к серверу " + ".\nПопробовать попробовать подключиться снова? ",
+                if (MessageBox.Show("Ошибка подключения к серверу ",
                     "Ошибка",
                     MessageBoxButton.OKCancel,
                     MessageBoxImage.Exclamation) == MessageBoxResult.OK)
                 {
-                    //btn_Click_Del(sender, e);
-                    //this.Execute(parameter);
+                    //
                 }
                 else
                 {
@@ -55,8 +51,6 @@ namespace BankWPF.Commands
                 }
 
             }
-
-
         }
     }
 }

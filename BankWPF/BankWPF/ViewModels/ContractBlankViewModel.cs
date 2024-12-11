@@ -15,12 +15,12 @@ namespace BankWPF.ViewModels
     internal class ContractBlankViewModel : BaseViewModel
     {
 
-
-        private readonly IRequestsToApiService _requestsToApiService;
+        private readonly IClientsProvider _clientsProvider;
 
         private readonly Contract _contract;
 
         private string _clientName;
+
 
         public NavigationViewModel NavigationViewModel { get; }
 
@@ -104,13 +104,13 @@ namespace BankWPF.ViewModels
         }
 
 
-        public ICommand PostDataCommand { get; }
+        public ICommand PostContractCommand { get; }
 
         public ICommand GetUserData { get; }
 
         public ICommand OpenContractBlankCommand { get; }
 
-        public ContractBlankViewModel(BankStore bankStore, NavigationViewModel navigationViewModel, NavigationStore navigationStore, Contract contract = null)
+        public ContractBlankViewModel(BankStore bankStore, NavigationViewModel navigationViewModel, NavigationStore navigationStore,IClientsProvider clientsProvider, Contract contract = null)
         {
 
             if (contract == null)
@@ -121,25 +121,19 @@ namespace BankWPF.ViewModels
 
             NavigationViewModel = navigationViewModel;
 
-            _requestsToApiService = new RequestsToApiService();
+            _clientsProvider = clientsProvider;
 
-            //PostDataCommand = new RelayCommand(PostClientData);
 
-            PostDataCommand = new PostDataCommand<Contract>(bankStore, _requestsToApiService, _contract);
+            PostContractCommand = new PostContractCommand(bankStore, contract);
 
-            GetUserData = new LoadSelectedContractCommand(this, _requestsToApiService);
+            GetUserData = new LoadSelectedContractCommand(this, clientsProvider);
 
-            //OpenContractBlankCommand = new NavigationCommand<ContractBlankViewModel>(new NavigationService<ContractBlankViewModel>(navigationStore,
-            //    () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore)));
-
-            //OpenContractBlankCommand = new NavigationCommand<LoginViewModel>(new NavigationService<LoginViewModel>(navigationStore,
-            //   () => new LoginViewModel()));
 
         }
 
-        public static ContractBlankViewModel LoadContractCardViewModel(BankStore bank, NavigationViewModel navigationViewModel, NavigationStore navigationStore, Contract contract = null)
+        public static ContractBlankViewModel LoadContractCardViewModel(BankStore bank, NavigationViewModel navigationViewModel, NavigationStore navigationStore, IClientsProvider clientsProvider, Contract contract = null)
         {
-            ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank, navigationViewModel, navigationStore, contract);
+            ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank, navigationViewModel, navigationStore, clientsProvider, contract);
 
             clientCardViewModel.GetUserData.Execute(clientCardViewModel);
 

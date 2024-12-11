@@ -2,6 +2,7 @@
 using BankWPF.Commands;
 using BankWPF.Models;
 using BankWPF.Services;
+using BankWPF.Services.ApiServices;
 using BankWPF.Stores;
 using Newtonsoft.Json;
 using System;
@@ -99,7 +100,7 @@ namespace BankWPF.ViewModels
         //public bool dataChangedFlag = true;
         private BankStore _bankStore;
 
-        public ClientsListingViewModel(BankStore bankStore, IRequestsToApiService requestService, NavigationViewModel navigationViewModel, NavigationStore navigationStore)
+        public ClientsListingViewModel(BankStore bankStore, /*IRequestsToApiService requestService,*/ NavigationViewModel navigationViewModel, NavigationStore navigationStore, IClientsProvider clientsProvider, IContractsProvider contractsProvider)
         {
 
 
@@ -109,17 +110,17 @@ namespace BankWPF.ViewModels
 
             Clients = new ObservableCollection<Client>(); //v1
 
-            _requestsToApiService = requestService;
+            //_requestsToApiService = requestService;
 
 
             OpenClientCardCommand = new NavigationCommand<ClientBlankViewModel>(new NavigationService<ClientBlankViewModel>(navigationStore,
-                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore)));
+                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, contractsProvider)));
 
             DblOpenClientCardCommand = new NavigationCommand<ClientBlankViewModel>(new NavigationService<ClientBlankViewModel>(navigationStore,
-                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore, SelectedClient)));
+                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, contractsProvider, SelectedClient)));
 
 
-            LoadDataCommand = new LoadClientsCommand(this, bankStore, _requestsToApiService);
+            LoadDataCommand = new LoadClientsCommand(this, bankStore/*, _requestsToApiService*/);
 
             HelperCommand = new HelperPostDataCommand(bankStore, navigationViewModel, navigationStore);
 
@@ -139,10 +140,10 @@ namespace BankWPF.ViewModels
             base.Dispose();
         }
 
-        public static ClientsListingViewModel LoadViewModel(BankStore bankStore, IRequestsToApiService requestService,
+        public static ClientsListingViewModel LoadViewModel(BankStore bankStore, /*IRequestsToApiService requestService,*/ IClientsProvider clientsProvider, IContractsProvider contractsProvider,
             NavigationViewModel navigationViewModel, NavigationStore navigationStore)
         {
-            ClientsListingViewModel viewModel = new ClientsListingViewModel(bankStore, requestService, navigationViewModel, navigationStore);
+            ClientsListingViewModel viewModel = new ClientsListingViewModel(bankStore, /*requestService,*/ navigationViewModel, navigationStore, clientsProvider, contractsProvider);
 
             viewModel.LoadDataCommand.Execute(viewModel);
 

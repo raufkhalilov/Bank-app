@@ -15,40 +15,36 @@ namespace BankWPF.Commands
     internal class LoadSelectedContractCommand : BaseAsyncCommand
     {
         private readonly ContractBlankViewModel _contractCardViewModel;
-        private readonly IRequestsToApiService _requestsToApiService;
+        //private readonly IRequestsToApiService _requestsToApiService;
+        private readonly IClientsProvider _clientsProvider;
 
-        public LoadSelectedContractCommand(ContractBlankViewModel contractCardViewModel, IRequestsToApiService requestsToApiService)
+        public LoadSelectedContractCommand(ContractBlankViewModel contractCardViewModel, IClientsProvider clientsProvider)
         {
             _contractCardViewModel = contractCardViewModel;
-            _requestsToApiService = requestsToApiService;
+            //_requestsToApiService = requestsToApiService;
+            _clientsProvider = clientsProvider;
         }
 
         public override async Task ExecuteAsync()
         {
 
-            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients"/*, this, btn_Click_Del, sender, e*/);
 
-            if (jsonData != null)
-            {
-                ObservableCollection<Client> parsedData = JsonConvert.DeserializeObject<ObservableCollection<Client>>(jsonData);
-                ObservableCollection<Client> clients = new ObservableCollection<Client>(parsedData);
-                //_contractCardViewModel. = parsedData;
-                //var v1 = clients.Where(d => d.ClientId == _contractCardViewModel.ClientID);
-                //string v2 = v1.Select(c => c.ClientName).FirstOrDefault();
-                _contractCardViewModel.ClientName = clients.Where(d => d.ClientId == _contractCardViewModel.ClientID).Select(c => c.ClientName).FirstOrDefault();
-                    
-                    
+            ObservableCollection<Client> clients = new ObservableCollection<Client>(await _clientsProvider.GetAllClients());
+
+            
+            if (clients != null)
+            {               
+                 _contractCardViewModel.ClientName = clients.Where(d => d.ClientId == _contractCardViewModel.ClientID).Select(c => c.ClientName).FirstOrDefault();          
             }
             else
             {
 
-                if (MessageBox.Show("Ошибка подключения к серверу " + ".\nПопробовать попробовать подключиться снова? ",
+                if (MessageBox.Show("Ошибка подключения к серверу ",
                     "Ошибка",
                     MessageBoxButton.OKCancel,
                     MessageBoxImage.Exclamation) == MessageBoxResult.OK)
                 {
-                    //btn_Click_Del(sender, e);
-                    //this.Execute(parameter);
+                    //
                 }
                 else
                 {

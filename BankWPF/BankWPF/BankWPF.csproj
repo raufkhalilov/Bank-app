@@ -80,7 +80,6 @@
     <Compile Include="Commands\NavigationCommand.cs" />
     <Compile Include="Commands\PostClientCommand.cs" />
     <Compile Include="Commands\PostContractCommand.cs" />
-    <Compile Include="Commands\PostDataCommand.cs" />
     <Compile Include="Components\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>

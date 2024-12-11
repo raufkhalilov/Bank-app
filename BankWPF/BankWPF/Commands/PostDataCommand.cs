@@ -40,11 +40,7 @@ namespace BankWPF.Commands
             {
                 
                     request = await _requestsToApiService.PostDataToApi(url, _dataForPost);/*TModel*/
-                //_bank.AddNewClient((Client)_dataForPost);// AddClient(_dataForPost);
-              
-                
-                    //request = await _requestsToApiService.PostDataToApi(url, _dataForPost);/*TModel*/
-                    //_bank.((Contract)_dataForPost);
+               
             }
 
             if (request != null)
