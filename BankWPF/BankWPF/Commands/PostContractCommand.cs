@@ -1,4 +1,5 @@
-﻿using BankWPF.Models;
+﻿using BankWPF.Exceptions;
+using BankWPF.Models;
 using BankWPF.Services;
 using BankWPF.Stores;
 using System;
@@ -34,12 +35,10 @@ namespace BankWPF.Commands
                     await _bankStore.AddNewContract(_newContract);
                     MessageBox.Show("Клиент успешно добавлен!", "Добавление клиента", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                catch (Exception ex)
+                catch (ApiConnectionException ex)
                 {
-                    MessageBox.Show("При добавлении клиента произошла ошибка!", "Добавление клиента", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("При добавлении клиента произошла ошибка!\n" + ex.Message, "Добавление клиента", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-
-
             }
         }
     }

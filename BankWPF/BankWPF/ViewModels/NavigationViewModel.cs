@@ -34,7 +34,7 @@ namespace BankWPF.ViewModels
 
             //====
 
-            ConnectToApiCommand = new HelperPostDataCommand(bankStore, this, navigationStore);
+            ConnectToApiCommand = new ConnectionCommand(bankStore, this, navigationStore);
         }
     }
 }

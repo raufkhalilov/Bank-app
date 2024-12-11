@@ -71,7 +71,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\BaseAsyncCommand.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
-    <Compile Include="Commands\HelperPostDataCommand.cs" />
+    <Compile Include="Commands\ConnectionCommand.cs" />
     <Compile Include="Commands\LoadContractsCommand.cs" />
     <Compile Include="Commands\LoadClientsCommand.cs" />
     <Compile Include="Commands\LoadSelectedContractCommand.cs" />
@@ -84,6 +84,7 @@
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\InverseBooleanToVisibilityConverter.cs" />
+    <Compile Include="Exceptions\ApiConnectionException.cs" />
     <Compile Include="Models\Bank.cs" />
     <Compile Include="Models\ClientsBook.cs" />
     <Compile Include="Models\ContractsBook.cs" />
@@ -205,8 +206,6 @@
   <ItemGroup>
     <Resource Include="Resourses\icons\icons8-гроссбух-48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

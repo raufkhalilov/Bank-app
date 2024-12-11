@@ -1,4 +1,5 @@
-﻿using BankWPF.Models;
+﻿using BankWPF.Exceptions;
+using BankWPF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,16 +21,15 @@ namespace BankWPF.Services.ApiServices
 
         public async Task AddClient(Client client)
         {
-            string url = "http://localhost:8080/post/Client";
+            string url = "http://109.206.241.154:8080/post/Client";
 
             string request = null;
 
-            //if (MessageBox.Show("Вы действительно хотите добавить нового клиента?", "Добавление клиента", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
-            //{
-                request = await _requestsToApiService.PostDataToApi(url, client);
+           
+            request = await _requestsToApiService.PostDataToApi(url, client);
 
-                //_bank.AddClient()
-            //}
+            if (request == null)
+                throw new ApiConnectionException("api connection error");
 
 /*
             if (request != null)

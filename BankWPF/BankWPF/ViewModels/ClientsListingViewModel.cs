@@ -122,7 +122,7 @@ namespace BankWPF.ViewModels
 
             LoadDataCommand = new LoadClientsCommand(this, bankStore/*, _requestsToApiService*/);
 
-            HelperCommand = new HelperPostDataCommand(bankStore, navigationViewModel, navigationStore);
+            HelperCommand = new ConnectionCommand(bankStore, navigationViewModel, navigationStore);
 
             bankStore.ClientAdded += OnClientMode;
 

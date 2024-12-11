@@ -1,4 +1,5 @@
-﻿using BankWPF.Models;
+﻿using BankWPF.Exceptions;
+using BankWPF.Models;
 using BankWPF.Services;
 using BankWPF.ViewModels;
 using Newtonsoft.Json;
@@ -63,38 +64,31 @@ namespace BankWPF.Stores
 
         }
 
-        //helper//
-
-        /*
-        public async Task Helper(Client newClient)
-        {
-            await _bank.AddNewClient(newClient);
-
-            _clients.Add(newClient);
-
-            _clients.Remove(newClient);
-
-            OnClientAdded(newClient);
-        }
-        */
-
-
+     
         public void ReLoadBank() //
         {
             
             _initLazyClients = new Lazy<Task>(InitializeClients);
             _initLazyContracts = new Lazy<Task>(InitializeContracts);
 
-        } 
-        //helper//
+        }
+
 
         public async Task AddNewClient(Client newClient)
         {
-            await _bank.AddNewClient(newClient);
 
-            _clients.Add(newClient);
-
-            OnClientAdded(newClient);
+            try
+            {
+                await _bank.AddNewClient(newClient);
+                _clients.Add(newClient);
+                OnClientAdded(newClient);
+            }
+            catch(ApiConnectionException)
+            {
+                //...
+                throw;
+            }
+            
         }
 
         private void OnClientAdded(Client newClient)
@@ -123,12 +117,16 @@ namespace BankWPF.Stores
 
         public async Task AddNewContract(Contract newContract)
         {
-
-            await _bank.AddNewContract(newContract);
-
-            _contracts.Add(newContract);
-
-            OnContractAdded(newContract);
+            try
+            {
+                await _bank.AddNewContract(newContract);
+                _contracts.Add(newContract);
+                OnContractAdded(newContract);
+            }
+            catch (ApiConnectionException) 
+            {
+                throw;
+            }
         }
 
         private void OnContractAdded(Contract newContract)

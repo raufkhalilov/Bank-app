@@ -1,4 +1,5 @@
-﻿using BankWPF.Models;
+﻿using BankWPF.Exceptions;
+using BankWPF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,12 +24,10 @@ namespace BankWPF.Services.ApiServices
 
             string request = null;
 
-            if (MessageBox.Show("Вы действительно хотите добавить нового клиента?", "Добавление клиента", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
-            {
-                request = await _requestsToApiService.PostDataToApi(url, contract);
+            request = await _requestsToApiService.PostDataToApi(url, contract);
 
-                //_bank.AddClient()
-            }
+            if (request == null)
+                throw new ApiConnectionException("api connection error");
         }
     }
 }

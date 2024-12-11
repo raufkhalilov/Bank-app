@@ -26,30 +26,17 @@ namespace BankWPF.Commands
 
         public override async Task ExecuteAsync()
         {
-
-
-
-            ObservableCollection<Contract> contracts = new ObservableCollection<Contract>(await _contractsProvider.GetAllContracts());
-
-            if (contracts != null)
+            try
             {
+                ObservableCollection<Contract> contracts = new ObservableCollection<Contract>(await _contractsProvider.GetAllContracts());
                 _clientCardViewModel.ClientsActiveContracts = new ObservableCollection<Contract>(contracts.Where(c => c.ClientID == _clientCardViewModel.ClientID));
             }
-            else
+            catch (ArgumentNullException ex)
             {
-
-                if (MessageBox.Show("Ошибка подключения к серверу ",
+                MessageBox.Show("Ошибка подключения к серверу\n",
                     "Ошибка",
                     MessageBoxButton.OKCancel,
-                    MessageBoxImage.Exclamation) == MessageBoxResult.OK)
-                {
-                    //
-                }
-                else
-                {
-                    //this.Close();
-                }
-
+                    MessageBoxImage.Error);
             }
         }
     }
