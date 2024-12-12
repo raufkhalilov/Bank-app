@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Resourses\icons\icons8-гроссбух-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LoadingSpinner" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="Classes\Commands\RelayCommand.cs" />
+    <Compile Remove="Classes\Helper.cs" />
+    <Compile Remove="Classes\RelayCommand.cs" />
+    <Compile Remove="ClientsWindow.xaml.cs" />
+    <Compile Remove="Commands\BasePostDataCommand.cs" />
+    <Compile Remove="Commands\Helper.cs" />
+    <Compile Remove="Commands\HelperPostDataCommand.cs" />
+    <Compile Remove="Commands\LoadDataCommand.cs" />
+    <Compile Remove="Commands\LoadDataCommand_v2.cs" />
+    <Compile Remove="Commands\PostDataCommand.cs" />
+    <Compile Remove="Commands\RelayCommand.cs" />
+    <Compile Remove="MainWindow.xaml.cs" />
+    <Compile Remove="ProductsWindow.xaml.cs" />
+    <Compile Remove="Services\ResponseValidateService.cs" />
+    <Compile Remove="Services\WindowService.cs" />
+    <Compile Remove="ViewModels\ApplicationViewModel.cs" />
+    <Compile Remove="ViewModels\ClientAddingViewModel.cs" />
+    <Compile Remove="ViewModels\ClientsViewModel.cs" />
+    <Compile Remove="ViewModels\ClientViewModel.cs" />
+    <Compile Remove="ViewModels\ContractsViewModel.cs" />
+    <Compile Remove="ViewModels\ListingDataViewModel.cs" />
+    <Compile Remove="Views\AddClientWindow.xaml.cs" />
+    <Compile Remove="Views\ClientsWindow.xaml.cs" />
+    <Compile Remove="Views\ClientWindow.xaml.cs" />
+    <Compile Remove="Views\ContractsWindow.xaml.cs" />
+    <Compile Remove="Views\ProductsWindow.xaml.cs" />
+    <Compile Remove="Views\StartWindow.xaml.cs" />
+    <Page Remove="ClientsWindow.xaml" />
+    <Page Remove="MainWindow.xaml" />
+    <Page Remove="ProductsWindow.xaml" />
+    <Page Remove="Views\AddClientWindow.xaml" />
+    <Page Remove="Views\ClientsWindow.xaml" />
+    <Page Remove="Views\ClientWindow.xaml" />
+    <Page Remove="Views\ContractsWindow.xaml" />
+    <Page Remove="Views\ProductsWindow.xaml" />
+    <Page Remove="Views\StartWindow.xaml" />
+  </ItemGroup>
+</Project>

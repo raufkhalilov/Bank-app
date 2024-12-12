@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\app_for_admins-main\BankWPF\BankWPF\obj\Debug\
+C:\Users\georg\app_for_admins\BankWPF\BankWPF\obj\Debug\
 BankWPF
 none
 false
 DEBUG;TRACE
-D:\app_for_admins-main\BankWPF\BankWPF\App.xaml
+C:\Users\georg\app_for_admins\BankWPF\BankWPF\App.xaml
 8448408023
 
 58-333034544
-20814974684
+20-457018697
 Components\NavigationBar.xaml;Views\ClientBlank.xaml;Views\ClientsView.xaml;Views\ContractBlank.xaml;Views\ContractsView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\StartPage.xaml;
 
 False
