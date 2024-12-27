@@ -1,5 +1,6 @@
 ﻿using BankWPF.Services;
-using BankWPF.Services.ApiServices;
+using BankWPFCore.Services.ApiServices.Get;
+using BankWPFCore.Services.ApiServices.Post;
 using System;
 using System.Collections.Generic;
 using System.Linq;

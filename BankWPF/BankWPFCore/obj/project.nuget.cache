@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Qep3GZZLeC0=",
+  "dgSpecHash": "Owz0o8lXGMc=",
   "success": true,
   "projectFilePath": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\BankWPFCore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\georg\\.nuget\\packages\\extended.wpf.toolkit\\4.6.1\\extended.wpf.toolkit.4.6.1.nupkg.sha512",
     "C:\\Users\\georg\\.nuget\\packages\\loadingspinner\\1.0.0\\loadingspinner.1.0.0.nupkg.sha512",
     "C:\\Users\\georg\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\georg\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.135\\microsoft.xaml.behaviors.wpf.1.1.135.nupkg.sha512",

@@ -7,6 +7,7 @@
     xmlns:local="clr-namespace:BankWPF.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewmodels="clr-namespace:BankWPF.ViewModels"
+    xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit.Obselete;assembly=Xceed.Wpf.Toolkit"
     d:DataContext="{d:DesignInstance Type=viewmodels:ClientBlankViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="900"
@@ -16,27 +17,27 @@
 
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="70" />
             <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
 
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="4*" />
         </Grid.ColumnDefinitions>
 
         <Grid
             Grid.Row="0"
             Grid.Column="0"
             Background="#FF99FFDD">
-            <TextBlock
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontFamily="OCR A Extended"
-                FontSize="36"
-                FontWeight="Bold"
-                Text="BGRT" />
+            <Label
+     HorizontalAlignment="Center"
+     VerticalAlignment="Center"
+     Content="МАДИ-банк"
+     FontFamily="/Resourses/Fonts/#Fowviel"
+     FontSize="28"
+     Foreground="Black" />
         </Grid>
 
         <Grid
@@ -58,7 +59,7 @@
 
             <Grid.RowDefinitions>
 
-                <RowDefinition Height="*" />
+                <RowDefinition Height="200" />
                 <RowDefinition Height="1.2*" />
             </Grid.RowDefinitions>
 
@@ -67,7 +68,7 @@
             <Grid Grid.Row="0">
 
 
-                <components:NavigationBar DataContext="{Binding NavigationViewModel}" />
+                <components:NavigationBar DataContext="{Binding NavigationViewModel}" Height="200"/>
 
 
             </Grid>
@@ -80,7 +81,7 @@
         <Grid Grid.Row="1" Grid.Column="1">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="360" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -92,19 +93,19 @@
             <Grid Grid.Row="0" Grid.RowSpan="2">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="68*" />
-                    <RowDefinition Height="45*" />
-                    <RowDefinition Height="45*" />
-                    <RowDefinition Height="45*" />
-                    <RowDefinition Height="45*" />
-                    <RowDefinition Height="45" />
-                    <RowDefinition Height="135*" />
+                    <RowDefinition Height="68" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="135" />
 
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="260" />
                 </Grid.ColumnDefinitions>
 
 
@@ -177,22 +178,27 @@
                     FontSize="14"
                     IsReadOnly="False" />
 
-                <TextBox
+                <xctk:MaskedTextBox
                     Grid.Row="3"
                     Grid.Column="1"
                     Margin="20,0,20,0"
                     VerticalAlignment="Bottom"
                     FontSize="14"
                     IsReadOnly="False"
+                    Mask="000-000-0000"
                     Text="{Binding PhoneNumber}" />
 
-                <TextBox
+                <xctk:MaskedTextBox
                     Grid.Row="4"
                     Grid.Column="1"
                     Margin="20,0,20,0"
                     VerticalAlignment="Bottom"
                     FontSize="14"
-                    IsReadOnly="False" />
+                    IsReadOnly="False" 
+                    Mask="00-00-000000"
+                    />
+
+              
 
                 <Grid Grid.Row="6" Grid.ColumnSpan="2">
 
@@ -220,7 +226,7 @@
 
                 <Grid.RowDefinitions>
 
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="40" />
 
                     <RowDefinition Height="5*" />
                     <RowDefinition Height="*" />
@@ -238,13 +244,15 @@
                 <ListView
                     Grid.Row="1"
                     Margin="20,0,20,20"
+                    
                     ItemsSource="{Binding ClientsActiveContracts}">
 
                     <ListView.View>
+
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding ContractID}" Header="ID" />
-                            <GridViewColumn DisplayMemberBinding="{Binding ContractAmount}" Header="ContractAmount" />
-                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" />
+                            <GridViewColumn DisplayMemberBinding="{Binding ContractID}" Header="ID" Width="auto"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding ContractAmount}" Header="ContractAmount" Width="auto"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" Width="auto"/>
                         </GridView>
 
                     </ListView.View>

@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows;
 using BankWPF.Commands;
 using BankWPF.Stores;
+using BankWPFCore.Services.ApiServices.Get;
 
 namespace BankWPF.ViewModels
 {
@@ -92,7 +93,7 @@ namespace BankWPF.ViewModels
             LoadContractsCommand = new LoadContractsCommand(this, bankStore/*, requestsToApiService*/);
 
             DblOpenContractCardCommand = new NavigationCommand<ContractBlankViewModel>(new NavigationService<ContractBlankViewModel>(navigationStore,
-                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, SelectedContract)));
+                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, null, SelectedContract)));
 
             _bankStore.ContractAdded += OnContractMode;
         }

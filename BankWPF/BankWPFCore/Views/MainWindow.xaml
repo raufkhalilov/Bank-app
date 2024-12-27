@@ -8,10 +8,10 @@
     xmlns:vms="clr-namespace:BankWPF.ViewModels"
     Title="BGRTBank"
     Width="800"
-    Height="450"
+    Height="470"
     d:DataContext="{d:DesignInstance Type=vms:MainViewModel}"
     Icon="/Resourses/icons/icons8-гроссбух-48.png"
-    ResizeMode="NoResize"
+    ResizeMode="CanResize"
     mc:Ignorable="d">
     <!--  resize mode should be deleted! ResizeMode="NoResize" -->
 

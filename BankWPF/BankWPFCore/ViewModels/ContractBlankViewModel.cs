@@ -1,7 +1,7 @@
 ﻿using BankWPF.Commands;
 using BankWPF.Models;
-using BankWPF.Services;
 using BankWPF.Stores;
+using BankWPFCore.Services.ApiServices.Get;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,6 +18,8 @@ namespace BankWPF.ViewModels
         private readonly IClientsProvider _clientsProvider;
 
         private readonly Contract _contract;
+
+        private readonly Client _client;
 
         private string _clientName;
 
@@ -110,7 +112,13 @@ namespace BankWPF.ViewModels
 
         public ICommand OpenContractBlankCommand { get; }
 
-        public ContractBlankViewModel(BankStore bankStore, NavigationViewModel navigationViewModel, NavigationStore navigationStore,IClientsProvider clientsProvider, Contract contract = null)
+        public ContractBlankViewModel(
+            BankStore bankStore, 
+            NavigationViewModel navigationViewModel, 
+            NavigationStore navigationStore,
+            IClientsProvider clientsProvider,
+            Client client,
+            Contract contract = null)
         {
 
             if (contract == null)
@@ -123,19 +131,27 @@ namespace BankWPF.ViewModels
 
             _clientsProvider = clientsProvider;
 
+            ClientID = client.ClientId;
+            ClientName = client.ClientName;
 
             PostContractCommand = new PostContractCommand(bankStore, contract);
 
-            GetUserData = new LoadSelectedContractCommand(this, clientsProvider);
+            //GetUserData = new LoadSelectedContractCommand(this, clientsProvider);
 
 
         }
 
-        public static ContractBlankViewModel LoadContractCardViewModel(BankStore bank, NavigationViewModel navigationViewModel, NavigationStore navigationStore, IClientsProvider clientsProvider, Contract contract = null)
+        public static ContractBlankViewModel LoadContractCardViewModel(
+            BankStore bank, 
+            NavigationViewModel navigationViewModel, 
+            NavigationStore navigationStore, 
+            IClientsProvider clientsProvider, 
+            Client client,
+            Contract contract = null)
         {
-            ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank, navigationViewModel, navigationStore, clientsProvider, contract);
+            ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank, navigationViewModel, navigationStore, clientsProvider,client, contract);
 
-            clientCardViewModel.GetUserData.Execute(clientCardViewModel);
+            //clientCardViewModel.GetUserData.Execute(clientCardViewModel);
 
             return clientCardViewModel;
         }

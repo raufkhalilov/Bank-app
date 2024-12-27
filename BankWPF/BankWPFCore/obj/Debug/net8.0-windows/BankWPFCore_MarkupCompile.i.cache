@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\App.xaml
 81936181634
 
-58-497888383
-2101184935845
+58-1050746053
+2151024631831
 Components\NavigationBar.xaml;Views\ClientBlank.xaml;Views\ClientsView.xaml;Views\ContractBlank.xaml;Views\ContractsView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\StartPage.xaml;
 
-True
+False
 

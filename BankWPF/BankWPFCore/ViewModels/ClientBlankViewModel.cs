@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using BankWPF.Stores;
-using BankWPF.Services.ApiServices;
+using BankWPFCore.Services.ApiServices.Get;
 
 namespace BankWPF.ViewModels
 {
@@ -75,7 +75,13 @@ namespace BankWPF.ViewModels
 
         public ICommand OpenContractBlankCommand { get; }
 
-        public ClientBlankViewModel(BankStore bankStore, NavigationViewModel navigationViewModel, NavigationStore navigationStore, IClientsProvider clientsProvider, IContractsProvider contractsProvider, Client client = null)
+        public ClientBlankViewModel(
+            BankStore bankStore, 
+            NavigationViewModel navigationViewModel, 
+            NavigationStore navigationStore, 
+            IClientsProvider clientsProvider, 
+            IContractsProvider contractsProvider, 
+            Client client = null)
         {
 
             if (client == null)
@@ -95,7 +101,7 @@ namespace BankWPF.ViewModels
             GetUserContracts = new LoadUserContractsCommand(this, contractsProvider);
 
             OpenContractBlankCommand = new NavigationCommand<ContractBlankViewModel>(new NavigationService<ContractBlankViewModel>(navigationStore,
-                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider)));
+                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, client)));
 
         }
 

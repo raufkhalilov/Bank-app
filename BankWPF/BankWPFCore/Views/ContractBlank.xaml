@@ -34,13 +34,13 @@
             Grid.Row="0"
             Grid.Column="0"
             Background="#FF62F6C5">
-            <TextBlock
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontFamily="OCR A Extended"
-                FontSize="36"
-                FontWeight="Bold"
-                Text="BGRT" />
+            <Label
+     HorizontalAlignment="Center"
+     VerticalAlignment="Center"
+     Content="МАДИ-банк"
+     FontFamily="/Resourses/Fonts/#Fowviel"
+     FontSize="28"
+     Foreground="Black" />
 
         </Grid>
 
@@ -61,7 +61,7 @@
                     Margin="20,0,20,0"
                     VerticalAlignment="Center"
                     FontSize="22"
-                    Text="Новый договор" />
+                    Text="Информация по договору" />
             </Grid>
 
             <Grid Grid.Column="1" Background="#FFA8FFE4" />
@@ -217,7 +217,9 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         FontSize="14"
+                        IsEnabled="False"
                         Text="{Binding ContractID, UpdateSourceTrigger=PropertyChanged}" />
+                    
                     <TextBox
                         Grid.Row="1"
                         Grid.Column="1"
@@ -238,6 +240,7 @@
                         FontSize="14"
                         Text="{Binding ContractAmount, UpdateSourceTrigger=PropertyChanged}" />
 
+                    <!--
                     <TextBox
                         Grid.Row="3"
                         Grid.Column="1"
@@ -247,6 +250,8 @@
                         VerticalAlignment="Center"
                         FontSize="14"
                         Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" />
+
+
 
                     <TextBox
                         Grid.Row="4"
@@ -258,13 +263,34 @@
                         FontSize="14"
                         Text="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}" />
 
+                    -->
+                    <DatePicker
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Width="120"
+                        Margin="5,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <DatePicker
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Width="120"
+                        Margin="5,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" />
+
                 </Grid>
 
                 <Grid Grid.Row="1">
-                    
+
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -290,8 +316,9 @@
                         BorderThickness="0"
                         Command="{Binding OpenContractBlankCommand}"
                         Content="Добавить"
-                        IsEnabled="False"
-                        FontSize="16" />
+                        FontSize="16"
+                        IsEnabled="False" />
+
 
                 </Grid>
 

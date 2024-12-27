@@ -38,13 +38,13 @@
 
 
             <Grid Grid.Row="0" Background="#FF99FFDD">
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontFamily="OCR A Extended"
-                    FontSize="36"
-                    FontWeight="Bold"
-                    Text="BGRT" />
+                <Label
+     HorizontalAlignment="Center"
+     VerticalAlignment="Center"
+     Content="МАДИ-банк"
+     FontFamily="/Resourses/Fonts/#Fowviel"
+     FontSize="28"
+     Foreground="Black" />
             </Grid>
 
             <Grid Grid.Row="1">

@@ -1,10 +1,11 @@
 ﻿using BankWPF.Services.ApiServices;
-using BankWPF.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BankWPFCore.Services.ApiServices.Get;
+using BankWPFCore.Services.ApiServices.Post;
 
 namespace BankWPF.Models
 {

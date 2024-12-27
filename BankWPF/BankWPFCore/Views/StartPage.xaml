@@ -92,12 +92,7 @@
                 -->
             </Grid>
 
-
             <!--  Click="btn_clients_window"  -->
-
-
-
-
             <!--
             <Button Content="Статистика"
                     VerticalAlignment="Top"
@@ -113,9 +108,9 @@
             <Label
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Content="BGRT.BANK"
-                FontFamily="Bahnschrift"
-                FontSize="22"
+                Content="МАДИ-банк"
+                FontFamily="/Resourses/Fonts/#Fowviel"
+                FontSize="28"
                 Foreground="Black" />
         </Grid>
 
@@ -146,6 +141,8 @@
                    
 
                 </WindowsFormsHost>
+                
+                <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resourses/sm_img-50005.jpg" Stretch="UniformToFill" />
                 <!--<WindowsFormsHost Height="249" VerticalAlignment="Center" Margin="325,0,10,0" Background="#FF84DEDE" RenderTransformOrigin="0.5,-0.041">
                     <dvc:Chart x:Name="chart1"/>
                 </WindowsFormsHost>-->

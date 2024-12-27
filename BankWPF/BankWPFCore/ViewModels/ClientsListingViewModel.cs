@@ -2,8 +2,8 @@
 using BankWPF.Commands;
 using BankWPF.Models;
 using BankWPF.Services;
-using BankWPF.Services.ApiServices;
 using BankWPF.Stores;
+using BankWPFCore.Services.ApiServices.Get;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

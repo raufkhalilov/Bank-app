@@ -57,6 +57,7 @@
 
             </Button>
 
+            <!--
             <Button
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
@@ -64,7 +65,7 @@
                 BorderThickness="0"
                 Content="Выход"
                 FontSize="14" />
-
+            -->
         </Grid>
     </Grid>
 </UserControl>

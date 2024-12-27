@@ -8,9 +8,19 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Resource Include="Resourses\icons\icons8-гроссбух-48.png" />
+    <Compile Remove="wpftoolkit-master\**" />
+    <EmbeddedResource Remove="wpftoolkit-master\**" />
+    <None Remove="wpftoolkit-master\**" />
+    <Page Remove="wpftoolkit-master\**" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resourses\Fonts\Fowviel.ttf" />
+    <Resource Include="Resourses\icons\icons8-гроссбух-48.png" />
+    <Resource Include="Resourses\sm_img-50005.jpg" />
+    <Resource Include="Resourses\22214_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
@@ -48,6 +58,9 @@
     <Compile Remove="Views\ContractsWindow.xaml.cs" />
     <Compile Remove="Views\ProductsWindow.xaml.cs" />
     <Compile Remove="Views\StartWindow.xaml.cs" />
+    <None Remove="Resourses\Fonts\Fowviel.ttf" />
+    <None Remove="Views\22214_.jpg" />
+    <None Remove="Views\sm_img-50005.jpg" />
     <Page Remove="ClientsWindow.xaml" />
     <Page Remove="MainWindow.xaml" />
     <Page Remove="ProductsWindow.xaml" />

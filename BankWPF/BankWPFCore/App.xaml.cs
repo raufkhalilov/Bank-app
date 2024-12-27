@@ -1,9 +1,10 @@
 ﻿using BankWPF.Models;
 using BankWPF.Services;
-using BankWPF.Services.ApiServices;
 using BankWPF.Stores;
 using BankWPF.ViewModels;
 using BankWPF.Views;
+using BankWPFCore.Services.ApiServices.Get;
+using BankWPFCore.Services.ApiServices.Post;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
