@@ -1,21 +1,13 @@
-﻿
-using BankWPF.Commands;
-using BankWPF.Models;
-using BankWPF.Services;
-using BankWPF.Stores;
-using BankWPFCore.Services.ApiServices.Get;
-using Newtonsoft.Json;
-using System;
+﻿using BankWPFCore.Commands;
+using BankWPFCore.Models;
+using BankWPFCore.Services;
+using BankWPFCore.Services.ApiServices.Providers;
+using BankWPFCore.Stores;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
-namespace BankWPF.ViewModels
+namespace BankWPFCore.ViewModels
 {
     internal class ClientsListingViewModel : /*ListingDataViewModel<Client>*/BaseViewModel
     {
@@ -48,8 +40,6 @@ namespace BankWPF.ViewModels
                 OnPropertyChanged(nameof(IsLoading));
             }
         }
-
-        
 
         private ObservableCollection<Client> _clients;
 
@@ -87,12 +77,6 @@ namespace BankWPF.ViewModels
 
         public ICommand LoadDataCommand { get; }
 
-
-
-        private readonly IRequestsToApiService _requestsToApiService;
-
-        //private readonly IDialogService _dialogService;
-
         public ICommand HelperCommand { get; }
 
 
@@ -100,10 +84,12 @@ namespace BankWPF.ViewModels
         //public bool dataChangedFlag = true;
         private BankStore _bankStore;
 
-        public ClientsListingViewModel(BankStore bankStore, /*IRequestsToApiService requestService,*/ NavigationViewModel navigationViewModel, NavigationStore navigationStore, IClientsProvider clientsProvider, IContractsProvider contractsProvider)
+        public ClientsListingViewModel(BankStore bankStore,
+            NavigationViewModel navigationViewModel, 
+            NavigationStore navigationStore, 
+            IClientsProvider clientsProvider, 
+            IContractsProvider contractsProvider)
         {
-
-
 
             _bankStore = bankStore;
             NavigationViewModel = navigationViewModel;
@@ -117,7 +103,7 @@ namespace BankWPF.ViewModels
                 () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, contractsProvider)));
 
             DblOpenClientCardCommand = new NavigationCommand<ClientBlankViewModel>(new NavigationService<ClientBlankViewModel>(navigationStore,
-                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, contractsProvider, SelectedClient)));
+                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore,  clientsProvider, contractsProvider, SelectedClient)));
 
 
             LoadDataCommand = new LoadClientsCommand(this, bankStore/*, _requestsToApiService*/);
@@ -163,13 +149,13 @@ namespace BankWPF.ViewModels
 
 
         #region Методы класса
-/*
-        private void OpenDialog(object parameter)
-        {
-            //_dialogService.ShowAddClientDialog();
-            //this.LoadData(parameter);
-        }
-*/
+        /*
+                private void OpenDialog(object parameter)
+                {
+                    //_dialogService.ShowAddClientDialog();
+                    //this.LoadData(parameter);
+                }
+        */
         #endregion
 
     }

@@ -1,11 +1,7 @@
-﻿using BankWPF.ViewModels;
+﻿using BankWPFCore.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BankWPF.Stores
+namespace BankWPFCore.Stores
 {
     internal class NavigationStore
     {
@@ -13,17 +9,19 @@ namespace BankWPF.Stores
 
         public BaseViewModel CurrentViewModel
         {
-            get { 
+            get
+            {
                 return _currentViewModel;
             }
-            set { 
+            set
+            {
                 _currentViewModel?.Dispose();
                 _currentViewModel = value;
                 OnCurrentViewModelChanged();
             }
         }
 
-       
+
         public event Action CurrentViewModelChanged;
 
         private void OnCurrentViewModelChanged()

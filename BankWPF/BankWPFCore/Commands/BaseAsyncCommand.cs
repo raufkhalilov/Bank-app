@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace BankWPF.Commands
+namespace BankWPFCore.Commands
 {
     internal abstract class BaseAsyncCommand : BaseCommand
     {
 
         private bool _isExecuting;
 
-        private bool IsExecuting
+        protected bool IsExecuting
         {
             get
             {
-                return _isExecuting;    
+                return _isExecuting;
             }
 
-            set 
-            { 
+            set
+            {
                 _isExecuting = value;
                 OnCanExecuteChanged();
             }
@@ -42,7 +38,7 @@ namespace BankWPF.Commands
             {
                 IsExecuting = false;
             }
-          
+
         }
 
         public abstract Task ExecuteAsync();

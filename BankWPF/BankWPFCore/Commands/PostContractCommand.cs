@@ -1,15 +1,10 @@
-﻿using BankWPF.Exceptions;
-using BankWPF.Models;
-using BankWPF.Services;
-using BankWPF.Stores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BankWPFCore.Exceptions;
+using BankWPFCore.Models;
+using BankWPFCore.Stores;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BankWPF.Commands
+namespace BankWPFCore.Commands
 {
     internal class PostContractCommand : BaseAsyncCommand
     {
@@ -25,11 +20,11 @@ namespace BankWPF.Commands
 
         public override async Task ExecuteAsync()
         {
-        
+
             if (MessageBox.Show("Вы действительно хотите добавить нового клиента?", "Добавление клиента", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
 
-               
+
                 try
                 {
                     await _bankStore.AddNewContract(_newContract);

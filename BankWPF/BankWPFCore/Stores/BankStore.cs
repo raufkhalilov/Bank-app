@@ -1,17 +1,10 @@
-﻿using BankWPF.Exceptions;
-using BankWPF.Models;
-using BankWPF.Services;
-using BankWPF.ViewModels;
-using Newtonsoft.Json;
+﻿using BankWPFCore.Exceptions;
+using BankWPFCore.Models;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace BankWPF.Stores
+namespace BankWPFCore.Stores
 {
     internal class BankStore
     {
@@ -52,22 +45,31 @@ namespace BankWPF.Stores
 
         private async Task InitializeClients()
         {
-            IEnumerable<Client> clients = await _bank.GetAllClients();
-            //IEnumerable<Contract> contracts = await _bank.GetAllContracts();
 
-            _clients.Clear();
-
-            if (clients != null)
+            try
             {
-                _clients.AddRange(clients);
+                IEnumerable<Client> clients = await _bank.GetAllClients();
+                //IEnumerable<Contract> contracts = await _bank.GetAllContracts();
+
+                _clients.Clear();
+
+                if (clients != null)
+                {
+                    _clients.AddRange(clients);
+                }
             }
+            catch (ApiConnectionException)
+            {
+                throw;
+            }
+
 
         }
 
-     
+
         public void ReLoadBank() //
         {
-            
+
             _initLazyClients = new Lazy<Task>(InitializeClients);
             _initLazyContracts = new Lazy<Task>(InitializeContracts);
 
@@ -83,12 +85,12 @@ namespace BankWPF.Stores
                 _clients.Add(newClient);
                 OnClientAdded(newClient);
             }
-            catch(ApiConnectionException)
+            catch (ApiConnectionException)
             {
                 //...
                 throw;
             }
-            
+
         }
 
         private void OnClientAdded(Client newClient)
@@ -106,13 +108,20 @@ namespace BankWPF.Stores
 
         private async Task InitializeContracts()
         {
-            IEnumerable<Contract> contracts = await _bank.GetAllContracts();
-            //IEnumerable<Contract> contracts = await _bank.GetAllContracts();
+            try
+            {
+                IEnumerable<Contract> contracts = await _bank.GetAllContracts();
+                //IEnumerable<Contract> contracts = await _bank.GetAllContracts();
 
-            _contracts.Clear();
+                _contracts.Clear();
 
-            if (contracts != null)
-                _contracts.AddRange(contracts);
+                if (contracts != null)
+                    _contracts.AddRange(contracts);
+            }
+            catch (ApiConnectionException)
+            {
+                throw;
+            }
         }
 
         public async Task AddNewContract(Contract newContract)
@@ -123,7 +132,7 @@ namespace BankWPF.Stores
                 _contracts.Add(newContract);
                 OnContractAdded(newContract);
             }
-            catch (ApiConnectionException) 
+            catch (ApiConnectionException)
             {
                 throw;
             }

@@ -1,13 +1,9 @@
-﻿using BankWPF.Services;
-using BankWPFCore.Services.ApiServices.Get;
-using BankWPFCore.Services.ApiServices.Post;
-using System;
+﻿using BankWPFCore.Services.ApiServices.Creators;
+using BankWPFCore.Services.ApiServices.Providers;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace BankWPF.Models
+namespace BankWPFCore.Models
 {
     internal class ContractsBook
     {
@@ -35,10 +31,10 @@ namespace BankWPF.Models
             return await _contractsProvider.GetAllContracts();
         }
 
-        public async Task AddContract(Contract contract) 
+        public async Task AddContract(Contract contract)
         {
             // checking conflict logic 
-            
+
             await _contractCreator.AddContract(contract);
         }
     }

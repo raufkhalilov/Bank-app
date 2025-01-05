@@ -1,17 +1,10 @@
-﻿using BankWPF.Models;
-using BankWPF.Services;
-using BankWPF.Stores;
-using BankWPF.ViewModels;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
+﻿using BankWPFCore.Exceptions;
+using BankWPFCore.Stores;
+using BankWPFCore.ViewModels;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BankWPF.Commands
+namespace BankWPFCore.Commands
 {
     internal class LoadClientsCommand : BaseAsyncCommand
     {
@@ -19,7 +12,7 @@ namespace BankWPF.Commands
         //private readonly IRequestsToApiService _requestsToApiService;
         private BankStore _bankStore;
 
-        public LoadClientsCommand(ClientsListingViewModel clientsViewModel, BankStore bankStore) 
+        public LoadClientsCommand(ClientsListingViewModel clientsViewModel, BankStore bankStore)
         {
             _bankStore = bankStore;
             _clientViewModel = clientsViewModel;
@@ -28,14 +21,24 @@ namespace BankWPF.Commands
         public override async Task ExecuteAsync()
         {
 
-           
             _clientViewModel.IsLoading = true;
+
+            try
+            {
 
                 await _bankStore.LoadClients();
                 _clientViewModel.UpdateClientsList(_bankStore.Clients);
+            }
+            catch (ApiConnectionException ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка подключения", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
 
             _clientViewModel.IsLoading = false;
-      
+
+            //TODO: add this code into try-catch block
+
         }
     }
 }

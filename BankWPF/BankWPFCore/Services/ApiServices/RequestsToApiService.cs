@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using BankWPFCore.Exceptions;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace BankWPF.Services
+namespace BankWPFCore.Services.ApiServices
 {
-   
+
 
     internal class RequestsToApiService : IRequestsToApiService
     {
@@ -31,9 +29,9 @@ namespace BankWPF.Services
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Произошла ошибка подключения к серверу!\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                return null;
+                throw new ApiConnectionException(ex.Message); //TODO!!!
+                //return null;
             }
         }
 

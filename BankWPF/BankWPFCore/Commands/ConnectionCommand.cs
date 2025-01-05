@@ -1,14 +1,9 @@
-﻿using BankWPF.Models;
-using BankWPF.Services;
-using BankWPF.Stores;
-using BankWPF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
+using BankWPFCore.Stores;
+using BankWPFCore.ViewModels;
 using System.Threading.Tasks;
 
-namespace BankWPF.Commands
+namespace BankWPFCore.Commands
 {
     internal class ConnectionCommand : BaseAsyncCommand
     {
@@ -16,18 +11,18 @@ namespace BankWPF.Commands
         private BankStore _bankStore;
         private NavigationViewModel _navigationViewModel;
         private NavigationStore _navigationStore;
-       
+
 
         public ConnectionCommand(BankStore bankStore, NavigationViewModel navigationViewModel, NavigationStore navigationStore)
         {
             _bankStore = bankStore;
-           _navigationViewModel = navigationViewModel;
+            _navigationViewModel = navigationViewModel;
             _navigationStore = navigationStore;
         }
 
         public override async Task ExecuteAsync()
         {
-           
+
             _bankStore.ReLoadBank();
 
 

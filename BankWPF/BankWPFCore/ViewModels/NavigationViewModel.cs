@@ -1,15 +1,9 @@
-﻿using BankWPF.Commands;
-using BankWPF.Models;
-using BankWPF.Services;
-using BankWPF.Stores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BankWPFCore.Commands;
+using BankWPFCore.Services;
+using BankWPFCore.Stores;
 using System.Windows.Input;
 
-namespace BankWPF.ViewModels
+namespace BankWPFCore.ViewModels
 {
     internal class NavigationViewModel : BaseViewModel
     {
@@ -18,6 +12,8 @@ namespace BankWPF.ViewModels
         public ICommand NavigateStartViewCommand { get; }
         public ICommand NavigateClientsViewCommand { get; }
         public ICommand NavigateContractsViewCommand { get; }
+        //public ICommand NavigateClientBlankViewCommand { get; }
+        //public ICommand NavigateContractBlankViewCommand { get; }
 
         public ICommand ConnectToApiCommand { get; } //
 
@@ -25,6 +21,8 @@ namespace BankWPF.ViewModels
         public NavigationViewModel(NavigationService<StartViewModel> startNavigationService,
             NavigationService<ClientsListingViewModel> clientsNavigationService,
             NavigationService<ContractsListingViewModel> contractNavigateService,
+            /*NavigationService<ClientBlankViewModel> clientBlankViewModel,*/
+            /*NavigationService<ContractBlankViewModel> contractBlankViewModel,*/
             BankStore bankStore,
             NavigationStore navigationStore)
         {
@@ -33,6 +31,11 @@ namespace BankWPF.ViewModels
             NavigateContractsViewCommand = new NavigationCommand<ContractsListingViewModel>(contractNavigateService);
 
             //====
+
+            //NavigateClientBlankViewCommand = new NavigationCommand<ClientBlankViewModel>(clientBlankViewModel);
+            //NavigateContractBlankViewCommand = new NavigationCommand<ContractBlankViewModel>(contractBlankViewModel);
+
+            //===
 
             ConnectToApiCommand = new ConnectionCommand(bankStore, this, navigationStore);
         }

@@ -1,11 +1,11 @@
 ﻿<UserControl
-    x:Class="BankWPF.Views.LoginView"
+    x:Class="BankWPFCore.Views.LoginView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:BankWPF.Views"
+    xmlns:local="clr-namespace:BankWPFCore.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewmodels="clr-namespace:BankWPF.ViewModels"
+    xmlns:viewmodels="clr-namespace:BankWPFCore.ViewModels"
     xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit.Obselete;assembly=Xceed.Wpf.Toolkit"
     d:DataContext="{d:DesignInstance Type=viewmodels:LoginViewModel}"
     d:DesignHeight="450"
@@ -123,8 +123,8 @@
                     Grid.Row="4"
                     Width="120"
                     Height="35"
-                    VerticalAlignment="Bottom"
                     HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Background="#FFADFFE3"
                     BorderThickness="0"
                     Command="{Binding LoginCommand}"
@@ -133,11 +133,11 @@
 
                 <x:Code>
                     <![CDATA[
-    private void PasswordToTag(object sender, RoutedEventArgs e)
-    {
-        PasswordBox passwordBox = (PasswordBox)sender;
-        passwordBox.Tag = passwordBox.Password;
-    }
+private void PasswordToTag(object sender, RoutedEventArgs e)
+{
+PasswordBox passwordBox = (PasswordBox)sender;
+passwordBox.Tag = passwordBox.Password;
+}
 ]]>
                 </x:Code>
 

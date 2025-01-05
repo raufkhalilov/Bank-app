@@ -1,12 +1,8 @@
-﻿using BankWPF.Stores;
-using BankWPF.ViewModels;
+﻿using BankWPFCore.Stores;
+using BankWPFCore.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BankWPF.Services
+namespace BankWPFCore.Services
 {
     internal class NavigationService<TViewModel>
         where TViewModel : BaseViewModel
@@ -23,6 +19,11 @@ namespace BankWPF.Services
         public void Navigate()
         {
             _navigationStore.CurrentViewModel = _createVM();
+        }
+
+        ~NavigationService(){
+            base.ToString();
+           //...
         }
     }
 }

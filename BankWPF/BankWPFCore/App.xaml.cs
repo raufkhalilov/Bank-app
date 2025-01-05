@@ -1,19 +1,15 @@
-﻿using BankWPF.Models;
-using BankWPF.Services;
-using BankWPF.Stores;
-using BankWPF.ViewModels;
-using BankWPF.Views;
-using BankWPFCore.Services.ApiServices.Get;
-using BankWPFCore.Services.ApiServices.Post;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BankWPFCore.Models;
+using BankWPFCore.Services;
+using BankWPFCore.Services.ApiServices;
+using BankWPFCore.Services.ApiServices.Creators;
+using BankWPFCore.Services.ApiServices.Providers;
+using BankWPFCore.Services.ConflictValidators.ClientConflictValidators;
+using BankWPFCore.Stores;
+using BankWPFCore.ViewModels;
+using BankWPFCore.Views;
 using System.Windows;
 
-namespace BankWPF
+namespace BankWPFCore
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml
@@ -22,13 +18,19 @@ namespace BankWPF
     {
         private readonly Bank _bank;
         private readonly BankStore _bankStore;
+        private readonly Account _account;
+        private readonly AccountStore _accountStore;
         private readonly ClientsBook _clientsBook;
         private readonly ContractsBook _contractsBook;
+
+        //private readonly 
 
         private readonly IClientCreator _clientCreator;
         private readonly IContractCreator _contractCreator;
         private readonly IClientsProvider _clientsProvider;
         private readonly IContractsProvider _contractsProvider;
+
+        private readonly IClientConflictValidator _clientConflictValidator;
 
         private readonly IRequestsToApiService _requestsToApiService;
         private readonly IAuthService _authService;
@@ -42,14 +44,19 @@ namespace BankWPF
            
             _requestsToApiService = new RequestsToApiService();
 
-            _authService = new AuthenicationService(/*_requestsToApiService*/); // soon
+            _account = new Account();
+            _accountStore = new AccountStore();
+
+            _authService = new AuthenicationService(/*_requestsToApiService*/_accountStore); // soon
 
             _clientsProvider = new ApiClientsProvider(_requestsToApiService);
             _clientCreator = new ApiClientCreator(_requestsToApiService);
             _contractCreator = new ApiContractCreator(_requestsToApiService);
             _contractsProvider = new ApiContractsProvider(_requestsToApiService);
 
-            _clientsBook = new ClientsBook(_clientsProvider, _clientCreator);
+            _clientConflictValidator = new ApiClientConflictValidator(_clientsProvider);
+
+            _clientsBook = new ClientsBook(_clientsProvider, _clientCreator, _clientConflictValidator);
             _contractsBook = new ContractsBook(_contractCreator, _contractsProvider);
             _bank = new Bank("BGRT", _clientsBook, _contractsBook);
             _bankStore = new BankStore(_bank);
@@ -59,6 +66,7 @@ namespace BankWPF
                 CreateStartNavigationService(),
                 CreateClientsNavigationService(),
                 CreateContractsNavigationService(),
+                /*CreateClientCardNavigationService(),*/
                 _bankStore, _navigationStore);
         }
 
@@ -104,14 +112,21 @@ namespace BankWPF
             return new NavigationService<ContractsListingViewModel>(_navigationStore, 
                 () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore,_navigationStore,_clientsProvider));
         }
-/*
-        private NavigationService<ClientBlankViewModel> CreateClientCardNavigationService()
+
+        /*private NavigationService<ClientBlankViewModel> CreateClientCardNavigationService()
         {
             return new NavigationService<ClientBlankViewModel>(_navigationStore, 
-                () => new ClientBlankViewModel(_bank,_navigationViewModel, _navigationStore));
+                () => new ClientBlankViewModel(_bankStore,_navigationViewModel, _navigationStore, _clientsProvider, _contractsProvider));
                 
         }*/
-       
+
+       /* private NavigationService<ContractBlankViewModel> CreateontracttCardNavigationService()
+        {
+            return new NavigationService<ContractBlankViewModel>(_navigationStore,
+                () => new ContractBlankViewModel(_bankStore, _navigationViewModel, _navigationStore, _clientsProvider));
+
+        }*/
+
     }
 }
 

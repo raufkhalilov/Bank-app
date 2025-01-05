@@ -1,35 +1,28 @@
-﻿
-using BankWPF.Models;
-using BankWPF.Services;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Windows;
-using BankWPF.Commands;
-using BankWPF.Stores;
-using BankWPFCore.Services.ApiServices.Get;
+using BankWPFCore.Stores;
+using BankWPFCore.Models;
+using BankWPFCore.Services.ApiServices.Providers;
+using BankWPFCore.Commands;
+using BankWPFCore.Services;
 
-namespace BankWPF.ViewModels
+namespace BankWPFCore.ViewModels
 {
     internal class ContractsListingViewModel : BaseViewModel
     {
 
         private readonly BankStore _bankStore;
 
-        
+
 
         private Contract _selectedContract;
 
-        public Contract SelectedContract 
-        { 
-            get 
-            { 
-                return _selectedContract; 
+        public Contract SelectedContract
+        {
+            get
+            {
+                return _selectedContract;
             }
             set
             {
@@ -101,7 +94,7 @@ namespace BankWPF.ViewModels
         //=============================================
 
 
-        public static ContractsListingViewModel LoadViewModel(NavigationViewModel navigationViewModel, BankStore bankStore,NavigationStore navigationStore, /*IRequestsToApiService requestsToApiService,*/ IClientsProvider clientsProvider)
+        public static ContractsListingViewModel LoadViewModel(NavigationViewModel navigationViewModel, BankStore bankStore, NavigationStore navigationStore, /*IRequestsToApiService requestsToApiService,*/ IClientsProvider clientsProvider)
         {
             ContractsListingViewModel viewModel = new ContractsListingViewModel(navigationViewModel, bankStore, navigationStore, /*requestsToApiService,*/ clientsProvider);
 

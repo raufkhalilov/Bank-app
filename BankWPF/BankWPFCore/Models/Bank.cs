@@ -1,19 +1,13 @@
-﻿using BankWPF.Services;
-using BankWPF.Services.ApiServices;
-using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BankWPF.Models
+namespace BankWPFCore.Models
 {
     internal class Bank
     {
-        
 
-        public string Name { get;}
+
+        public string Name { get; }
 
         private readonly ClientsBook _clientsBook;
 
@@ -46,7 +40,7 @@ namespace BankWPF.Models
             await _clientsBook.AddClient(client);
         }
 
-        public async Task AddNewContract(Contract contract) 
+        public async Task AddNewContract(Contract contract)
         {
             //...
             await _contractsBook.AddContract(contract);

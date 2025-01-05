@@ -1,13 +1,7 @@
-﻿using BankWPF.Services;
-using BankWPF.Stores;
-using BankWPF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BankWPFCore.Services;
+using BankWPFCore.ViewModels;
 
-namespace BankWPF.Commands
+namespace BankWPFCore.Commands
 {
     internal class NavigationCommand<TViewModel> : BaseCommand
         where TViewModel : BaseViewModel

@@ -1,16 +1,11 @@
-﻿using BankWPF.Commands;
-using BankWPF.Services;
-using BankWPF.Stores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BankWPFCore.Commands;
+using BankWPFCore.Services;
+using BankWPFCore.Stores;
 using System.Windows.Input;
 
-namespace BankWPF.ViewModels
+namespace BankWPFCore.ViewModels
 {
-    
+
 
     internal class LoginViewModel : BaseViewModel
     {
