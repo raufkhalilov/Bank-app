@@ -24,6 +24,7 @@ namespace BankWPFCore.ViewModels
         {
             get
             {
+
                 return _client.ClientId;//_contract.ClientID;
             }
             set
@@ -123,6 +124,7 @@ namespace BankWPFCore.ViewModels
             else
                 _contract = contract;
 
+            if (client != null)
             _client = client;
 
             NavigationViewModel = navigationViewModel;

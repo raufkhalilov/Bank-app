@@ -20,8 +20,8 @@
     <Grid>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
 
 
@@ -34,14 +34,7 @@
             Grid.Row="0"
             Grid.Column="0"
             Background="#FF62F6C5">
-            <Label
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Content="МАДИ-банк"
-                FontFamily="/Resourses/Fonts/#Fowviel"
-                FontSize="28"
-                Foreground="Black" />
-
+            <Label Style="{StaticResource MyLabelStyle}" />
         </Grid>
 
 
@@ -51,7 +44,7 @@
             Grid.ColumnSpan="2">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="500" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -82,10 +75,10 @@
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1">
+            
             <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
                 <RowDefinition Height="*" />
-
-                <RowDefinition Height="4*" />
 
             </Grid.RowDefinitions>
 
@@ -96,7 +89,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="150" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
@@ -104,7 +97,7 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Width="auto"
-                    Margin="20,0"
+                    Margin="40,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     FontSize="14"
@@ -113,7 +106,7 @@
                     Grid.Row="1"
                     Grid.Column="0"
                     Width="auto"
-                    Margin="20,0"
+                    Margin="40,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     FontSize="14"
@@ -123,7 +116,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Width="300"
-                    Margin="20,0"
+                    Margin="25,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     FontSize="14"
@@ -133,7 +126,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     Width="300"
-                    Margin="20,0"
+                    Margin="25,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     FontSize="14"
@@ -296,8 +289,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
 
-                        <ColumnDefinition Width="160" />
-                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="180" />
                     </Grid.ColumnDefinitions>
 
                     <Button
@@ -306,6 +299,7 @@
                         Margin="10,10"
                         Command=""
                         Content="Сохранить"
+                        IsEnabled="False"
                         Style="{StaticResource MyButtonStyle}" />
 
                     <Button

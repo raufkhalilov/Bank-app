@@ -6,10 +6,11 @@
     xmlns:converters="clr-namespace:BankWPFCore.Converters"
     xmlns:custom="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinner"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:BankWPFCore.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewmodels="clr-namespace:BankWPFCore.ViewModels"
-    xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit.Obselete;assembly=Xceed.Wpf.Toolkit" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit.Obselete;assembly=Xceed.Wpf.Toolkit"
     d:DataContext="{d:DesignInstance Type=viewmodels:ClientBlankViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="900"
@@ -37,21 +38,15 @@
         <Grid
             Grid.Row="0"
             Grid.Column="0"
-            Background="#FF99FFDD">
-            <Label
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Content="МАДИ-банк"
-                FontFamily="/Resourses/Fonts/#Fowviel"
-                FontSize="28"
-                Foreground="Black" />
+            Background="#FF62F6C5">
+            <Label Style="{StaticResource MyLabelStyle}" />
         </Grid>
 
         <Grid
             Grid.Row="0"
             Grid.Column="1"
             Grid.ColumnSpan="2"
-            Background="Aquamarine">
+            Background="#FFACFFE3">
 
             <TextBlock
                 Margin="20,0,20,0"
@@ -94,7 +89,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="7*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Grid.RowSpan="2">
@@ -210,7 +205,7 @@
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -259,19 +254,19 @@
                     <ListView
                         Margin="20,0,20,20"
                         ItemsSource="{Binding ClientsActiveContracts}"
-                        Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
-                        SelectedItem="{Binding SelectedContract}">
+                        SelectedItem="{Binding SelectedContract}"
+                        Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
 
                         <!--
                         <ListView.InputBindings>
-                            <MouseBinding Command="{Binding DblOpenContractCardCommand}" 
+                            <MouseBinding Command="{Binding DblOpenContractCardCommand}"
                                           MouseAction="LeftDoubleClick" />
                         </ListView.InputBindings>
                         -->
 
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="MouseDoubleClick">
-                                <i:InvokeCommandAction Command="{Binding DblOpenContractCardCommand, Mode=OneWay}"/>
+                                <i:InvokeCommandAction Command="{Binding DblOpenContractCardCommand, Mode=OneWay}" />
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
 
@@ -320,12 +315,12 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="180" />
                 </Grid.ColumnDefinitions>
 
                 <Button
                     Grid.Column="3"
-                    HorizontalAlignment="Right"
+                    
                     Command="{Binding OpenContractBlankCommand}"
                     Content="Новая услуга"
                     Style="{StaticResource MyButtonStyle}" />

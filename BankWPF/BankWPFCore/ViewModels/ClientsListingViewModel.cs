@@ -5,6 +5,8 @@ using BankWPFCore.Services.ApiServices.Providers;
 using BankWPFCore.Stores;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.Contracts;
+using System.Linq;
 using System.Windows.Input;
 
 namespace BankWPFCore.ViewModels
@@ -53,16 +55,52 @@ namespace BankWPFCore.ViewModels
             set
             {
                 _clients = value;
-                OnPropertyChanged("Clients");//
+                //ApplyFilter();
+                //OnPropertyChanged("Clients");//
             }
         }
         #endregion
 
 
+        //===================================
 
-        //Список клиентов теперь хранится в _data родительского класса ListingDataViewModel<TModel>
-        //Это сделано для возможности использования одной команды
-        //загрузки для всех моделей, всесто нескольких под разные типы
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                OnPropertyChanged(nameof(SearchText));
+                ApplyFilter();
+            }
+        }
+
+        private ObservableCollection<Client> _filteredData;
+
+        public ObservableCollection<Client> FilteredData
+        {
+            get
+            {
+                return _filteredData;
+            }
+            set
+            {
+                _filteredData = value;
+                OnPropertyChanged(nameof(FilteredData));
+                //ApplyFilter();
+            }
+        }
+
+        private void ApplyFilter()
+        {
+            // Implement logic to filter Data based on SearchText
+            var bufContracts = new List<Client>(Clients);
+            FilteredData = new ObservableCollection<Client>(bufContracts.Where(item => item.ClientName.Contains(SearchText) || (item.ClientId.ToString()).Contains(SearchText) || item.PhoneNumber.ToString().Contains(SearchText)));
+        }
+
+        //===================================
+
 
 
         public NavigationViewModel NavigationViewModel { get; }
@@ -133,6 +171,7 @@ namespace BankWPFCore.ViewModels
 
             viewModel.LoadDataCommand.Execute(viewModel);
 
+            viewModel.FilteredData = viewModel.Clients;
 
             return viewModel;
         }

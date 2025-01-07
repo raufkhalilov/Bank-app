@@ -37,16 +37,19 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*" />
+            <RowDefinition Height="70" />
+            
             <RowDefinition Height="120*" />
         </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="170" />
             <ColumnDefinition Width="173*" />
         </Grid.ColumnDefinitions>
+        
         <Grid Grid.Row="1" Background="#FFE1FCFC">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*" />
+                <RowDefinition Height="200" />
                 <RowDefinition Height="30*" />
 
             </Grid.RowDefinitions>
@@ -54,7 +57,7 @@
             <Grid>
 
 
-                <components:NavigationBar DataContext="{Binding NavigationViewModel}" />
+                <components:NavigationBar Height="200" DataContext="{Binding NavigationViewModel}" />
 
 
                 <!--
@@ -104,14 +107,10 @@
 
         </Grid>
 
-        <Grid Background="#FFADFFE3">
-            <Label
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Content="МАДИ-банк"
-                FontFamily="/Resourses/Fonts/#Fowviel"
-                FontSize="28"
-                Foreground="Black" />
+        <Grid  Background="#FF62F6C5">
+ <Label
+     Style="{StaticResource MyLabelStyle}"
+     />
         </Grid>
 
         <Grid

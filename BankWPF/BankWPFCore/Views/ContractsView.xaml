@@ -22,31 +22,28 @@
     <Grid Background="White">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*" />
-            <ColumnDefinition Width="173*" />
+            <ColumnDefinition Width="170" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions />
 
         <Grid Grid.Column="0" Background="#FFE1FCFC">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.5*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="200" />
                 <RowDefinition Height="1.5*" />
             </Grid.RowDefinitions>
 
 
-            <Grid Grid.Row="0" Background="#FF99FFDD">
-                <Label
-     HorizontalAlignment="Center"
-     VerticalAlignment="Center"
-     Content="МАДИ-банк"
-     FontFamily="/Resourses/Fonts/#Fowviel"
-     FontSize="28"
-     Foreground="Black" />
+            <Grid Grid.Row="0" Background="#FF62F6C5">
+                <Label Style="{StaticResource MyLabelStyle}" />
             </Grid>
 
-            <components:NavigationBar Grid.Row="1" DataContext="{Binding NavigationViewModel}" />
+            <components:NavigationBar
+                Grid.Row="1"
+                Height="200"
+                DataContext="{Binding NavigationViewModel}" />
 
         </Grid>
 
@@ -54,33 +51,43 @@
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.8*" />
+                <RowDefinition Height="70" />
                 <RowDefinition Height="35" />
-                <RowDefinition Height="5*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
             </Grid.RowDefinitions>
 
-            <TextBlock
-                Grid.Row="0"
-                Margin="10,0,0,0"
-                VerticalAlignment="Center"
-                FontSize="20"
-                Text="Активные договоры" />
+            <Grid Grid.Row="0"
+                   Background="#FFACFFE3">
+                <TextBlock
+                    Grid.Row="0"
+                    Margin="20,0,0,0"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Text="Активные договоры" />
+            </Grid>
 
             <Grid Grid.Row="1">
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="65" />
+                    <ColumnDefinition Width="9*" />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock VerticalAlignment="Center" Margin="10,0" Text="Поиск:" FontSize="14"/>
+                <TextBlock
+                    Margin="20,0,0,0"
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    Text="Поиск:" />
 
-                <TextBox Grid.Column="1" Margin="0,5,10,5"/>
+                <TextBox
+                    Grid.Column="1"
+                    Margin="10,5,20,5"
+                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
 
             </Grid>
 
-            <Grid Grid.Row="2" Margin="10,0,10,0">
+            <Grid Grid.Row="2" Margin="20,0,20,0">
 
                 <custom:LoadingSpinner
                     Diameter="100"
@@ -89,22 +96,18 @@
                     Color="Aquamarine" />
 
                 <DataGrid
-                    
                     x:Name="ProductsGrid"
                     AutoGenerateColumns="False"
                     Background="White"
                     BorderThickness="0"
                     IsReadOnly="True"
                     IsSynchronizedWithCurrentItem="True"
-                    ItemsSource="{Binding Contracts, UpdateSourceTrigger=PropertyChanged}"
+                    ItemsSource="{Binding FilteredData, UpdateSourceTrigger=PropertyChanged}"
                     SelectedItem="{Binding SelectedContract}"
                     Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
 
                     <DataGrid.InputBindings>
-                        <MouseBinding
-                            Command="{Binding DblOpenContractCardCommand}"
-                            
-                            MouseAction="LeftDoubleClick" />
+                        <MouseBinding Command="{Binding DblOpenContractCardCommand}" MouseAction="LeftDoubleClick" />
                     </DataGrid.InputBindings>
 
                     <DataGrid.Columns>
@@ -149,9 +152,9 @@
                 VerticalAlignment="Center"
                 BorderThickness="0"
                 Command="{Binding DblOpenContractCardCommand}"
-                Content="Новый договор" 
-                Visibility="Collapsed"
-                IsEnabled="False"/>
+                Content="Новый договор"
+                IsEnabled="False"
+                Visibility="Collapsed" />
 
         </Grid>
 

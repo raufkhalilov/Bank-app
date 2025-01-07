@@ -6,6 +6,8 @@ using BankWPFCore.Models;
 using BankWPFCore.Services.ApiServices.Providers;
 using BankWPFCore.Commands;
 using BankWPFCore.Services;
+using System.Linq;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace BankWPFCore.ViewModels
 {
@@ -33,7 +35,7 @@ namespace BankWPFCore.ViewModels
 
 
         private ObservableCollection<Contract> _contracts;
-        #region Поля модели представления
+       
         public ObservableCollection<Contract> Contracts
         {
             get
@@ -43,10 +45,49 @@ namespace BankWPFCore.ViewModels
             set
             {
                 _contracts = value;
-                OnPropertyChanged();
+                //OnPropertyChanged(nameof(Contracts));
+                //ApplyFilter();
             }
         }
-        #endregion
+
+        //===================================
+
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                OnPropertyChanged(nameof(SearchText));
+                ApplyFilter();
+            }
+        }
+
+        private ObservableCollection<Contract> _filteredData;
+
+        public ObservableCollection<Contract> FilteredData 
+        {
+            get
+            {
+                return _filteredData;
+            }
+            set
+            {
+                _filteredData = value;
+                OnPropertyChanged(nameof(FilteredData));
+                //ApplyFilter();
+            }
+        }
+
+        private void ApplyFilter()
+        {
+            // Implement logic to filter Data based on SearchText
+            var bufContracts = new List<Contract>(Contracts);
+            FilteredData = new ObservableCollection<Contract>(bufContracts.Where(item => item.Description.Contains(SearchText) || (item.ContractID.ToString()).Contains(SearchText) || item.ClientID.ToString().Contains(SearchText)));
+        }
+
+        //===================================
 
         private bool _isLoading;
 
@@ -60,6 +101,7 @@ namespace BankWPFCore.ViewModels
             {
                 _isLoading = value;
                 OnPropertyChanged(nameof(IsLoading));
+               
             }
         }
 
@@ -86,7 +128,7 @@ namespace BankWPFCore.ViewModels
             LoadContractsCommand = new LoadContractsCommand(this, bankStore/*, requestsToApiService*/);
 
             DblOpenContractCardCommand = new NavigationCommand<ContractBlankViewModel>(new NavigationService<ContractBlankViewModel>(navigationStore,
-                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, null, SelectedContract)));
+                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, new Client(), SelectedContract)));
 
             _bankStore.ContractAdded += OnContractMode;
         }
@@ -99,6 +141,8 @@ namespace BankWPFCore.ViewModels
             ContractsListingViewModel viewModel = new ContractsListingViewModel(navigationViewModel, bankStore, navigationStore, /*requestsToApiService,*/ clientsProvider);
 
             viewModel.LoadContractsCommand.Execute(viewModel);
+
+            viewModel.FilteredData = viewModel.Contracts;
 
             return viewModel;
         }
@@ -128,6 +172,16 @@ namespace BankWPFCore.ViewModels
                 _contracts.Add(contract);
             }
         }
+
+        //=============================================
+        //=============================================
+        //=============================================
+
+        
+
+        
+
+        
 
     }
 }
