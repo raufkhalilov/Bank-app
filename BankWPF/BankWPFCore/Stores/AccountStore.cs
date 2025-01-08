@@ -19,5 +19,10 @@ namespace BankWPFCore.Stores
             }
         }
 
+        public AccountStore(Account account)
+        {
+            _currentAccount = account;
+        }
+
     }
 }

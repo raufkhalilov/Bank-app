@@ -75,6 +75,9 @@
     <Folder Include="Services\Новая папка\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\net8.0-windows\config.json" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>

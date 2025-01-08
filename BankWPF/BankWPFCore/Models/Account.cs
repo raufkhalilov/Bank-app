@@ -3,9 +3,9 @@
     internal class Account : BaseModel
     {
         private int _id;
-        private string _userName;
+        private string _name;
         private string _password;
-        private bool _isAdmin;
+        private bool _permission;
 
         public int Id 
         { 
@@ -20,16 +20,16 @@
             } 
         }
 
-        public string UserName
+        public string Name
         {
             get
             {
-                return _userName;
+                return _name;
             }
             set
             {
-                _userName = value;
-                OnPropertyChanged(nameof(UserName));
+                _name = value;
+                OnPropertyChanged(nameof(Name));
             }
         }
 
@@ -47,16 +47,16 @@
         }
 
 
-        public bool IsAdmin
+        public bool Permission
         {
             get
             {
-                return _isAdmin;
+                return _permission;
             }
             set
             {
-                _isAdmin = value;
-                OnPropertyChanged(nameof(IsAdmin));
+                _permission = value;
+                OnPropertyChanged(nameof(Permission));
             }
         }
     }

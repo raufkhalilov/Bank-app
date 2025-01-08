@@ -347,7 +347,8 @@
                 <Button
                     Grid.Column="0"
                     Command=""
-                    Content="Сохранить"
+                    IsEnabled="{Binding CanChange}"
+                    Content="Обновить"
                     Style="{StaticResource MyButtonStyle}" />
 
             </Grid>

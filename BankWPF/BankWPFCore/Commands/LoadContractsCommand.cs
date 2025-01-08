@@ -28,7 +28,7 @@ namespace BankWPFCore.Commands
             }
             catch (ApiConnectionException ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка подключения", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Comment + "\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
 

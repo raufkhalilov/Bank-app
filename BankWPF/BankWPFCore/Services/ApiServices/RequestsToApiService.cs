@@ -15,22 +15,31 @@ namespace BankWPFCore.Services.ApiServices
         public async Task<string> GetDataFromApi(string requestUrl)
         {
             string res = string.Empty;
+            int statusCode = 0;
 
             try
             {
                 using (var client = new HttpClient())
                 {
-                    var response = await client.GetAsync(requestUrl);
+                    HttpResponseMessage response = await client.GetAsync(requestUrl);//var
+                    statusCode = (int)response.StatusCode;
                     response.EnsureSuccessStatusCode(); // Проверяет, был ли ответ успешным
                     res = await response.Content.ReadAsStringAsync();
+                    //response.StatusCode
+
                 }
 
                 return res;
             }
+            catch (HttpRequestException httpEx)
+            {
+                statusCode = (int)httpEx.StatusCode.GetValueOrDefault();
+                throw new ApiConnectionException(httpEx, statusCode, "Ошибка подключения."); //TODO!!!
+            }
             catch (Exception ex)
             {
 
-                throw new ApiConnectionException(ex.Message); //TODO!!!
+                throw new ApiConnectionException(ex, statusCode, "Ошибка подключения."); //TODO!!!
                 //return null;
             }
         }
@@ -43,6 +52,8 @@ namespace BankWPFCore.Services.ApiServices
             // Создаем HttpClient
             using (var client = new HttpClient())
             {
+
+                int statusCode = 0;
                 // Создаем содержимое запроса
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -50,7 +61,7 @@ namespace BankWPFCore.Services.ApiServices
                 {
                     // Отправляем POST-запрос
                     HttpResponseMessage response = await client.PostAsync(url, content);
-
+                    response.EnsureSuccessStatusCode(); // Проверяет, был ли ответ успешным
                     // Проверяем успешность запроса
                     if (response.IsSuccessStatusCode)
                     {
@@ -63,6 +74,11 @@ namespace BankWPFCore.Services.ApiServices
                     }
 
                     return await response.Content.ReadAsStringAsync();
+                }
+                catch (HttpRequestException httpEx)
+                {
+                    statusCode = (int)httpEx.StatusCode.GetValueOrDefault();
+                    throw new ApiConnectionException(httpEx, statusCode, "Ошибка подключения."); //TODO!!!
                 }
                 catch (Exception ex)
                 {

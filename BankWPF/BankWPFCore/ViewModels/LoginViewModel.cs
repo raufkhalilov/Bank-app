@@ -1,5 +1,6 @@
 ﻿using BankWPFCore.Commands;
 using BankWPFCore.Services;
+using BankWPFCore.Services.AuthenticationServices;
 using BankWPFCore.Stores;
 using System.Windows.Input;
 

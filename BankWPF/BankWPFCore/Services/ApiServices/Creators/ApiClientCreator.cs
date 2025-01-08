@@ -22,7 +22,15 @@ namespace BankWPFCore.Services.ApiServices.Creators
 
             string request = null;
 
-            request = await _requestsToApiService.PostDataToApi(url, client);
+
+            try
+            {
+                request = await _requestsToApiService.PostDataToApi(url, client);
+            }
+            catch (ApiConnectionException) { 
+                throw;
+            }
+
 
             if (request == null)
                 throw new ApiConnectionException("api connection error");

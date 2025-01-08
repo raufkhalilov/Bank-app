@@ -123,6 +123,7 @@ namespace BankWPFCore.ViewModels
         private BankStore _bankStore;
 
         public ClientsListingViewModel(BankStore bankStore,
+            AccountStore accountStore,
             NavigationViewModel navigationViewModel, 
             NavigationStore navigationStore, 
             IClientsProvider clientsProvider, 
@@ -138,10 +139,10 @@ namespace BankWPFCore.ViewModels
 
 
             OpenClientCardCommand = new NavigationCommand<ClientBlankViewModel>(new NavigationService<ClientBlankViewModel>(navigationStore,
-                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, contractsProvider)));
+                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, accountStore, navigationViewModel, navigationStore, clientsProvider, contractsProvider)));
 
             DblOpenClientCardCommand = new NavigationCommand<ClientBlankViewModel>(new NavigationService<ClientBlankViewModel>(navigationStore,
-                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, navigationViewModel, navigationStore,  clientsProvider, contractsProvider, SelectedClient)));
+                () => ClientBlankViewModel.LoadClientCardViewModel(bankStore, accountStore, navigationViewModel, navigationStore,  clientsProvider, contractsProvider, SelectedClient)));
 
 
             LoadDataCommand = new LoadClientsCommand(this, bankStore/*, _requestsToApiService*/);
@@ -164,10 +165,10 @@ namespace BankWPFCore.ViewModels
             base.Dispose();
         }
 
-        public static ClientsListingViewModel LoadViewModel(BankStore bankStore, /*IRequestsToApiService requestService,*/ IClientsProvider clientsProvider, IContractsProvider contractsProvider,
+        public static ClientsListingViewModel LoadViewModel(BankStore bankStore, AccountStore accountStore,/*IRequestsToApiService requestService,*/ IClientsProvider clientsProvider, IContractsProvider contractsProvider,
             NavigationViewModel navigationViewModel, NavigationStore navigationStore)
         {
-            ClientsListingViewModel viewModel = new ClientsListingViewModel(bankStore, /*requestService,*/ navigationViewModel, navigationStore, clientsProvider, contractsProvider);
+            ClientsListingViewModel viewModel = new ClientsListingViewModel(bankStore, accountStore, /*requestService,*/ navigationViewModel, navigationStore, clientsProvider, contractsProvider);
 
             viewModel.LoadDataCommand.Execute(viewModel);
 

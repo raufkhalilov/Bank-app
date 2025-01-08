@@ -3,6 +3,7 @@ using BankWPFCore.Services;
 using BankWPFCore.Services.ApiServices;
 using BankWPFCore.Services.ApiServices.Creators;
 using BankWPFCore.Services.ApiServices.Providers;
+using BankWPFCore.Services.AuthenticationServices;
 using BankWPFCore.Services.ConflictValidators.ClientConflictValidators;
 using BankWPFCore.Stores;
 using BankWPFCore.ViewModels;
@@ -45,9 +46,9 @@ namespace BankWPFCore
             _requestsToApiService = new RequestsToApiService();
 
             _account = new Account();
-            _accountStore = new AccountStore();
+            _accountStore = new AccountStore(_account);
 
-            _authService = new AuthenicationService(/*_requestsToApiService*/_accountStore); // soon
+            _authService = new AuthenicationService(/*_requestsToApiService*/_accountStore,"./config.json"); // soon
 
             _clientsProvider = new ApiClientsProvider(_requestsToApiService);
             _clientCreator = new ApiClientCreator(_requestsToApiService);
@@ -73,11 +74,11 @@ namespace BankWPFCore
         protected override void OnStartup(StartupEventArgs e)
         {
     
-            NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
-            startNavigationService.Navigate();
+            //NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
+            //startNavigationService.Navigate();
 
-            //NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
-            //loginNavigationService.Navigate();
+            NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
+            loginNavigationService.Navigate();
 
             var startWindow = new MainWindow
             {
@@ -104,13 +105,13 @@ namespace BankWPFCore
         private NavigationService<ClientsListingViewModel> CreateClientsNavigationService()
         {
             return new NavigationService<ClientsListingViewModel>(_navigationStore, 
-                () => ClientsListingViewModel.LoadViewModel(_bankStore, _clientsProvider, _contractsProvider, _navigationViewModel, _navigationStore));
+                () => ClientsListingViewModel.LoadViewModel(_bankStore, _accountStore, _clientsProvider, _contractsProvider, _navigationViewModel, _navigationStore));
         }
 
         private NavigationService<ContractsListingViewModel> CreateContractsNavigationService()
         {
             return new NavigationService<ContractsListingViewModel>(_navigationStore, 
-                () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore,_navigationStore,_clientsProvider));
+                () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore, _accountStore, _navigationStore,_clientsProvider));
         }
 
         /*private NavigationService<ClientBlankViewModel> CreateClientCardNavigationService()

@@ -298,8 +298,8 @@
                         Grid.Column="1"
                         Margin="10,10"
                         Command=""
-                        Content="Сохранить"
-                        IsEnabled="False"
+                        Content="Обновить"
+                        IsEnabled="{Binding CanChange}"
                         Style="{StaticResource MyButtonStyle}" />
 
                     <Button

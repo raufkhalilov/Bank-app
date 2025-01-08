@@ -114,7 +114,7 @@ namespace BankWPFCore.ViewModels
 
         public ICommand DblOpenContractCardCommand { get; }
 
-        public ContractsListingViewModel(NavigationViewModel navigationViewModel, BankStore bankStore, NavigationStore navigationStore, /*IRequestsToApiService requestsToApiService,*/ IClientsProvider clientsProvider)
+        public ContractsListingViewModel(NavigationViewModel navigationViewModel, BankStore bankStore, AccountStore accountStore, NavigationStore navigationStore, /*IRequestsToApiService requestsToApiService,*/ IClientsProvider clientsProvider)
         {
             _bankStore = bankStore;
 
@@ -128,7 +128,7 @@ namespace BankWPFCore.ViewModels
             LoadContractsCommand = new LoadContractsCommand(this, bankStore/*, requestsToApiService*/);
 
             DblOpenContractCardCommand = new NavigationCommand<ContractBlankViewModel>(new NavigationService<ContractBlankViewModel>(navigationStore,
-                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, navigationViewModel, navigationStore, clientsProvider, new Client(), SelectedContract)));
+                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, accountStore, navigationViewModel, navigationStore, clientsProvider, new Client(), SelectedContract)));
 
             _bankStore.ContractAdded += OnContractMode;
         }
@@ -136,9 +136,9 @@ namespace BankWPFCore.ViewModels
         //=============================================
 
 
-        public static ContractsListingViewModel LoadViewModel(NavigationViewModel navigationViewModel, BankStore bankStore, NavigationStore navigationStore, /*IRequestsToApiService requestsToApiService,*/ IClientsProvider clientsProvider)
+        public static ContractsListingViewModel LoadViewModel(NavigationViewModel navigationViewModel, BankStore bankStore, AccountStore accountStore, NavigationStore navigationStore, /*IRequestsToApiService requestsToApiService,*/ IClientsProvider clientsProvider)
         {
-            ContractsListingViewModel viewModel = new ContractsListingViewModel(navigationViewModel, bankStore, navigationStore, /*requestsToApiService,*/ clientsProvider);
+            ContractsListingViewModel viewModel = new ContractsListingViewModel(navigationViewModel, bankStore, accountStore, navigationStore, /*requestsToApiService,*/ clientsProvider);
 
             viewModel.LoadContractsCommand.Execute(viewModel);
 

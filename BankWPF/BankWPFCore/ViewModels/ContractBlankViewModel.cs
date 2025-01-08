@@ -103,6 +103,25 @@ namespace BankWPFCore.ViewModels
             }
         }
 
+        //===================================
+
+        private bool _canChange;
+
+        public bool CanChange
+        {
+            get 
+            { 
+                return _canChange; 
+            }
+            set
+            {
+                _canChange = value;
+                OnPropertyChanged(nameof(CanChange));
+            }
+        }
+
+        //===================================
+
 
         public ICommand PostContractCommand { get; }
 
@@ -112,6 +131,7 @@ namespace BankWPFCore.ViewModels
 
         public ContractBlankViewModel(
             BankStore bankStore,
+            AccountStore accountStore,
             NavigationViewModel navigationViewModel,
             NavigationStore navigationStore,
             IClientsProvider clientsProvider,
@@ -131,6 +151,7 @@ namespace BankWPFCore.ViewModels
 
             _clientsProvider = clientsProvider;
 
+            _canChange = accountStore.CurrentAccount.Permission;
             //ClientID = client.ClientId;
             //ClientName = client.ClientName;
 
@@ -144,13 +165,14 @@ namespace BankWPFCore.ViewModels
 
         public static ContractBlankViewModel LoadContractCardViewModel(
             BankStore bank,
+            AccountStore accountStore,
             NavigationViewModel navigationViewModel,
             NavigationStore navigationStore,
             IClientsProvider clientsProvider,
             Client client,
             Contract contract = null)
         {
-            ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank, navigationViewModel, navigationStore, clientsProvider, client, contract);
+            ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank,accountStore, navigationViewModel, navigationStore, clientsProvider, client, contract);
 
             //clientCardViewModel.GetUserData.Execute(clientCardViewModel);
 

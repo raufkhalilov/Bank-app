@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "worker1",
+    "password": "qwerty12",
+    "permission": false
+  },
+  {
+    "id": "2",
+    "name": "worker2",
+    "password": "asdfgh12",
+    "permission": false
+  },
+  {
+    "id": "3",
+    "name": "admin",
+    "password": "zxcvbn12",
+    "permission": true
+  }
+]
