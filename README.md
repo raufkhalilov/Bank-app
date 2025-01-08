@@ -8,8 +8,7 @@
 ```curl -X POST http://localhost:8080/post/Client -H "Content-Type: application/json" -d '{"client_name": "<...>", "phone_number":"<...>"}'```
 
 # Пользовательский интерфейс:
-login = "admin"
-password = "password"
+файл (config.json) с логинами и паролями лежит рядом с исполняемым файлом. 
 
 1) Работает вывод таблиц клиентов и контрактов.
 2) Работает возможность добавления новых клиентов.
