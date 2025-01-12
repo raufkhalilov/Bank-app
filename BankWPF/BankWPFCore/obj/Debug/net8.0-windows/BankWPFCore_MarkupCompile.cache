@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\App.xaml
-9-431107014
-
-63-554728719
+10-1336295767
+1-1363994131
+651243635459
 2151024631831
-Components\NavigationBar.xaml;ResourcesDictionary.xaml;Views\ClientBlank.xaml;Views\ClientsView.xaml;Views\ContractBlank.xaml;Views\ContractsView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\StartPage.xaml;
+Components\NavigationBar.xaml;ResourcesDictionary.xaml;Views\ClientBlank.xaml;Views\ClientsView.xaml;Views\ContractBlank.xaml;Views\ContractsView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\SettingsView.xaml;Views\StartPage.xaml;
 
 False
 

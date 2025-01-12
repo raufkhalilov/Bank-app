@@ -3,6 +3,7 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace BankWPFCore.Services.ApiServices
 {
@@ -82,8 +83,10 @@ namespace BankWPFCore.Services.ApiServices
                 }
                 catch (Exception ex)
                 {
+                    
+                    throw new ApiConnectionException(ex, statusCode, "Ошибка подключения."); //TODO!!!
                     //Console.WriteLine($"Exception caught: {ex.Message}");
-                    return null;
+                    //return null;
                 }
             }
         }

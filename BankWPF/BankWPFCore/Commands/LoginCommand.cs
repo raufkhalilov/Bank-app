@@ -22,6 +22,8 @@ namespace BankWPFCore.Commands
 
         public override async Task ExecuteAsync()
         {
+            _loginViewModel.ErrorMessage = string.Empty;
+
             if (await _authService.IsAuthenticated(_loginViewModel.Username, _loginViewModel.Password))
             {
 
@@ -30,7 +32,8 @@ namespace BankWPFCore.Commands
             }
             else
             {
-                MessageBox.Show("Неверный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                //MessageBox.Show("Неверный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                _loginViewModel.ErrorMessage = "Неверный логин или пароль!";
             }
         }
     }

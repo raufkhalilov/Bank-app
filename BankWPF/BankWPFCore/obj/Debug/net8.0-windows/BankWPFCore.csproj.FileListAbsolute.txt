@@ -58,3 +58,6 @@ C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\obj\Debug\net8.0-windows\refin
 C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\obj\Debug\net8.0-windows\BankWPFCore.pdb
 C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\obj\Debug\net8.0-windows\BankWPFCore.genruntimeconfig.cache
 C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\obj\Debug\net8.0-windows\ref\BankWPFCore.dll
+C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\obj\Debug\net8.0-windows\Views\SettingsView.g.cs
+C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\obj\Debug\net8.0-windows\BankWPFCore_Content.g.cs
+C:\Users\georg\app_for_admins\BankWPF\BankWPFCore\obj\Debug\net8.0-windows\Views\SettingsView.baml

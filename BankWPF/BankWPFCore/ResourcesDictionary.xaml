@@ -14,7 +14,7 @@
     </Style>
 
     <Style x:Key="MyLabelStyle" TargetType="Label">
-
+        
         <Setter Property="Width" Value="140" />
         <Setter Property="Height" Value="35" />
         <Setter Property="BorderThickness" Value="0" />
@@ -24,7 +24,16 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Content" Value="МАДИ-банк"/>
+        
+    </Style>
 
+    <Style x:Key="MyErrorMrssageTB" TargetType="TextBlock">
+        
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="Red" />
+        
     </Style>
 
 </ResourceDictionary>

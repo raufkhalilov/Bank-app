@@ -23,6 +23,7 @@ namespace BankWPFCore.ViewModels
             set
             {
                 _username = value;
+                ErrorMessage = string.Empty;
                 OnPropertyChanged(nameof(Username));
             }
         }
@@ -36,9 +37,32 @@ namespace BankWPFCore.ViewModels
             set
             {
                 _password = value;
+                ErrorMessage = string.Empty;
                 OnPropertyChanged(nameof(Password));
             }
         }
+
+        //==========================
+
+        private string _errorMessage;
+
+        public string ErrorMessage
+        {
+            get
+            {
+                return _errorMessage;
+            }
+            set
+            {
+                _errorMessage = value;
+                OnPropertyChanged(nameof(ErrorMessage));
+                OnPropertyChanged(nameof(HasErrorMessage));
+            }
+        }
+
+        public bool HasErrorMessage => !string.IsNullOrEmpty(_errorMessage);
+
+        //==========================
 
         public ICommand OpenStartPageCommand { get; }
 

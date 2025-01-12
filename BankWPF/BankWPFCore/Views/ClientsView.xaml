@@ -16,6 +16,7 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <convertors:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
     </UserControl.Resources>
 
@@ -54,11 +55,11 @@
         <Grid Grid.Column="1" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70" />
-                <RowDefinition Height="35" />
+
                 <RowDefinition Height="*" />
-                <RowDefinition Height="60" />
+
             </Grid.RowDefinitions>
-            
+
 
             <Grid Grid.Row="0" Background="#FFACFFE3">
                 <TextBlock
@@ -72,89 +73,120 @@
 
             <Grid Grid.Row="1">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="65" />
-                    <ColumnDefinition Width="9*" />
-                </Grid.ColumnDefinitions>
-
-                <TextBlock
-                    Margin="20,0,0,0"
-                    VerticalAlignment="Center"
-                    FontSize="14"
-                    Text="Поиск:" />
-
-                <TextBox
-                    Grid.Column="1"
-                    Margin="10,5,20,5"
-                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
-
-            </Grid>
-
-            <Grid Grid.Row="2" Margin="20,0,20,0">
-
                 <custom:LoadingSpinner
                     Diameter="100"
                     IsLoading="{Binding IsLoading}"
                     Thickness="5"
                     Color="Aquamarine" />
 
-                <DataGrid
-                    x:Name="ClientsGrid"
-                    AutoGenerateColumns="False"
-                    Background="White"
-                    BorderBrush="Aqua"
-                    BorderThickness="0"
-                    IsReadOnly="True"
-                    IsSynchronizedWithCurrentItem="True"
-                    ItemsSource="{Binding FilteredData, UpdateSourceTrigger=PropertyChanged}"
-                    SelectedItem="{Binding SelectedClient}"
-                    Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+                <Grid Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
 
-                    <DataGrid.InputBindings>
-                        <MouseBinding Command="{Binding DblOpenClientCardCommand}" MouseAction="LeftDoubleClick" />
-                    </DataGrid.InputBindings>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
 
-                    <DataGrid.Columns>
-                        <DataGridTextColumn
-                            Width="25"
-                            Binding="{Binding ClientId}"
-                            Header="ID" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding ClientName}"
-                            Header="Name" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding PhoneNumber}"
-                            Header="Phone number" />
-                    </DataGrid.Columns>
 
-                </DataGrid>
+                    <Grid Grid.Row="0" Visibility="{Binding HasErrorMessage, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65" />
+                            <ColumnDefinition Width="9*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Text="Поиск:" />
+
+                        <TextBox
+                            Grid.Column="1"
+                            Margin="10,5,20,5"
+                            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="20,0,20,0">
+
+                        <!--
+                        <custom:LoadingSpinner
+                            Diameter="100"
+                            IsLoading="{Binding IsLoading}"
+                            Thickness="5"
+                            Color="Aquamarine" />-->
+                        <Grid>
+
+
+                            <TextBlock
+                                Style="{StaticResource MyErrorMrssageTB}"
+                                Text="{Binding ErrorMessage}"
+                                Visibility="{Binding HasErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                            <DataGrid
+                                x:Name="ClientsGrid"
+                                AutoGenerateColumns="False"
+                                Background="White"
+                                BorderBrush="Aqua"
+                                BorderThickness="0"
+                                IsReadOnly="True"
+                                IsSynchronizedWithCurrentItem="True"
+                                ItemsSource="{Binding FilteredData, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedItem="{Binding SelectedClient}"
+                                Visibility="{Binding HasErrorMessage, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+                                <DataGrid.InputBindings>
+                                    <MouseBinding Command="{Binding DblOpenClientCardCommand}" MouseAction="LeftDoubleClick" />
+                                </DataGrid.InputBindings>
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn
+                                        Width="25"
+                                        Binding="{Binding ClientId}"
+                                        Header="ID" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        Binding="{Binding ClientName}"
+                                        Header="Name" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        Binding="{Binding PhoneNumber}"
+                                        Header="Phone number" />
+                                </DataGrid.Columns>
+
+                            </DataGrid>
+
+                        </Grid>
+
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="180" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Row="3"
+                            Grid.Column="3"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Command="{Binding OpenClientCardCommand}"
+                            Content="Новый клиент"
+                            Style="{StaticResource MyButtonStyle}"
+                            Visibility="{Binding HasErrorMessage, Converter={StaticResource InverseBooleanToVisibilityConverter}}" />
+
+                    </Grid>
+
+                </Grid>
 
             </Grid>
-
-            <Grid Grid.Row="3">
-                
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="180" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="180" />
-                    <ColumnDefinition Width="180" />
-                </Grid.ColumnDefinitions>
-
-                <Button
-                    Grid.Row="3"
-                    Grid.Column="3"
-                    
-                    Command="{Binding OpenClientCardCommand}"
-                    Content="Новый клиент"
-                    Style="{StaticResource MyButtonStyle}" 
-                    HorizontalAlignment="Center" 
-                    VerticalAlignment="Center" />
-
-            </Grid>
-
-
 
         </Grid>
 

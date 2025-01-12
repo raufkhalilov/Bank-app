@@ -16,6 +16,7 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <convertors:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
     </UserControl.Resources>
 
@@ -52,13 +53,12 @@
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70" />
-                <RowDefinition Height="35" />
+
                 <RowDefinition Height="*" />
-                <RowDefinition Height="60" />
+
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0"
-                   Background="#FFACFFE3">
+            <Grid Grid.Row="0" Background="#FFACFFE3">
                 <TextBlock
                     Grid.Row="0"
                     Margin="20,0,0,0"
@@ -67,27 +67,10 @@
                     Text="Активные договоры" />
             </Grid>
 
+
+
             <Grid Grid.Row="1">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="65" />
-                    <ColumnDefinition Width="9*" />
-                </Grid.ColumnDefinitions>
-
-                <TextBlock
-                    Margin="20,0,0,0"
-                    VerticalAlignment="Center"
-                    FontSize="14"
-                    Text="Поиск:" />
-
-                <TextBox
-                    Grid.Column="1"
-                    Margin="10,5,20,5"
-                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
-
-            </Grid>
-
-            <Grid Grid.Row="2" Margin="20,0,20,0">
 
                 <custom:LoadingSpinner
                     Diameter="100"
@@ -95,66 +78,104 @@
                     Thickness="5"
                     Color="Aquamarine" />
 
-                <DataGrid
-                    x:Name="ProductsGrid"
-                    AutoGenerateColumns="False"
-                    Background="White"
-                    BorderThickness="0"
-                    IsReadOnly="True"
-                    IsSynchronizedWithCurrentItem="True"
-                    ItemsSource="{Binding FilteredData, UpdateSourceTrigger=PropertyChanged}"
-                    SelectedItem="{Binding SelectedContract}"
-                    Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+                <Grid Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
 
-                    <DataGrid.InputBindings>
-                        <MouseBinding Command="{Binding DblOpenContractCardCommand}" MouseAction="LeftDoubleClick" />
-                    </DataGrid.InputBindings>
+                    <Grid.RowDefinitions>
 
-                    <DataGrid.Columns>
-                        <DataGridTextColumn
-                            Width="35"
-                            Binding="{Binding ContractID}"
-                            Header="ID" />
-                        <DataGridTextColumn
-                            Width="65"
-                            Binding="{Binding ClientID}"
-                            Header="ClientID" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Description}"
-                            Header="Description" />
-                        <DataGridTextColumn
-                            Width="90"
-                            Binding="{Binding ProductTypeID}"
-                            Header="ProductTypeID" />
-                        <DataGridTextColumn
-                            Width="55"
-                            Binding="{Binding ContractAmount}"
-                            Header="Amount" />
-                        <DataGridTextColumn
-                            Width="70"
-                            Binding="{Binding StartDate}"
-                            Header="StartDate" />
-                        <DataGridTextColumn
-                            Width="70"
-                            Binding="{Binding EndDate}"
-                            Header="EndDate" />
-                    </DataGrid.Columns>
-                </DataGrid>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Visibility="{Binding HasErrorMessage, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65" />
+                            <ColumnDefinition Width="9*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Text="Поиск:" />
+
+                        <TextBox
+                            Grid.Column="1"
+                            Margin="10,5,20,5"
+                            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="20,0,20,0">
+
+                        <Grid Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+                            <TextBlock
+                                Style="{StaticResource MyErrorMrssageTB}"
+                                Text="{Binding ErrorMessage}"
+                                Visibility="{Binding HasErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                            <DataGrid
+                                x:Name="ProductsGrid"
+                                AutoGenerateColumns="False"
+                                Background="White"
+                                BorderThickness="0"
+                                IsReadOnly="True"
+                                IsSynchronizedWithCurrentItem="True"
+                                ItemsSource="{Binding FilteredData, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedItem="{Binding SelectedContract}"
+                                Visibility="{Binding HasErrorMessage, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+                                <DataGrid.InputBindings>
+                                    <MouseBinding Command="{Binding DblOpenContractCardCommand}" MouseAction="LeftDoubleClick" />
+                                </DataGrid.InputBindings>
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn
+                                        Width="35"
+                                        Binding="{Binding ContractID}"
+                                        Header="ID" />
+                                    <DataGridTextColumn
+                                        Width="65"
+                                        Binding="{Binding ClientID}"
+                                        Header="ClientID" />
+                                    <DataGridTextColumn
+                                        Width="*"
+                                        Binding="{Binding Description}"
+                                        Header="Description" />
+                                    <DataGridTextColumn
+                                        Width="90"
+                                        Binding="{Binding ProductTypeID}"
+                                        Header="ProductTypeID" />
+                                    <DataGridTextColumn
+                                        Width="55"
+                                        Binding="{Binding ContractAmount}"
+                                        Header="Amount" />
+                                    <DataGridTextColumn
+                                        Width="70"
+                                        Binding="{Binding StartDate}"
+                                        Header="StartDate" />
+                                    <DataGridTextColumn
+                                        Width="70"
+                                        Binding="{Binding EndDate}"
+                                        Header="EndDate" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Grid>
+
+                    <Button
+                        Grid.Row="2"
+                        Style="{StaticResource MyButtonStyle}"
+                        Command="{Binding DblOpenContractCardCommand}"
+                        Content="Новый договор"
+                        IsEnabled="False"
+                        Visibility="Collapsed" />
+
+                </Grid>
+
             </Grid>
-
-            <Button
-                Grid.Row="2"
-                Width="93"
-                Height="29"
-                Margin="10,0,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                BorderThickness="0"
-                Command="{Binding DblOpenContractCardCommand}"
-                Content="Новый договор"
-                IsEnabled="False"
-                Visibility="Collapsed" />
 
         </Grid>
 

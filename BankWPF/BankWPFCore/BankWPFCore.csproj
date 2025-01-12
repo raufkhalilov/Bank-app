@@ -60,7 +60,6 @@
     <Compile Remove="Views\StartWindow.xaml.cs" />
     <None Remove="Resourses\Fonts\Fowviel.ttf" />
     <None Remove="Views\22214_.jpg" />
-    <None Remove="Views\sm_img-50005.jpg" />
     <Page Remove="ClientsWindow.xaml" />
     <Page Remove="MainWindow.xaml" />
     <Page Remove="ProductsWindow.xaml" />
@@ -72,7 +71,7 @@
     <Page Remove="Views\StartWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\Новая папка\" />
+    <Content Include="bin\Debug\net8.0-windows\settings.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\net8.0-windows\config.json" />

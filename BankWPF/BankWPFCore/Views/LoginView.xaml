@@ -12,12 +12,16 @@
     d:DesignWidth="800"
     Background="#FFF3FFFA"
     mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="1.4*" />
-
-            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="180" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -39,7 +43,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="1.3*" />
-                <RowDefinition Height="1.3*" />
+                <RowDefinition Height="70" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
@@ -62,15 +66,23 @@
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1">
+            <TextBlock
+                Margin="0,10"
+                Style="{StaticResource MyErrorMrssageTB}"
+                Text="{Binding ErrorMessage}"
+                Visibility="{Binding HasErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </Grid>
 
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Grid.Row="2" Grid.Column="1">
+
+            <Grid HorizontalAlignment="Center" >
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
                     <RowDefinition Height="30" />
-                    <RowDefinition Height="40" />
                     <RowDefinition Height="30" />
-                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
                 <TextBlock
@@ -79,7 +91,7 @@
                     Margin="3,3,6,3"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Bottom"
-                    FontSize="18"
+                    FontSize="16"
                     Text="Логин:" />
 
                 <TextBox
@@ -88,7 +100,7 @@
                     Margin="3,3,6,3"
                     HorizontalAlignment="Stretch"
                     BorderThickness="0"
-                    FontSize="18"
+                    FontSize="16"
                     Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock
@@ -97,7 +109,7 @@
                     Margin="3,3,6,3"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Bottom"
-                    FontSize="18"
+                    FontSize="16"
                     Text="Пароль:" />
 
                 <!--
@@ -115,7 +127,7 @@
                     Margin="3,3,6,3"
                     HorizontalAlignment="Stretch"
                     BorderThickness="0"
-                    FontSize="18"
+                    FontSize="16"
                     PasswordChanged="PasswordToTag"
                     Tag="{Binding Password, Mode=OneWayToSource}" />
 
@@ -124,7 +136,7 @@
                     Width="120"
                     Height="35"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="Center"
                     Background="#FFADFFE3"
                     BorderThickness="0"
                     Command="{Binding LoginCommand}"
@@ -145,7 +157,7 @@ passwordBox.Tag = passwordBox.Password;
 
         </Grid>
 
-        <Grid Grid.Row="3" Grid.Column="1" />
+
 
 
 

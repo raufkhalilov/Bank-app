@@ -2,6 +2,11 @@
 using BankWPFCore.Models;
 using BankWPFCore.Services.ApiServices.Providers;
 using BankWPFCore.Stores;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Input;
 
 namespace BankWPFCore.ViewModels
@@ -11,12 +16,58 @@ namespace BankWPFCore.ViewModels
 
         private readonly IClientsProvider _clientsProvider;
 
-        private readonly Contract _contract;
+        private readonly ErrorViewModel _errorViewModel;
 
-        private readonly Client _client;
+        private Contract _contract;
 
-        private string _clientName;
+        private Client _client;
 
+        //private string _clientName;
+
+        public ICommand PostContractCommand { get; }
+
+        public ICommand GetUserData { get; }
+
+        public ICommand OpenContractBlankCommand { get; }
+
+
+        public Client Client
+        {
+            get
+            {
+
+                return _client;//_contract.ClientID;
+            }
+            set
+            {
+                //_contract.ClientID = value;
+                _client = value;
+                //ClientID = _client.ClientId;
+                //ClientName = _client.ClientName;
+                OnPropertyChanged(nameof(Client));
+                OnPropertyChanged(nameof(ClientName));
+            }
+        }
+
+        public Contract Contract
+        {
+            get
+            {
+
+                return _contract;//_contract.ClientID;
+            }
+            set
+            {
+                //_contract.ClientID = value;
+                _contract = value;
+                //ClientID = _client.ClientId;
+                //ClientName = _client.ClientName;
+                OnPropertyChanged(nameof(Contract));
+            }
+        }
+
+
+        #region Поля представления
 
         public NavigationViewModel NavigationViewModel { get; }
 
@@ -25,12 +76,12 @@ namespace BankWPFCore.ViewModels
             get
             {
 
-                return _client.ClientId;//_contract.ClientID;
+                return _contract.ClientID;
             }
             set
             {
-                //_contract.ClientID = value;
-                _client.ClientId = value;
+                _contract.ClientID = value;
+                //_client.ClientId = value;
                 OnPropertyChanged(nameof(ClientID));
             }
         }
@@ -70,8 +121,16 @@ namespace BankWPFCore.ViewModels
             {
                 _contract.Description = value;
                 OnPropertyChanged(nameof(Description));
+
+                _errorViewModel.ClearErrors(nameof(Description));
+
+                if (Description.Length == 0)
+                {
+                    _errorViewModel.AddError("Заполните поле!", nameof(Description));
+                }    
             }
         }
+
 
         public string ContractAmount
         {
@@ -100,8 +159,12 @@ namespace BankWPFCore.ViewModels
             {
                 _contract.EndDate = value;
                 OnPropertyChanged(nameof(EndDate));
+
+                
             }
         }
+
+        #endregion
 
         //===================================
 
@@ -122,46 +185,67 @@ namespace BankWPFCore.ViewModels
 
         //===================================
 
+        #region Контроль ввода
 
-        public ICommand PostContractCommand { get; }
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
-        public ICommand GetUserData { get; }
+        public bool CanUse => !_errorViewModel.HasErrors; //Поле отвечает за возможность добавить новый договор в зависимости от наличия ошибок
 
-        public ICommand OpenContractBlankCommand { get; }
+        private void ErrorsViewModel_ErrorsChanged(object sender, DataErrorsChangedEventArgs e)
+        {
+            ErrorsChanged?.Invoke(this, e);
+            OnPropertyChanged(nameof(CanUse));
+        }
+
+        public IEnumerable GetErrors(string propertyName)
+        {
+            return _errorViewModel.GetErrors(propertyName);
+             
+                /*_propertyNameToErrorDictionary
+                .GetValueOrDefault(propertyName, new List<string>());*/
+        }
+
+        #endregion
 
         public ContractBlankViewModel(
             BankStore bankStore,
             AccountStore accountStore,
             NavigationViewModel navigationViewModel,
-            NavigationStore navigationStore,
-            IClientsProvider clientsProvider,
+           /* NavigationStore navigationStore,*/
+            /*IClientsProvider clientsProvider,*/
             Client client,
             Contract contract = null)
         {
 
-            if (contract == null)
-                _contract = new Contract();
-            else
-                _contract = contract;
-
-            if (client != null)
-            _client = client;
-
             NavigationViewModel = navigationViewModel;
-
-            _clientsProvider = clientsProvider;
+            _errorViewModel = new ErrorViewModel();
+            _errorViewModel.ErrorsChanged += ErrorsViewModel_ErrorsChanged;
 
             _canChange = accountStore.CurrentAccount.Permission;
-            //ClientID = client.ClientId;
-            //ClientName = client.ClientName;
+
+            
+            if (contract == null)
+            {
+                Contract = new Contract();
+                Description = string.Empty;
+            }
+            else
+                Contract = contract;
+
+
+            if (client != null)
+                Client = client;
+            else
+                Client = new Client();
 
             PostContractCommand = new PostContractCommand(bankStore, contract);
 
-            //GetUserData = new LoadSelectedContractCommand(this, clientsProvider);
-
-
+            if(Client.ClientId == 0)
+                GetUserData = new LoadSelectedContractCommand(this, bankStore);
 
         }
+
+        
 
         public static ContractBlankViewModel LoadContractCardViewModel(
             BankStore bank,
@@ -172,11 +256,14 @@ namespace BankWPFCore.ViewModels
             Client client,
             Contract contract = null)
         {
-            ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank,accountStore, navigationViewModel, navigationStore, clientsProvider, client, contract);
+            ContractBlankViewModel clientCardViewModel = new ContractBlankViewModel(bank,accountStore, navigationViewModel, /*navigationStore,*/ /*clientsProvider,*/ client, contract);
 
-            //clientCardViewModel.GetUserData.Execute(clientCardViewModel);
+           
+            clientCardViewModel.GetUserData?.Execute(clientCardViewModel);
 
             return clientCardViewModel;
         }
+
+        ~ContractBlankViewModel() { }
     }
 }

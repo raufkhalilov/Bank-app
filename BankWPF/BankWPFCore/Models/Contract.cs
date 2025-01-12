@@ -88,5 +88,11 @@ namespace BankWPFCore.Models
                 OnPropertyChanged("ContractAmount");
             }
         }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
+
     }
 }

@@ -13,14 +13,14 @@ namespace BankWPFCore.Commands
     internal class LoadUserContractsCommand : BaseAsyncCommand
     {
         private readonly ClientBlankViewModel _clientCardViewModel;
-        private readonly IContractsProvider _contractsProvider; //-
+        //private readonly IContractsProvider _contractsProvider; //-
         private readonly Bank _bank;
         private readonly bool _isContactsLoading;
 
         public LoadUserContractsCommand(ClientBlankViewModel clientsViewModel, Bank bank, IContractsProvider contractsProvider, bool isContactsLoading = true)
         {
             _clientCardViewModel = clientsViewModel;
-            _contractsProvider = contractsProvider;
+            //_contractsProvider = contractsProvider;
             _bank = bank;
             _isContactsLoading = isContactsLoading;
         }

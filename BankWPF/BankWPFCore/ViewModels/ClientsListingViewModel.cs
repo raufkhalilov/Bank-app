@@ -28,20 +28,7 @@ namespace BankWPFCore.ViewModels
             }
         }
 
-        private bool _isLoading;
-
-        public bool IsLoading
-        {
-            get
-            {
-                return _isLoading;
-            }
-            set
-            {
-                _isLoading = value;
-                OnPropertyChanged(nameof(IsLoading));
-            }
-        }
+        
 
         private ObservableCollection<Client> _clients;
 
@@ -61,6 +48,42 @@ namespace BankWPFCore.ViewModels
         }
         #endregion
 
+        #region Вспомогательные поля
+
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get
+            {
+                return _isLoading;
+            }
+            set
+            {
+                _isLoading = value;
+                OnPropertyChanged(nameof(IsLoading));
+            }
+        }
+
+        private string _errorMessage;
+
+        public string ErrorMessage
+        {
+            get
+            {
+                return _errorMessage;
+            }
+            set
+            {
+                _errorMessage = value;
+                OnPropertyChanged(nameof(ErrorMessage));
+                OnPropertyChanged(nameof(HasErrorMessage));
+            }
+        }
+
+        public bool HasErrorMessage => !string.IsNullOrEmpty(_errorMessage);
+
+        #endregion
 
         //===================================
 

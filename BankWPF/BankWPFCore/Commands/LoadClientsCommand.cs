@@ -22,6 +22,7 @@ namespace BankWPFCore.Commands
         {
 
             _clientViewModel.IsLoading = true;
+            _clientViewModel.ErrorMessage = string.Empty;
 
             try
             {
@@ -31,8 +32,8 @@ namespace BankWPFCore.Commands
             }
             catch (ApiConnectionException ex)
             {
-                MessageBox.Show(ex.Comment + "\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-
+                //MessageBox.Show(ex.Comment + "\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                _clientViewModel.ErrorMessage = "При загрузке клиентов произошла ошибка!";
             }
 
             _clientViewModel.IsLoading = false;

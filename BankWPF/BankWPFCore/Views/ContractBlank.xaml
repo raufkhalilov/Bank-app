@@ -308,7 +308,7 @@
                         Margin="10,10"
                         Command="{Binding OpenContractBlankCommand}"
                         Content="Добавить"
-                        IsEnabled="False"
+                        IsEnabled="{Binding CanUse}"
                         Style="{StaticResource MyButtonStyle}" />
 
 

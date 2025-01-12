@@ -1,5 +1,6 @@
 ﻿using BankWPFCore.Models;
 using BankWPFCore.Services.ApiServices.Providers;
+using BankWPFCore.Stores;
 using BankWPFCore.ViewModels;
 using System;
 using System.Collections.ObjectModel;
@@ -13,24 +14,27 @@ namespace BankWPFCore.Commands
     {
         private readonly ContractBlankViewModel _contractCardViewModel;
         //private readonly IRequestsToApiService _requestsToApiService;
-        private readonly IClientsProvider _clientsProvider;
+        //private readonly IClientsProvider _clientsProvider;
 
-        private readonly Bank _bank;
+        private readonly BankStore _bank;
 
-        public LoadSelectedContractCommand(ContractBlankViewModel contractCardViewModel, Bank bank, IClientsProvider clientsProvider)
+        public LoadSelectedContractCommand(ContractBlankViewModel contractCardViewModel, BankStore bankStore)
         {
             _contractCardViewModel = contractCardViewModel;
             //_requestsToApiService = requestsToApiService;
-            _clientsProvider = clientsProvider;
-            _bank = bank;
+            //_clientsProvider = clientsProvider;
+            _bank = bankStore;
         }
 
         public override async Task ExecuteAsync()
         {
             try
             {
-                ObservableCollection<Client> clients = new ObservableCollection<Client>(/*await _clientsProvider.GetAllClients()*/await _bank.GetAllClients());
-                _contractCardViewModel.ClientName = clients.Where(d => d.ClientId == _contractCardViewModel.ClientID).Select(c => c.ClientName).FirstOrDefault();
+                if(_bank.Clients.Count == 0)
+                    await _bank.LoadClients();
+
+                ObservableCollection<Client> clients = new ObservableCollection<Client>(/*await _clientsProvider.GetAllClients()*/ _bank.Clients);
+                _contractCardViewModel.Client = clients.Where(d => d.ClientId == _contractCardViewModel.Contract.ClientID).FirstOrDefault();
             }
             catch (ArgumentNullException)
             {

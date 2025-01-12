@@ -89,6 +89,8 @@ namespace BankWPFCore.ViewModels
 
         //===================================
 
+        #region Вспомогательные поля
+
         private bool _isLoading;
 
         public bool IsLoading
@@ -101,9 +103,28 @@ namespace BankWPFCore.ViewModels
             {
                 _isLoading = value;
                 OnPropertyChanged(nameof(IsLoading));
-               
             }
         }
+
+        private string _errorMessage;
+
+        public string ErrorMessage
+        {
+            get
+            {
+                return _errorMessage;
+            }
+            set
+            {
+                _errorMessage = value;
+                OnPropertyChanged(nameof(ErrorMessage));
+                OnPropertyChanged(nameof(HasErrorMessage));
+            }
+        }
+
+        public bool HasErrorMessage => !string.IsNullOrEmpty(_errorMessage);
+
+        #endregion
 
         public NavigationViewModel NavigationViewModel { get; }
 
@@ -127,8 +148,11 @@ namespace BankWPFCore.ViewModels
 
             LoadContractsCommand = new LoadContractsCommand(this, bankStore/*, requestsToApiService*/);
 
+            //Contract contract = new Contract();
+            //contract = SelectedContract;
+
             DblOpenContractCardCommand = new NavigationCommand<ContractBlankViewModel>(new NavigationService<ContractBlankViewModel>(navigationStore,
-                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, accountStore, navigationViewModel, navigationStore, clientsProvider, new Client(), SelectedContract)));
+                () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, accountStore, navigationViewModel, navigationStore, clientsProvider, null, (Contract)SelectedContract.Clone())));
 
             _bankStore.ContractAdded += OnContractMode;
         }

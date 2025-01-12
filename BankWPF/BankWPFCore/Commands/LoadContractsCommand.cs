@@ -11,15 +11,16 @@ namespace BankWPFCore.Commands
         private readonly BankStore _bankStore;
         private readonly ContractsListingViewModel _contractsViewModel;
 
-        public LoadContractsCommand(ContractsListingViewModel clientsViewModel, BankStore bankStore)
+        public LoadContractsCommand(ContractsListingViewModel contractsListingViewModel, BankStore bankStore)
         {
             _bankStore = bankStore;
-            _contractsViewModel = clientsViewModel;
+            _contractsViewModel = contractsListingViewModel;
         }
 
         public override async Task ExecuteAsync()
         {
             _contractsViewModel.IsLoading = true;
+            _contractsViewModel.ErrorMessage = string.Empty;
 
             try
             {
@@ -28,7 +29,8 @@ namespace BankWPFCore.Commands
             }
             catch (ApiConnectionException ex)
             {
-                MessageBox.Show(ex.Comment + "\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                //MessageBox.Show(ex.Comment + "\n" + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                _contractsViewModel.ErrorMessage = "При загрузке договоров произошла ошибка!";
             }
 
 
