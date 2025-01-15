@@ -9,10 +9,18 @@ namespace BankWPFCore.Services.ApiServices.Providers
     internal class ApiContractsProvider : IContractsProvider
     {
         readonly IRequestsToApiService _requestsToApiService;
+        string _url;
 
-        public ApiContractsProvider(IRequestsToApiService requestsToApiService)
+        public string Url
+        {
+            get => _url;
+            set => _url = value;
+        }
+
+        public ApiContractsProvider(IRequestsToApiService requestsToApiService, string url)
         {
             _requestsToApiService = requestsToApiService;//new RequestsToApiService();
+            _url = url;
         }
 
 
@@ -20,7 +28,9 @@ namespace BankWPFCore.Services.ApiServices.Providers
         {
             //var jsonData = await _requestsToApiService.GetDataFromApi("http://109.206.241.154:8080/get/Contracts");
 
-            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Contracts");
+            //var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Contracts");
+
+            var jsonData = await _requestsToApiService.GetDataFromApi(_url);
 
             /*if (jsonData != null)
             {
@@ -37,7 +47,15 @@ namespace BankWPFCore.Services.ApiServices.Providers
                 throw new ApiConnectionException("api connection error");
             }
 
-            return JsonConvert.DeserializeObject</*ObservableCollection*/IEnumerable<Contract>>(jsonData);
+            try
+            {
+                return JsonConvert.DeserializeObject</*ObservableCollection*/IEnumerable<Contract>>(jsonData);
+            }
+            catch
+            {
+                throw new ApiConnectionException("api connection error");
+            }
+
         }
     }
 }

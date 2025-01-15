@@ -21,7 +21,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.1" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +75,7 @@
     <Page Remove="Views\StartWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\net8.0-windows\appsettings.json" />
     <Content Include="bin\Debug\net8.0-windows\settings.json" />
   </ItemGroup>
   <ItemGroup>

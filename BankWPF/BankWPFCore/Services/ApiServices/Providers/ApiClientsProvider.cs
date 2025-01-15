@@ -10,26 +10,44 @@ namespace BankWPFCore.Services.ApiServices.Providers
     {
 
         readonly IRequestsToApiService _requestsToApiService;
+        string _url;
 
-        public ApiClientsProvider(IRequestsToApiService requestsToApiService)
+        
+
+        public string Url 
+        { 
+            get => _url; 
+            set => _url = value; 
+        }
+
+        public ApiClientsProvider(IRequestsToApiService requestsToApiService, string url)
         {
             _requestsToApiService = requestsToApiService;//new RequestsToApiService();
+            _url = url;
         }
 
 
         public async Task<IEnumerable<Client>> GetAllClients()
         {
-            var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients");
+            //var jsonData = await _requestsToApiService.GetDataFromApi("http://localhost:8080/get/Clients");
 
             //var jsonData = await _requestsToApiService.GetDataFromApi("http://109.206.241.154:8080/get/Clients");
+
+            var jsonData = await _requestsToApiService.GetDataFromApi(_url);
 
             if (jsonData == null)
             {
                 throw new ApiConnectionException("api connection error");
             }
 
-            return JsonConvert.DeserializeObject</*ObservableCollection*/IEnumerable<Client>>(jsonData);
-
+            try
+            {
+                return JsonConvert.DeserializeObject</*ObservableCollection*/IEnumerable<Client>>(jsonData);
+            }
+            catch
+            {
+                throw new ApiConnectionException("api connection error");
+            }
         }
     }
 }

@@ -25,7 +25,11 @@
 
         </Style>
 
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
     </UserControl.Resources>
+
+
 
     <Grid>
         <Grid>
@@ -57,15 +61,18 @@
 
             </Button>
 
-            <!--
+
             <Button
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
-                Background="#FFFF7979"
                 BorderThickness="0"
-                Content="Выход"
-                FontSize="14" />
-            -->
+                Command="{Binding NavigateSettingsViewCommand}"
+                Content="Настройки"
+                FontSize="14"
+                IsEnabled="{Binding CanChange}"
+                Style="{StaticResource MyButtonStyle}"
+                Visibility="{Binding CanChange, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
         </Grid>
     </Grid>
 </UserControl>

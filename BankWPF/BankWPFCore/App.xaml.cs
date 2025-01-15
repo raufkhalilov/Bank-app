@@ -1,4 +1,5 @@
 ﻿using BankWPFCore.Models;
+using BankWPFCore.Models.Helpers;
 using BankWPFCore.Services;
 using BankWPFCore.Services.ApiServices;
 using BankWPFCore.Services.ApiServices.Creators;
@@ -8,6 +9,7 @@ using BankWPFCore.Services.ConflictValidators.ClientConflictValidators;
 using BankWPFCore.Stores;
 using BankWPFCore.ViewModels;
 using BankWPFCore.Views;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace BankWPFCore
@@ -24,7 +26,9 @@ namespace BankWPFCore
         private readonly ClientsBook _clientsBook;
         private readonly ContractsBook _contractsBook;
 
-        //private readonly 
+        private readonly ApiConfiguration _apiConfiguration;
+        private readonly SettingsManager _settingsManager;
+        private readonly ApiSettingsService _apiSettingsService;
 
         private readonly IClientCreator _clientCreator;
         private readonly IContractCreator _contractCreator;
@@ -39,6 +43,8 @@ namespace BankWPFCore
         private readonly NavigationStore _navigationStore;
         private readonly NavigationViewModel _navigationViewModel;
 
+        private Urls _urls;
+
 
         public App()
         {
@@ -50,10 +56,16 @@ namespace BankWPFCore
 
             _authService = new AuthenicationService(/*_requestsToApiService*/_accountStore,"./config.json"); // soon
 
-            _clientsProvider = new ApiClientsProvider(_requestsToApiService);
-            _clientCreator = new ApiClientCreator(_requestsToApiService);
-            _contractCreator = new ApiContractCreator(_requestsToApiService);
-            _contractsProvider = new ApiContractsProvider(_requestsToApiService);
+            _apiConfiguration = new ApiConfiguration();
+
+            _settingsManager = new SettingsManager("settings.json");
+            _apiSettingsService = new ApiSettingsService("appsettings.json");
+            _urls = _apiSettingsService.findApi(/*"localhost"*/_settingsManager.LoadSettings().CurrentSettings.CurrentApiKey);
+
+            _clientsProvider = new ApiClientsProvider(_requestsToApiService, _urls.url1);
+            _clientCreator = new ApiClientCreator(_requestsToApiService, _urls.url3);
+            _contractCreator = new ApiContractCreator(_requestsToApiService, "");//не реализован на сервере
+            _contractsProvider = new ApiContractsProvider(_requestsToApiService, _urls.url2);
 
             _clientConflictValidator = new ApiClientConflictValidator(_clientsProvider);
 
@@ -67,18 +79,22 @@ namespace BankWPFCore
                 CreateStartNavigationService(),
                 CreateClientsNavigationService(),
                 CreateContractsNavigationService(),
+                CreateSettingsNavigationService(),
                 /*CreateClientCardNavigationService(),*/
-                _bankStore, _navigationStore);
+                _bankStore, _accountStore, _navigationStore);
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
     
-            NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
-            startNavigationService.Navigate();
+            //NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
+            //startNavigationService.Navigate();
+            //
+            //NavigationService<SettingsViewModel> startNavigationService = CreateSettingsNavigationService();
+            //startNavigationService.Navigate();
 
-            //NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
-            //loginNavigationService.Navigate();
+            NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
+            loginNavigationService.Navigate();
 
             var startWindow = new MainWindow
             {
@@ -114,6 +130,11 @@ namespace BankWPFCore
                 () => ContractsListingViewModel.LoadViewModel(_navigationViewModel,_bankStore, _accountStore, _navigationStore,_clientsProvider));
         }
 
+        private NavigationService<SettingsViewModel> CreateSettingsNavigationService()
+        {
+            return new NavigationService<SettingsViewModel>(_navigationStore,
+                () => SettingsViewModel.LoadViewModel(_navigationViewModel, _apiConfiguration, _settingsManager, _apiSettingsService, _clientsProvider, _contractsProvider, _clientCreator, _contractCreator))/*.LoadViewModel(_navigationViewModel, _bankStore, _accountStore, _navigationStore, _clientsProvider))*/;
+        }
         /*private NavigationService<ClientBlankViewModel> CreateClientCardNavigationService()
         {
             return new NavigationService<ClientBlankViewModel>(_navigationStore, 
@@ -121,12 +142,12 @@ namespace BankWPFCore
                 
         }*/
 
-       /* private NavigationService<ContractBlankViewModel> CreateontracttCardNavigationService()
-        {
-            return new NavigationService<ContractBlankViewModel>(_navigationStore,
-                () => new ContractBlankViewModel(_bankStore, _navigationViewModel, _navigationStore, _clientsProvider));
+        /* private NavigationService<ContractBlankViewModel> CreateontracttCardNavigationService()
+         {
+             return new NavigationService<ContractBlankViewModel>(_navigationStore,
+                 () => new ContractBlankViewModel(_bankStore, _navigationViewModel, _navigationStore, _clientsProvider));
 
-        }*/
+         }*/
 
     }
 }

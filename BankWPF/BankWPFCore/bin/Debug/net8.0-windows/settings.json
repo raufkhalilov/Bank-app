@@ -1,18 +1,5 @@
 {
-  "ApiSettings": [
-    {
-      "localhost": {
-        "GetClients": "http://localhost:8080/get/Clients",
-        "GetContracts": "http://localhost:8080/get/Contracts",
-        "PostClient": "http://localhost:8080/post/Client"
-      }
-    },
-    {
-      "http://109.206.241.154:8080(Timothy)": {
-        "GetClients": "http://localhost:8080/get/Clients",
-        "GetContracts": "http://localhost:8080/get/Contracts",
-        "PostClient": "http://localhost:8080/post/Client"
-      }
-    }
-  ]
+  "CurrentSettings": {
+    "CurrentApiKey": "localhost"
+  }
 }

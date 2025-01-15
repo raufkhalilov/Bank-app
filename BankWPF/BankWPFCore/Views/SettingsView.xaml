@@ -6,6 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:BankWPFCore.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:BankWPFCore.ViewModels"
+    d:DataContext="{d:DesignInstance Type=viewmodels:SettingsViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -65,7 +67,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
@@ -75,19 +77,36 @@
                     Margin="20,0,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
-                    FontSize="16"
+                    FontSize="14"
                     Text="URL:" />
 
                 <ComboBox
                     Grid.Row="1"
                     Grid.Column="1"
-                    Margin="20,0,20,0"
-                    
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Center"
-                    FontSize="16" >
-                   
-                </ComboBox>
+                    Width="200"
+                    Height="25"
+                    HorizontalAlignment="Left"
+                    Margin="0,0,20,0"
+                    DisplayMemberPath="Name"
+                    FontSize="14"
+                    ItemsSource="{Binding Items}"
+                    SelectedItem="{Binding SelectedItem}" />
+
+            </Grid>
+
+            <Grid Grid.Row="2">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Column="2"
+                    Command="{Binding ChangeApi}"
+                    Content="Применить"
+                    Style="{StaticResource MyButtonStyle}" />
+
 
             </Grid>
 

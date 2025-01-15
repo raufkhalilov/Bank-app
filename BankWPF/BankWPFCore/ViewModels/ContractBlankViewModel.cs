@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace BankWPFCore.ViewModels
 {
-    internal class ContractBlankViewModel : BaseViewModel
+    internal class ContractBlankViewModel : BaseViewModel , INotifyDataErrorInfo
     {
 
         private readonly IClientsProvider _clientsProvider;
@@ -124,15 +124,18 @@ namespace BankWPFCore.ViewModels
 
                 _errorViewModel.ClearErrors(nameof(Description));
 
-                if (Description.Length == 0)
+                if (Description.Length == 0 || Description.Contains(' '))
                 {
-                    _errorViewModel.AddError("Заполните поле!", nameof(Description));
-                }    
+                    _errorViewModel.AddError(nameof(Description), "Заполните поле!");
+                }
+
+                
+                
             }
         }
 
 
-        public string ContractAmount
+        public /*string*/ float ContractAmount
         {
             get { return _contract.ContractAmount; }
             set
@@ -187,22 +190,22 @@ namespace BankWPFCore.ViewModels
 
         #region Контроль ввода
 
+        public bool HasErrors => _errorViewModel.HasErrors;
+
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
-        public bool CanUse => !_errorViewModel.HasErrors; //Поле отвечает за возможность добавить новый договор в зависимости от наличия ошибок
+        public bool CanUse => !HasErrors;
+
+
+        public IEnumerable GetErrors(string propertyName)
+        {
+            return _errorViewModel.GetErrors(propertyName);
+        }
 
         private void ErrorsViewModel_ErrorsChanged(object sender, DataErrorsChangedEventArgs e)
         {
             ErrorsChanged?.Invoke(this, e);
             OnPropertyChanged(nameof(CanUse));
-        }
-
-        public IEnumerable GetErrors(string propertyName)
-        {
-            return _errorViewModel.GetErrors(propertyName);
-             
-                /*_propertyNameToErrorDictionary
-                .GetValueOrDefault(propertyName, new List<string>());*/
         }
 
         #endregion
@@ -211,13 +214,12 @@ namespace BankWPFCore.ViewModels
             BankStore bankStore,
             AccountStore accountStore,
             NavigationViewModel navigationViewModel,
-           /* NavigationStore navigationStore,*/
-            /*IClientsProvider clientsProvider,*/
             Client client,
             Contract contract = null)
         {
 
             NavigationViewModel = navigationViewModel;
+
             _errorViewModel = new ErrorViewModel();
             _errorViewModel.ErrorsChanged += ErrorsViewModel_ErrorsChanged;
 
@@ -232,6 +234,7 @@ namespace BankWPFCore.ViewModels
             else
                 Contract = contract;
 
+           
 
             if (client != null)
                 Client = client;

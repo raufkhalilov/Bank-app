@@ -3,10 +3,14 @@ using BankWPFCore.Models;
 using BankWPFCore.Services;
 using BankWPFCore.Services.ApiServices.Providers;
 using BankWPFCore.Stores;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
+using LiveCharts.Wpf;
+using LiveCharts;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace BankWPFCore.ViewModels
@@ -140,10 +144,65 @@ namespace BankWPFCore.ViewModels
 
         public ICommand HelperCommand { get; }
 
-
-
-        //public bool dataChangedFlag = true;
         private BankStore _bankStore;
+
+
+        //=======================================================
+        //============Graphics===================================
+
+
+        private SeriesCollection _seriesCollection;
+        private string[] _labels;
+        private Func<double, string> _formatter;
+
+        public SeriesCollection SeriesCollection
+        {
+            get
+            {
+                return _seriesCollection;
+            }
+            set
+            {
+                _seriesCollection = value;
+                OnPropertyChanged(nameof(SeriesCollection));
+            }
+        }
+
+        public string[] Labels
+        {
+            get
+            {
+                return _labels;
+            }
+            set
+            {
+                _labels = value;
+                OnPropertyChanged(nameof(Labels));
+            }
+        }
+
+        public Func<double, string> Formatter
+        {
+            get
+            {
+                return _formatter;
+            }
+            set
+            {
+                _formatter = value;
+                OnPropertyChanged(nameof(Formatter));
+            }
+        }
+
+
+
+
+
+        //============Graphics===================================
+        //=======================================================
+
+
+
 
         public ClientsListingViewModel(BankStore bankStore,
             AccountStore accountStore,
@@ -173,6 +232,43 @@ namespace BankWPFCore.ViewModels
             HelperCommand = new ConnectionCommand(bankStore, navigationViewModel, navigationStore);
 
             bankStore.ClientAdded += OnClientMode;
+
+            //=======================================
+
+            SeriesCollection = new SeriesCollection
+            {
+                /*new StackedColumnSeries
+                {
+                    Values = new ChartValues<double> {4, 5, 6, 8, 7},
+                    StackMode = StackMode.Values, // this is not necessary, values is the default stack mode
+                    DataLabels = true,
+                    Title="Credits"
+
+
+                },
+                new StackedColumnSeries
+                {
+                    Values = new ChartValues<double> {2, 5, 6, 7},
+                    StackMode = StackMode.Values,
+                    DataLabels = true,
+                    Title="Debts"
+                },
+                new StackedColumnSeries
+                {
+                    Values = new ChartValues<double> {6, 2, 7, 2, 7},
+                StackMode = StackMode.Values,
+                DataLabels = true,
+                Title = "Cards"
+                }*/
+            };
+
+
+            
+
+            
+            Formatter = value => value + " $";
+
+            //=======================================
 
         }
 
@@ -207,19 +303,18 @@ namespace BankWPFCore.ViewModels
             foreach (var client in clients)
             {
                 _clients.Add(client);
+
+
             }
+
+            //Labels = new string[Clients.Count];
+            //adding values also updates and animates
+            //SeriesCollection[2].Values.Add(4d);
+            /*for (int i = 0; i < Clients.Count; i++)
+            {
+                Labels[i] = Clients[i].ClientName;
+                //SeriesCollection[0].Values.Add(Clients[i].)
+            }*/
         }
-
-
-        #region Методы класса
-        /*
-                private void OpenDialog(object parameter)
-                {
-                    //_dialogService.ShowAddClientDialog();
-                    //this.LoadData(parameter);
-                }
-        */
-        #endregion
-
     }
 }

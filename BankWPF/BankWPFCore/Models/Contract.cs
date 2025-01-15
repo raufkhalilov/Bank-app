@@ -17,7 +17,7 @@ namespace BankWPFCore.Models
         [JsonProperty("end_date")]
         private string end_date;
         [JsonProperty("contract_amount")]
-        private string contract_amount;
+        private float contract_amount;
 
         public int ContractID
         {
@@ -79,7 +79,7 @@ namespace BankWPFCore.Models
             }
         }
 
-        public string ContractAmount
+        public float ContractAmount
         {
             get { return contract_amount; }
             set

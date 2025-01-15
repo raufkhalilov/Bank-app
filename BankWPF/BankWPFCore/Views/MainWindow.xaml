@@ -43,6 +43,10 @@
                 <local:LoginView />
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type vms:SettingsViewModel}">
+                <local:SettingsView />
+            </DataTemplate>
+
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="19*" />

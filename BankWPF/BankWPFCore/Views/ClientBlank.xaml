@@ -320,7 +320,6 @@
 
                 <Button
                     Grid.Column="3"
-                    
                     Command="{Binding OpenContractBlankCommand}"
                     Content="Новая услуга"
                     Style="{StaticResource MyButtonStyle}" />
@@ -347,8 +346,8 @@
                 <Button
                     Grid.Column="0"
                     Command=""
-                    IsEnabled="{Binding CanChange}"
                     Content="Обновить"
+                    IsEnabled="{Binding CanChange}"
                     Style="{StaticResource MyButtonStyle}" />
 
             </Grid>

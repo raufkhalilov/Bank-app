@@ -11,43 +11,80 @@ namespace BankWPFCore.ViewModels
     internal class ErrorViewModel : INotifyDataErrorInfo
     {
 
-        private readonly Dictionary<string, List<string>> _propertyNameToErrorDictionary = new Dictionary<string, List<string>>();
+        /* private readonly Dictionary<string, List<string>> _propertyNameToErrorDictionary = new Dictionary<string, List<string>>();
+
+         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+         public bool HasErrors => _propertyNameToErrorDictionary.Any();
+
+         public IEnumerable GetErrors(string propertyName)
+         {
+             return _propertyNameToErrorDictionary
+                 .GetValueOrDefault(propertyName, new List<string>());
+         }
+
+         public void AddError(string errorMessage, string propertyName)
+         {
+             if (!_propertyNameToErrorDictionary.ContainsKey(propertyName))
+             {
+                 _propertyNameToErrorDictionary.Add(propertyName, new List<string>());
+             }
+
+             _propertyNameToErrorDictionary[propertyName].Add(errorMessage);
+
+             OnErrorsChanged(propertyName);
+         }
+
+         public void ClearErrors(string propertyName)
+         {
+
+             if (_propertyNameToErrorDictionary.Remove(propertyName))
+             {
+                 OnErrorsChanged(propertyName);
+             }
+         }
+
+         private void OnErrorsChanged(string propertyName)
+         {
+             ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+             //OnPropertyChanged(nameof(CanUse));
+         }*/
+
+        private readonly Dictionary<string, List<string>> _propertyErrors = new Dictionary<string, List<string>>();
+
+        public bool HasErrors => _propertyErrors.Any();
 
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
-        public bool HasErrors => _propertyNameToErrorDictionary.Any();
-
         public IEnumerable GetErrors(string propertyName)
         {
-            return _propertyNameToErrorDictionary
-                .GetValueOrDefault(propertyName, new List<string>());
+            return _propertyErrors.GetValueOrDefault(propertyName, null);
         }
 
-        public void AddError(string errorMessage, string propertyName)
+        public void AddError(string propertyName, string errorMessage)
         {
-            if (!_propertyNameToErrorDictionary.ContainsKey(propertyName))
+            if (!_propertyErrors.ContainsKey(propertyName))
             {
-                _propertyNameToErrorDictionary.Add(propertyName, new List<string>());
+                _propertyErrors.Add(propertyName, new List<string>());
             }
 
-            _propertyNameToErrorDictionary[propertyName].Add(errorMessage);
-
-            OnErrorChanged(propertyName);
+            _propertyErrors[propertyName].Add(errorMessage);
+            OnErrorsChanged(propertyName);
         }
 
         public void ClearErrors(string propertyName)
         {
-
-            if (_propertyNameToErrorDictionary.Remove(propertyName))
-                OnErrorChanged(propertyName);
-
+            if (_propertyErrors.Remove(propertyName))
+            {
+                OnErrorsChanged(propertyName);
+            }
         }
 
-        private void OnErrorChanged(string propertyName)
+        private void OnErrorsChanged(string propertyName)
         {
-            ErrorsChanged?.Invoke(propertyName, new DataErrorsChangedEventArgs(nameof(propertyName)));
-            //OnPropertyChanged(nameof(CanUse));
+            ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
         }
+    
 
         ~ErrorViewModel() { }
     }

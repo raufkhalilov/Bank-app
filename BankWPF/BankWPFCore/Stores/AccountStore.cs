@@ -1,4 +1,5 @@
 ﻿using BankWPFCore.Models;
+using System;
 
 namespace BankWPFCore.Stores
 {
@@ -15,13 +16,22 @@ namespace BankWPFCore.Stores
             }
             set 
             { 
-                _currentAccount = value; 
+                _currentAccount = value;
+                OnCurrentAccountChanged();
             }
         }
 
         public AccountStore(Account account)
         {
             _currentAccount = account;
+        }
+
+
+        public event Action CurrentAccountChanged;
+
+        private void OnCurrentAccountChanged()
+        {
+            CurrentAccountChanged?.Invoke();
         }
 
     }
