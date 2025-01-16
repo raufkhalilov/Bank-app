@@ -170,7 +170,7 @@
                     VerticalAlignment="Bottom"
                     FontSize="14"
                     IsReadOnly="False"
-                    Text="{Binding ClientName}" />
+                    Text="{Binding ClientName, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBox
                     Grid.Row="2"
@@ -178,7 +178,8 @@
                     Margin="20,0,20,0"
                     VerticalAlignment="Bottom"
                     FontSize="14"
-                    IsReadOnly="False" />
+                    IsReadOnly="False" 
+                    Text="{Binding ClientAge, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <xctk:MaskedTextBox
                     Grid.Row="3"
@@ -188,7 +189,7 @@
                     FontSize="14"
                     IsReadOnly="False"
                     Mask="000-000-0000"
-                    Text="{Binding PhoneNumber}" />
+                    Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}" />
 
                 <xctk:MaskedTextBox
                     Grid.Row="4"
@@ -197,7 +198,8 @@
                     VerticalAlignment="Bottom"
                     FontSize="14"
                     IsReadOnly="False"
-                    Mask="00-00-000000" />
+                    Mask="00-00-000000" 
+                    Text="{Binding PassportData, UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
@@ -341,6 +343,7 @@
                     Grid.Column="1"
                     Command="{Binding PostDataCommand}"
                     Content="Добавить"
+                    IsEnabled="{Binding CanUse}"
                     Style="{StaticResource MyButtonStyle}" />
 
                 <Button

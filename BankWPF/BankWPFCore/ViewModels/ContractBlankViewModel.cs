@@ -142,6 +142,13 @@ namespace BankWPFCore.ViewModels
             {
                 _contract.ContractAmount = value;
                 OnPropertyChanged(nameof(ContractAmount));
+
+                _errorViewModel.ClearErrors(nameof(ContractAmount));
+
+                if (ContractAmount <= 0)
+                {
+                    _errorViewModel.AddError(nameof(ContractAmount), "Значение не может быть отрицательным!");
+                }
             }
         }
 
@@ -230,6 +237,7 @@ namespace BankWPFCore.ViewModels
             {
                 Contract = new Contract();
                 Description = string.Empty;
+                ContractAmount = 0;
             }
             else
                 Contract = contract;

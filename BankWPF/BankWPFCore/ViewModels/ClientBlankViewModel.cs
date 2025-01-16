@@ -6,16 +6,24 @@ using BankWPFCore.Services.ApiServices.Providers;
 using BankWPFCore.Commands;
 using BankWPFCore.Services;
 using System.Linq.Expressions;
+using System.ComponentModel;
+using System;
+using System.Collections;
 
 namespace BankWPFCore.ViewModels
 {
-    internal class ClientBlankViewModel : BaseViewModel
+    internal class ClientBlankViewModel : BaseViewModel, INotifyDataErrorInfo
     {
 
         //private readonly IRequestsToApiService _requestsToApiService;
 
         private readonly Client _client;
         private ObservableCollection<Contract> _clientsActiveContracts;
+
+        private int _clientAge;
+        private string _passportData;
+
+        private readonly ErrorViewModel _errorViewModel;
 
 
         public NavigationViewModel NavigationViewModel { get; }
@@ -36,7 +44,14 @@ namespace BankWPFCore.ViewModels
             set
             {
                 _client.ClientName = value;
-                OnPropertyChanged("ClientName");
+                OnPropertyChanged(nameof(ClientName));
+
+                _errorViewModel.ClearErrors(nameof(ClientName));
+
+                if ((ClientName != string.Empty && ClientName?[0] == ' ') || ClientName.Length == 0)
+                {
+                    _errorViewModel.AddError(nameof(ClientName), "Значение не может быть отрицательным!");
+                }
             }
         }
 
@@ -46,7 +61,48 @@ namespace BankWPFCore.ViewModels
             set
             {
                 _client.PhoneNumber = value;
-                OnPropertyChanged("PhoneNumber");
+                OnPropertyChanged(nameof(PhoneNumber));
+
+                _errorViewModel.ClearErrors(nameof(PhoneNumber));
+
+                if (PhoneNumber.Contains('_'))
+                {
+                    _errorViewModel.AddError(nameof(PhoneNumber), "Значение не может быть отрицательным!");
+                }
+            }
+        }
+
+        public int ClientAge
+        {
+            get { return _clientAge; }
+            set
+            {
+                _clientAge = value;
+                OnPropertyChanged(nameof(ClientAge));
+
+                _errorViewModel.ClearErrors(nameof(ClientAge));
+
+                if (ClientAge <= 18 || ClientAge >= 120)
+                {
+                    _errorViewModel.AddError(nameof(ClientAge), "Некорректный возраст!");
+                }
+            }
+        }
+
+        public string PassportData
+        {
+            get { return _passportData; }
+            set
+            {
+                _passportData = value;
+                OnPropertyChanged(nameof(PassportData));
+
+                _errorViewModel.ClearErrors(nameof(PassportData));
+
+                if (PassportData.Contains('_'))
+                {
+                    _errorViewModel.AddError(nameof(PassportData), "Значение не может быть отрицательным!");
+                }
             }
         }
 
@@ -109,6 +165,31 @@ namespace BankWPFCore.ViewModels
 
         //===================================
 
+
+
+        #region Контроль ввода
+
+        public bool HasErrors => _errorViewModel.HasErrors;
+
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public bool CanUse => !HasErrors;
+
+
+        public IEnumerable GetErrors(string propertyName)
+        {
+            return _errorViewModel.GetErrors(propertyName);
+        }
+
+        private void ErrorsViewModel_ErrorsChanged(object sender, DataErrorsChangedEventArgs e)
+        {
+            ErrorsChanged?.Invoke(this, e);
+            OnPropertyChanged(nameof(CanUse));
+        }
+
+        #endregion
+
+
         public ICommand PostDataCommand { get; }
 
         public ICommand GetUserContracts { get; }
@@ -132,10 +213,19 @@ namespace BankWPFCore.ViewModels
 
             bool loadContracts = false;
 
+            _errorViewModel = new ErrorViewModel();
+            _errorViewModel.ErrorsChanged += ErrorsViewModel_ErrorsChanged;
+
             _canChange = accountStore.CurrentAccount.Permission;
 
             if (client == null)
+            {
                 _client = new Client();
+                ClientName=string.Empty;
+                ClientAge = 0;
+                PhoneNumber += "_";
+                PassportData += "_";
+            }
             else
             {
                 _client = client;
@@ -164,6 +254,7 @@ namespace BankWPFCore.ViewModels
                 () => ContractBlankViewModel.LoadContractCardViewModel(bankStore, accountStore, navigationViewModel, navigationStore, clientsProvider, client, SelectedContract)));
 
 
+            
         }
 
         public static ClientBlankViewModel LoadClientCardViewModel(BankStore bankStore, AccountStore accountStore, NavigationViewModel navigationViewModel, NavigationStore navigationStore, /*NavigationService<ClientsListingViewModel> navigationService,*/ IClientsProvider clientsProvider, IContractsProvider contractsProvider, Client client = null)
