@@ -1,6 +1,8 @@
 ﻿using BankWPFCore.Exceptions;
+using BankWPFCore.Models;
 using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
@@ -91,5 +93,43 @@ namespace BankWPFCore.Services.ApiServices
             }
         }
 
+        public async Task<string> UpdateDataFromApi(string url, object updatedData)
+        {
+
+             HttpClient client = new HttpClient();
+
+            //var url = "https://api.example.com/resource/1"; // URL вашего API
+            /*var updatedData = new
+            {
+                Name = "New Name",
+                Description = "Updated description"
+            };*/
+            int statusCode = 0;
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(updatedData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            try
+            {
+                var response = await client.PutAsync(url, content);
+
+                
+
+                return await response.Content.ReadAsStringAsync();
+            }
+            catch (HttpRequestException httpEx)
+            {
+                statusCode = (int)httpEx.StatusCode.GetValueOrDefault();
+                throw new ApiConnectionException(httpEx, statusCode, "Ошибка подключения."); //TODO!!!
+            }
+            catch (Exception ex)
+            {
+
+                throw new ApiConnectionException(ex, statusCode, "Ошибка подключения."); //TODO!!!
+                                                                                         //Console.WriteLine($"Exception caught: {ex.Message}");
+                                                                                         //return null;
+            }
+        }
     }
 }

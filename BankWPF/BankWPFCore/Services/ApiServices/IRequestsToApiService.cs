@@ -7,5 +7,7 @@ namespace BankWPFCore.Services.ApiServices
         Task<string> GetDataFromApi(string url);
 
         Task<string> PostDataToApi/*<T>*/(string url, object dataForPost);
+
+        Task<string> UpdateDataFromApi(string url, object updatedData);
     }
 }

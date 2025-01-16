@@ -237,19 +237,22 @@ namespace BankWPFCore.ViewModels
             {
                 Contract = new Contract();
                 Description = string.Empty;
-                ContractAmount = 0;
+                ContractAmount = 0;//string.Empty;
             }
             else
                 Contract = contract;
 
-           
+
 
             if (client != null)
+            {
                 Client = client;
+                this.ClientID = Client.ClientId;
+            }
             else
                 Client = new Client();
 
-            PostContractCommand = new PostContractCommand(bankStore, contract);
+            PostContractCommand = new PostContractCommand(bankStore, _contract);
 
             if(Client.ClientId == 0)
                 GetUserData = new LoadSelectedContractCommand(this, bankStore);

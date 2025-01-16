@@ -46,5 +46,16 @@ namespace BankWPFCore.Models
             await _contractsBook.AddContract(contract);
         }
 
+        public async Task UpdateClient(Client client)
+        {
+            //_clientsBook.
+            await _clientsBook.UpdateClient(client);
+        }
+
+        public async Task UpdateContract(Contract contract)
+        {
+            //_contractsBook
+        }
+
     }
 }

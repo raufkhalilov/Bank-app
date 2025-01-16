@@ -10,6 +10,21 @@ namespace BankWPFCore.Models
         private string client_name { get; set; }
         [JsonProperty("phone_number")]
         private string phone_number { get; set; }
+        [JsonProperty("is_deleted")]
+        private bool is_deleted { get; set; }
+
+        /*
+         -- Создание таблицы clients
+        CREATE TABLE clients (
+            client_id SERIAL PRIMARY KEY,
+            client_name VARCHAR(255) NOT NULL,
+            phone_number VARCHAR(20) NOT NULL,
+            is_deleted BOOLEAN DEFAULT FALSE
+        );
+
+       
+
+         */
 
 
         public int ClientId
@@ -37,6 +52,15 @@ namespace BankWPFCore.Models
             {
                 phone_number = value;
                 OnPropertyChanged("PhoneNumber");
+            }
+        }
+        public bool IsDeleted
+        {
+            get { return is_deleted; }
+            set
+            {
+                is_deleted = value;
+                OnPropertyChanged(nameof(IsDeleted));
             }
         }
     }

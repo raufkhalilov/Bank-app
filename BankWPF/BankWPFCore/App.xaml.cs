@@ -4,6 +4,7 @@ using BankWPFCore.Services;
 using BankWPFCore.Services.ApiServices;
 using BankWPFCore.Services.ApiServices.Creators;
 using BankWPFCore.Services.ApiServices.Providers;
+using BankWPFCore.Services.ApiServices.Updaters;
 using BankWPFCore.Services.AuthenticationServices;
 using BankWPFCore.Services.ConflictValidators.ClientConflictValidators;
 using BankWPFCore.Stores;
@@ -35,6 +36,8 @@ namespace BankWPFCore
         private readonly IClientsProvider _clientsProvider;
         private readonly IContractsProvider _contractsProvider;
 
+        private readonly IClientUpdater _clientUpdater;
+
         private readonly IClientConflictValidator _clientConflictValidator;
 
         private readonly IRequestsToApiService _requestsToApiService;
@@ -64,12 +67,15 @@ namespace BankWPFCore
 
             _clientsProvider = new ApiClientsProvider(_requestsToApiService, _urls.url1);
             _clientCreator = new ApiClientCreator(_requestsToApiService, _urls.url3);
-            _contractCreator = new ApiContractCreator(_requestsToApiService, "");//не реализован на сервере
+            
             _contractsProvider = new ApiContractsProvider(_requestsToApiService, _urls.url2);
+            _contractCreator = new ApiContractCreator(_requestsToApiService, _urls.url4);//не реализован на сервере
+
+            _clientUpdater = new ApiClientUpdater(_requestsToApiService, "");
 
             _clientConflictValidator = new ApiClientConflictValidator(_clientsProvider);
 
-            _clientsBook = new ClientsBook(_clientsProvider, _clientCreator, _clientConflictValidator);
+            _clientsBook = new ClientsBook(_clientsProvider, _clientCreator, _clientUpdater, _clientConflictValidator);
             _contractsBook = new ContractsBook(_contractCreator, _contractsProvider);
             _bank = new Bank("BGRT", _clientsBook, _contractsBook);
             _bankStore = new BankStore(_bank);
@@ -87,14 +93,14 @@ namespace BankWPFCore
         protected override void OnStartup(StartupEventArgs e)
         {
     
-            //NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
-            //startNavigationService.Navigate();
+            NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
+            startNavigationService.Navigate();
             //
             //NavigationService<SettingsViewModel> startNavigationService = CreateSettingsNavigationService();
             //startNavigationService.Navigate();
 
-            NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
-            loginNavigationService.Navigate();
+            //NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
+            //loginNavigationService.Navigate();
 
             var startWindow = new MainWindow
             {

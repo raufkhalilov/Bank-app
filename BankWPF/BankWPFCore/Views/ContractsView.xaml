@@ -141,23 +141,20 @@
                                         Binding="{Binding ClientID}"
                                         Header="ClientID" />
                                     <DataGridTextColumn
-                                        Width="*"
+                                        Width="100"
                                         Binding="{Binding Description}"
                                         Header="Description" />
+                                   
                                     <DataGridTextColumn
-                                        Width="90"
-                                        Binding="{Binding ProductTypeID}"
-                                        Header="ProductTypeID" />
-                                    <DataGridTextColumn
-                                        Width="55"
+                                        Width="85"
                                         Binding="{Binding ContractAmount}"
                                         Header="Amount" />
                                     <DataGridTextColumn
-                                        Width="70"
+                                        Width="*"
                                         Binding="{Binding StartDate}"
                                         Header="StartDate" />
                                     <DataGridTextColumn
-                                        Width="70"
+                                        Width="*"
                                         Binding="{Binding EndDate}"
                                         Header="EndDate" />
                                 </DataGrid.Columns>

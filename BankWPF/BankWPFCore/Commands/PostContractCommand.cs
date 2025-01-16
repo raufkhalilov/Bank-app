@@ -21,18 +21,18 @@ namespace BankWPFCore.Commands
         public override async Task ExecuteAsync()
         {
 
-            if (MessageBox.Show("Вы действительно хотите добавить нового клиента?", "Добавление клиента", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
+            if (MessageBox.Show("Вы действительно хотите добавить новый договор?", "Новый договор", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
 
 
                 try
                 {
                     await _bankStore.AddNewContract(_newContract);
-                    MessageBox.Show("Клиент успешно добавлен!", "Добавление клиента", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("договор успешно добавлен!", "Новый договор", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (ApiConnectionException ex)
                 {
-                    MessageBox.Show("При добавлении клиента произошла ошибка!\n" + ex.Message, "Добавление клиента", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("При добавлении договора произошла ошибка!\n" + ex.Message, "Новый договор", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }

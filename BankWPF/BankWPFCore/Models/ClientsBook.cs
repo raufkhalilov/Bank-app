@@ -4,6 +4,7 @@ using BankWPFCore.Services.ConflictValidators.ClientConflictValidators;
 using BankWPFCore.Exceptions;
 using BankWPFCore.Services.ApiServices.Providers;
 using BankWPFCore.Services.ApiServices.Creators;
+using BankWPFCore.Services.ApiServices.Updaters;
 
 namespace BankWPFCore.Models
 {
@@ -13,14 +14,16 @@ namespace BankWPFCore.Models
         IClientConflictValidator _clientConflictValidator;
         IClientsProvider _clientsProvider;
         IClientCreator _clientCreator;
+        IClientUpdater _clientUpdater;
 
         //private readonly List<Client> _clients;
 
-        public ClientsBook(IClientsProvider clientsProvider, IClientCreator clientCreator, IClientConflictValidator clientConflictValidator)
+        public ClientsBook(IClientsProvider clientsProvider, IClientCreator clientCreator, IClientUpdater clientUpdater, IClientConflictValidator clientConflictValidator)
         {
             //_clients = new List<Client>();
             _clientCreator = clientCreator;
             _clientsProvider = clientsProvider;
+            _clientUpdater = clientUpdater;
             _clientConflictValidator = clientConflictValidator;
         }
 
@@ -48,6 +51,21 @@ namespace BankWPFCore.Models
 
             await _clientCreator.AddClient(client);
             //_clients.Add(client);
+        }
+
+        public async Task UpdateClient(Client client)
+        {
+
+            Client confClient = await _clientConflictValidator.GetConflictingClient(client);
+
+            if (confClient != null)
+            {
+                throw new ClientConflictException(confClient, client);
+            }
+
+
+            await _clientUpdater.UpdateClient(client);
+
         }
     }
 }

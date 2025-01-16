@@ -32,14 +32,7 @@ namespace BankWPFCore.Services.ApiServices.Providers
 
             var jsonData = await _requestsToApiService.GetDataFromApi(_url);
 
-            /*if (jsonData != null)
-            {
-                return JsonConvert.DeserializeObject<ObservableCollection<Contract>>(jsonData);
-            }
-            else
-            {
-                return null;
-            }*/
+           
 
 
             if (jsonData == null)

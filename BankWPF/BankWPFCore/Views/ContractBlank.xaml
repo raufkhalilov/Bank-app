@@ -306,7 +306,7 @@
                         Grid.Row="1"
                         Grid.Column="2"
                         Margin="10,10"
-                        Command="{Binding OpenContractBlankCommand}"
+                        Command="{Binding PostContractCommand}"
                         Content="Добавить"
                         IsEnabled="{Binding CanUse}"
                         Style="{StaticResource MyButtonStyle}" />

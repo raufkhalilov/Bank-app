@@ -2,6 +2,7 @@
 using BankWPFCore.Models;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace BankWPFCore.Stores
@@ -96,6 +97,23 @@ namespace BankWPFCore.Stores
         private void OnClientAdded(Client newClient)
         {
             ClientAdded?.Invoke(newClient);
+        }
+
+        public async Task UpdateClient(Client updatedClient) 
+        {
+
+            try
+            {
+                await _bank.AddNewClient(updatedClient);
+                //_clients.Add(newClient);
+                OnClientAdded(updatedClient);
+            }
+            catch (ApiConnectionException)
+            {
+                //...
+                throw;
+            }
+
         }
 
         //=================================

@@ -11,6 +11,7 @@ namespace BankWPFCore.Models.Helpers
         public string url1 { get; set; }
         public string url2 { get; set; }
         public string url3 { get; set; }
+        public string url4 { get; set; }
     }
 
 }
