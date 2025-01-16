@@ -152,7 +152,7 @@ namespace BankWPFCore.ViewModels
             }
         }
 
-        public string StartDate
+        public /*string*/DateTime StartDate
         {
             get { return _contract.StartDate; }
             set
@@ -162,7 +162,7 @@ namespace BankWPFCore.ViewModels
             }
         }
 
-        public string EndDate
+        public /*string*/DateTime EndDate
         {
             get { return _contract.EndDate; }
             set

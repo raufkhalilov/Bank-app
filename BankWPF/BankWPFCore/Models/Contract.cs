@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace BankWPFCore.Models
 {
@@ -24,10 +25,10 @@ namespace BankWPFCore.Models
         private int contract_id;//
 
         [JsonProperty("end_date")]
-        private string end_date;
+        private DateTime/*string*/ end_date;
 
         [JsonProperty("start_date")]
-        private string start_date;
+        private DateTime start_date;
 
 
         [JsonProperty("is_deleted")]
@@ -86,7 +87,7 @@ namespace BankWPFCore.Models
             }
         }*/
 
-        public string StartDate
+        public /*string*/DateTime StartDate
         {
             get { return start_date; }
             set
@@ -96,7 +97,7 @@ namespace BankWPFCore.Models
             }
         }
 
-        public string EndDate
+        public /*string*/DateTime EndDate
         {
             get { return end_date; }
             set
