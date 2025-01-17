@@ -93,14 +93,14 @@ namespace BankWPFCore
         protected override void OnStartup(StartupEventArgs e)
         {
     
-            NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
-            startNavigationService.Navigate();
+            //NavigationService<StartViewModel> startNavigationService = CreateStartNavigationService();
+            //startNavigationService.Navigate();
             //
             //NavigationService<SettingsViewModel> startNavigationService = CreateSettingsNavigationService();
             //startNavigationService.Navigate();
 
-            //NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
-            //loginNavigationService.Navigate();
+            NavigationService<LoginViewModel> loginNavigationService = CreateLoginViewModel();
+            loginNavigationService.Navigate();
 
             var startWindow = new MainWindow
             {

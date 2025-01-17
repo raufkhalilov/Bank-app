@@ -265,7 +265,8 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         FontSize="14"
-                        Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" />
+                        
+                        Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged, StringFormat=YYYY.MM.DD}" />
 
                     <DatePicker
                         Grid.Row="4"

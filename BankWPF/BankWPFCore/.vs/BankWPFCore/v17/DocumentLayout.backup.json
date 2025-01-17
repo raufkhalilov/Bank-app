@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\viewmodels\\contractblankviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:viewmodels\\contractblankviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\viewmodels\\contractslistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:viewmodels\\contractslistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\commands\\loadselectedcontractcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:commands\\loadselectedcontractcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\views\\contractblank.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:views\\contractblank.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\services\\apiservices\\creators\\apicontractcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +31,12 @@
       "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:services\\apiservices\\requeststoapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\viewmodels\\contractblankviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:viewmodels\\contractblankviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\commands\\loadusercontractscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:commands\\loadusercontractscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\commands\\loadselectedcontractcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:commands\\loadselectedcontractcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\commands\\postcontractcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:bin\\debug\\net8.0-windows\\settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\views\\contractblank.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:views\\contractblank.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\bankwpfcore.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:bankwpfcore.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -93,10 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\services\\apiservices\\creators\\apiclientcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:services\\apiservices\\creators\\apiclientcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C1EFC7B6-9B39-4374-B13F-A5BFAF2DD12F}|BankWPFCore.csproj|c:\\users\\georg\\app_for_admins\\bankwpf\\bankwpfcore\\views\\clientblank.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -467,7 +467,7 @@
         },
         {
           "DockedWidth": 302,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -484,13 +484,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ContractBlankViewModel.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\ViewModels\\ContractBlankViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\ContractBlankViewModel.cs",
               "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\ViewModels\\ContractBlankViewModel.cs",
               "RelativeToolTip": "ViewModels\\ContractBlankViewModel.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAawKQAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T16:10:05.403Z",
               "IsPinned": true,
@@ -498,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "RequestsToApiService.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Services\\ApiServices\\RequestsToApiService.cs",
               "RelativeDocumentMoniker": "Services\\ApiServices\\RequestsToApiService.cs",
@@ -512,20 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ContractsListingViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\ViewModels\\ContractsListingViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\ContractsListingViewModel.cs",
-              "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\ViewModels\\ContractsListingViewModel.cs",
-              "RelativeToolTip": "ViewModels\\ContractsListingViewModel.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAqwJoAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T16:12:31.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ApiContractCreator.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Services\\ApiServices\\Creators\\ApiContractCreator.cs",
               "RelativeDocumentMoniker": "Services\\ApiServices\\Creators\\ApiContractCreator.cs",
@@ -533,12 +520,49 @@
               "RelativeToolTip": "Services\\ApiServices\\Creators\\ApiContractCreator.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAqwCIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T22:41:24.156Z",
+              "WhenOpened": "2024-12-30T22:41:24.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAiwGAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T22:04:39.233Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "ContractsListingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\ViewModels\\ContractsListingViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ContractsListingViewModel.cs",
+              "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\ViewModels\\ContractsListingViewModel.cs",
+              "RelativeToolTip": "ViewModels\\ContractsListingViewModel.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAqwIwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T16:12:31.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ContractBlank.xaml",
+              "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Views\\ContractBlank.xaml",
+              "RelativeDocumentMoniker": "Views\\ContractBlank.xaml",
+              "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Views\\ContractBlank.xaml",
+              "RelativeToolTip": "Views\\ContractBlank.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-15T22:06:34.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "BankStore.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Stores\\BankStore.cs",
               "RelativeDocumentMoniker": "Stores\\BankStore.cs",
@@ -550,20 +574,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "LoadSelectedContractCommand.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Commands\\LoadSelectedContractCommand.cs",
               "RelativeDocumentMoniker": "Commands\\LoadSelectedContractCommand.cs",
               "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Commands\\LoadSelectedContractCommand.cs",
               "RelativeToolTip": "Commands\\LoadSelectedContractCommand.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAqwCsAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwCQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T22:09:13.925Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Contract.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Models\\Contract.cs",
               "RelativeDocumentMoniker": "Models\\Contract.cs",
@@ -571,12 +595,11 @@
               "RelativeToolTip": "Models\\Contract.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAAAAAGMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T22:41:43.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T22:41:43.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Bank.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Models\\Bank.cs",
               "RelativeDocumentMoniker": "Models\\Bank.cs",
@@ -588,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "LoadUserContractsCommand.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Commands\\LoadUserContractsCommand.cs",
               "RelativeDocumentMoniker": "Commands\\LoadUserContractsCommand.cs",
@@ -600,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "PostContractCommand.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Commands\\PostContractCommand.cs",
               "RelativeDocumentMoniker": "Commands\\PostContractCommand.cs",
@@ -612,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ContractsBook.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Models\\ContractsBook.cs",
               "RelativeDocumentMoniker": "Models\\ContractsBook.cs",
@@ -624,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "LoadClientsCommand.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Commands\\LoadClientsCommand.cs",
               "RelativeDocumentMoniker": "Commands\\LoadClientsCommand.cs",
@@ -636,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\bin\\Debug\\net8.0-windows\\appsettings.json",
               "RelativeDocumentMoniker": "bin\\Debug\\net8.0-windows\\appsettings.json",
@@ -648,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Models\\Client.cs",
               "RelativeDocumentMoniker": "Models\\Client.cs",
@@ -660,18 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ContractBlank.xaml",
-              "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Views\\ContractBlank.xaml",
-              "RelativeDocumentMoniker": "Views\\ContractBlank.xaml",
-              "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Views\\ContractBlank.xaml",
-              "RelativeToolTip": "Views\\ContractBlank.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-15T22:06:34.391Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "settings.json",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\bin\\Debug\\net8.0-windows\\settings.json",
               "RelativeDocumentMoniker": "bin\\Debug\\net8.0-windows\\settings.json",
@@ -683,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "BankWPFCore.csproj",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\BankWPFCore.csproj",
               "RelativeDocumentMoniker": "BankWPFCore.csproj",
@@ -695,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "IContractCreator.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Services\\ApiServices\\Creators\\IContractCreator.cs",
               "RelativeDocumentMoniker": "Services\\ApiServices\\Creators\\IContractCreator.cs",
@@ -707,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ClientBlankViewModel.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\ViewModels\\ClientBlankViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\ClientBlankViewModel.cs",
@@ -719,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "IRequestsToApiService.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Services\\ApiServices\\IRequestsToApiService.cs",
               "RelativeDocumentMoniker": "Services\\ApiServices\\IRequestsToApiService.cs",
@@ -731,7 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ClientsBook.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Models\\ClientsBook.cs",
               "RelativeDocumentMoniker": "Models\\ClientsBook.cs",
@@ -744,7 +756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "PostClientCommand.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Commands\\PostClientCommand.cs",
               "RelativeDocumentMoniker": "Commands\\PostClientCommand.cs",
@@ -756,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "ApiClientCreator.cs",
               "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\Services\\ApiServices\\Creators\\ApiClientCreator.cs",
               "RelativeDocumentMoniker": "Services\\ApiServices\\Creators\\ApiClientCreator.cs",
@@ -765,18 +777,6 @@
               "ViewState": "AgIAABgAAAAAAAAAAAAqwC4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T22:41:17.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAiwEkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T22:04:39.233Z"
             },
             {
               "$type": "Document",
@@ -1013,7 +1013,8 @@
               "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-30T22:13:19.391Z"
+              "WhenOpened": "2024-12-30T22:13:19.391Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1058,7 +1059,8 @@
               "ToolTip": "C:\\Users\\georg\\app_for_admins\\BankWPF\\BankWPFCore\\ResourcesDictionary.xaml",
               "RelativeToolTip": "ResourcesDictionary.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-29T15:43:05.135Z"
+              "WhenOpened": "2024-12-29T15:43:05.135Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
